@@ -1,0 +1,10 @@
+{
+  "name": "daniel-sushi",
+  "private": true,
+  "description": "Sito di Daniel's Sushi, Bitetto (BA). Sito statico: nessuna dipendenza.",
+  "type": "module",
+  "scripts": {
+    "menu": "node scripts/genera-menu.mjs",
+    "start": "python3 -m http.server 8000"
+  }
+}
