@@ -1,0 +1,54 @@
+<!-- @dsCard height=300 -->
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8"><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../bundle.css">
+<title>Daniel's Sushi</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=Oswald:wght@700&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--riso); color:var(--sumi); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:300px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:300px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:300px; }
+  .ardesia { fill:var(--brand-ardesia); }
+  .arancio { fill:var(--brand-arancio); }
+  .kraft { fill:var(--brand-kraft); }
+  .cobalto { fill:var(--brand-cobalto); }
+  .ritaglio { fill:var(--brand-riso); }
+  .arco-s { rx:var(--radius-arch-s); }
+  .arco-l { rx:var(--radius-arch-l); }
+  .words { position:absolute; left:var(--space-12); bottom:var(--space-8); max-width:440px; }
+  .name { margin:0; font-family:var(--font-display); font-size:88px; line-height:.95; font-weight:700; text-transform:uppercase; color:var(--sumi); }
+  .tag { margin:var(--space-3) 0 0 2px; font-size:14px; line-height:20px; color:var(--sumi-muted); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 300" width="480" height="300">
+<!--
+  blocks      brand-ardesia two 80-wide arches (the packaging's dominant dark) · brand-arancio one 160-wide arch (the action colour) · brand-kraft one 80-wide arch · brand-cobalto one 80-wide arch (the posts' blue, once) — about 40% of 960×300
+  arrangement flush arches of staggered heights bleeding off the bottom edge, left to right, like the lid of the takeaway box
+  pattern     half-rounds overlapping the arch feet, from the packaging's stacked semicircles («Forma e spazio: l'arco»): five discs in brand-riso, brand-arancio and brand-kraft
+  scales      widths 80 and 160 (space-16 + space-4 multiples), arch tops radius-arch-s / radius-arch-l (half the width), disc rx radius-arch-s
+-->
+<rect class="ardesia arco-s" x="0" y="70" width="80" height="320" rx="40"/>
+<rect class="kraft arco-s" x="80" y="150" width="80" height="240" rx="40"/>
+<rect class="ardesia arco-s" x="160" y="24" width="80" height="360" rx="40"/>
+<rect class="arancio arco-l" x="240" y="104" width="160" height="320" rx="80"/>
+<rect class="cobalto arco-s" x="400" y="48" width="80" height="340" rx="40"/>
+<rect class="ritaglio arco-s" x="0" y="232" width="80" height="80" rx="40"/>
+<rect class="arancio arco-s" x="80" y="256" width="80" height="80" rx="40"/>
+<rect class="kraft arco-s" x="160" y="200" width="80" height="80" rx="40"/>
+<rect class="ritaglio arco-s" x="280" y="240" width="80" height="80" rx="40"/>
+<rect class="kraft arco-s" x="400" y="220" width="80" height="80" rx="40"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Daniel's<br>Sushi</h1>
+<p class="tag">Sushi all'italiana a Bitetto: carta, inchiostro e archi.</p>
+</div>
+</div>
+</body>
+</html>

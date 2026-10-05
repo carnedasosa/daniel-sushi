@@ -1,0 +1,79 @@
+{
+  "v": 3,
+  "assetGroups": {
+    "Logos": {
+      "files": {
+        "logo.png": {
+          "blob": "aced3605d8845f48ac932622dce7ff8f",
+          "name": "logo.png",
+          "size": 54433,
+          "type": "image/png"
+        }
+      },
+      "name": "Logos",
+      "order": [
+        "logo.png"
+      ],
+      "tile": "l"
+    },
+    "Riferimenti": {
+      "files": {
+        "grafica-1.png": {
+          "blob": "2b59bf1ca72780c2222aeebcd23a1b84",
+          "name": "grafica-1.png",
+          "size": 502406,
+          "type": "image/png"
+        },
+        "grafica-2.png": {
+          "blob": "7dc6a41063062f0f826e66b63ac1fd96",
+          "name": "grafica-2.png",
+          "size": 325055,
+          "type": "image/png"
+        },
+        "grafica-3.png": {
+          "blob": "19c6db43abc11fb3d8c84158c9d1692c",
+          "name": "grafica-3.png",
+          "size": 448511,
+          "type": "image/png"
+        },
+        "packaging-sushi.jpg": {
+          "blob": "2b4e735b30cf1ffdc99ca9c70aef3d68",
+          "name": "packaging-sushi.jpg",
+          "size": 152810,
+          "type": "image/jpeg"
+        }
+      },
+      "name": "Riferimenti",
+      "order": [
+        "packaging-sushi.jpg",
+        "grafica-1.png",
+        "grafica-2.png",
+        "grafica-3.png"
+      ],
+      "tile": "m"
+    }
+  },
+  "blobs": {},
+  "createdOnFiles": {
+    "at": "2026-10-05T17:07:17Z",
+    "v": 1
+  },
+  "docs": {
+    "sections": []
+  },
+  "groups": [
+    "Logos",
+    "Riferimenti"
+  ],
+  "lastChange": {
+    "at": "2026-10-05T17:07:17Z",
+    "by": "alessio",
+    "note": "Prima versione dal logo, dal packaging e dai post Instagram",
+    "via": "Cowork"
+  },
+  "layout": "files",
+  "libraries": [],
+  "namespace": "DanielsSushi",
+  "sections": {},
+  "title": "Daniel's Sushi"
+}
