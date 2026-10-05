@@ -1,0 +1,65 @@
+<!-- @dsCard group="Movimento" height=420 subtitle="Archi, ingresso, pressione, card, cambio categoria" -->
+<!doctype html>
+<html lang="it">
+<head><meta charset="utf-8"><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../bundle.css"><title>Motion</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Oswald:wght@500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+body{margin:0;background:var(--riso);}
+.pad{padding:24px;display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:end;}
+.stage{display:flex;flex-direction:column;gap:12px;}
+.ds-arches{height:160px;}
+.hero h2{margin:0;font:700 40px/.95 var(--font-display);text-transform:uppercase;}
+.hero p{margin:0;font:italic 400 17px/26px var(--font-serif);color:var(--sumi-muted);}
+.card{padding:20px;border-radius:var(--radius-md);background:var(--carta);border:1px solid var(--linea);}
+.card h3{margin:0 0 6px;font:600 20px/26px var(--font-serif);}
+.card p{margin:0;font:400 14px/22px var(--font-sans);color:var(--sumi-muted);}
+.label{margin:0;font:600 12px/16px var(--font-sans);letter-spacing:.04em;text-transform:uppercase;color:var(--sumi-muted);}
+</style>
+</head>
+<body>
+<div class="ds pad" id="root">
+<div class="stage">
+<p class="label">Archi · m-arches</p>
+<div class="ds-arches m-arches" aria-hidden="true">
+<div class="ds-arch ds-arch--ardesia" style="--i:0;height:100%"></div>
+<div class="ds-arch ds-arch--kraft" style="--i:1;height:60%"></div>
+<div class="ds-arch ds-arch--arancio" style="--i:2;height:85%"></div>
+<div class="ds-arch ds-arch--ardesia" style="--i:3;height:55%"></div>
+<div class="ds-arch ds-arch--arancio" style="--i:4;height:95%"></div>
+</div>
+</div>
+<div class="stage hero">
+<p class="label">Ingresso · m-enter</p>
+<h2 class="m-enter" style="--i:0">Ti aspettiamo questa sera</h2>
+<p class="m-enter" style="--i:1">Roll creativi con stracciatella, pistacchio e mandorla.</p>
+<div class="ds-row m-enter" style="--i:2"><a class="ds-btn ds-btn--primary" href="#ordina">Ordina ora</a><a class="ds-btn ds-btn--secondary" href="#menu">Sfoglia il menù</a></div>
+</div>
+<div class="stage">
+<p class="label">Card · m-lift</p>
+<article class="card m-lift"><h3>Daniel's roll</h3><p>Passa sopra con il mouse: la card sale di 4px.</p></article>
+<p class="label">Cambio categoria · m-swap</p>
+<div class="ds-cats"><button type="button" class="ds-chip" aria-current="true" id="c1">Special roll</button><button type="button" class="ds-chip" id="c2">Poke bowl</button></div>
+<p id="list" class="m-swap-b" style="margin:0;font:600 20px/26px var(--font-serif)">Sake roll · Maguro roll · Shrimp roll</p>
+</div>
+<div class="stage"><button type="button" class="ds-btn ds-btn--secondary" id="replay">Riproduci le animazioni</button></div>
+</div>
+<script>
+(function(){
+  var data={c1:'Sake roll · Maguro roll · Shrimp roll',c2:"Philadelphia's poke · Daniel's poke · Aman's poke"};
+  var list=document.getElementById('list');
+  ['c1','c2'].forEach(function(id){
+    document.getElementById(id).addEventListener('click',function(){
+      ['c1','c2'].forEach(function(o){document.getElementById(o).setAttribute('aria-current',o===id?'true':'false');});
+      list.textContent=data[id];
+      list.className=list.className==='m-swap-a'?'m-swap-b':'m-swap-a';
+    });
+  });
+  document.getElementById('replay').addEventListener('click',function(){
+    var els=document.querySelectorAll('.m-arches > *, .m-enter');
+    els.forEach(function(e){e.style.animation='none';});
+    void document.body.offsetWidth;
+    els.forEach(function(e){e.style.animation='';});
+  });
+})();
+</script>
+</body>
+</html>

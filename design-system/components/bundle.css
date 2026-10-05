@@ -73,3 +73,56 @@
 .ds-box__body { display: grid; gap: var(--space-2); padding: var(--space-6); }
 .ds-box__title { margin: 0; font: 600 24px/1.05 var(--font-display); text-transform: uppercase; }
 .ds-box__foot { display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); padding-top: var(--space-2); }
+
+/* ===== Movimento =====
+   Regole in motion.md. Durate e curve sono token (famiglie durata, easing); i valori dopo la virgola sono il ripiego. */
+.ds-btn, .ds-chip, .ds-nav a { transition: background-color var(--dur-fast, 120ms) var(--ease-out, cubic-bezier(.2,.7,.2,1)), color var(--dur-fast, 120ms) var(--ease-out, cubic-bezier(.2,.7,.2,1)), border-color var(--dur-fast, 120ms) var(--ease-out, cubic-bezier(.2,.7,.2,1)), transform var(--dur-fast, 120ms) var(--ease-out, cubic-bezier(.2,.7,.2,1)); }
+.ds-btn:hover { transform: translateY(-1px); }
+.ds-btn:active, .ds-chip:active { transform: translateY(1px); transition-duration: 60ms; }
+.ds-chip:hover { border-color: var(--sumi); }
+
+
+/* Bottoni e chip: si sollevano di 1px, alla pressione scendono. */
+.m-press { transition: transform var(--dur-fast, 120ms) var(--ease-out, cubic-bezier(.2, .7, .2, 1)), filter var(--dur-fast, 120ms) var(--ease-out, cubic-bezier(.2, .7, .2, 1)); }
+.m-press:hover { transform: translateY(-1px); filter: brightness(.95); }
+.m-press:active { transform: translateY(1px); filter: brightness(.9); transition-duration: 60ms; }
+.m-press:focus-visible { outline: 2px solid var(--focus, #17318F); outline-offset: 2px; }
+
+/* Card: si alzano di 4px al passaggio del mouse. Niente ombre: il brand usa bordi. */
+.m-lift { transition: transform var(--dur-base, 200ms) var(--ease-out, cubic-bezier(.2, .7, .2, 1)); }
+.m-lift:hover { transform: translateY(-4px); }
+
+/* Foto dentro un arco o una card: leggero zoom, il contenitore taglia. */
+.m-zoom { overflow: hidden; }
+.m-zoom > img { transition: transform var(--dur-slow, 420ms) var(--ease-out, cubic-bezier(.2, .7, .2, 1)); }
+.m-zoom:hover > img { transform: scale(1.04); }
+
+/* Archi che salgono dal bordo inferiore, uno dopo l'altro (style="--i: 0", "--i: 1"…). */
+@keyframes m-arch-rise { from { transform: translateY(45%); } to { transform: none; } }
+.m-arches > * { animation: m-arch-rise var(--dur-arch, 640ms) var(--ease-out, cubic-bezier(.2, .7, .2, 1)) both; animation-delay: calc(var(--i, 0) * var(--stagger, 70ms)); }
+
+/* Ingresso al caricamento: titolo, frase e bottoni dell'hero (style="--i: n"). */
+@keyframes m-enter { from { opacity: .35; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.m-enter { animation: m-enter var(--dur-slow, 420ms) var(--ease-out, cubic-bezier(.2, .7, .2, 1)) both; animation-delay: calc(var(--i, 0) * var(--stagger, 70ms)); }
+
+/* Comparsa allo scroll, solo dove il browser la supporta; altrove la sezione è già lì. */
+@supports (animation-timeline: view()) {
+  .m-reveal { animation: m-enter linear both; animation-timeline: view(); animation-range: entry 0% entry 40%; }
+  .m-arches--scroll > * { animation: m-arch-rise linear both; animation-timeline: view(); animation-range: entry 0% entry 100%; }
+}
+
+/* Cambio di categoria nel menù: alterna m-swap-a / m-swap-b per far ripartire l'animazione. */
+@keyframes m-swap-a { from { opacity: .3; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes m-swap-b { from { opacity: .3; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.m-swap-a { animation: m-swap-a var(--dur-base, 200ms) var(--ease-out, cubic-bezier(.2, .7, .2, 1)); }
+.m-swap-b { animation: m-swap-b var(--dur-base, 200ms) var(--ease-out, cubic-bezier(.2, .7, .2, 1)); }
+
+@media (prefers-reduced-motion: reduce) {
+  .m-press, .m-lift, .m-zoom > img { transition: none; }
+  .m-press:hover, .m-press:active, .m-lift:hover, .m-zoom:hover > img { transform: none; }
+  .m-arches > *, .m-arches--scroll > *, .m-enter, .m-reveal, .m-swap-a, .m-swap-b { animation: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ds-btn, .ds-chip, .ds-nav a { transition: none; }
+  .ds-btn:hover, .ds-btn:active, .ds-chip:active { transform: none; }
+}

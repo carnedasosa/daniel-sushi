@@ -1,6 +1,6 @@
 # Daniel's Sushi — design system
 
-Esportato da Claude Design (sistema «Daniel's Sushi», versione 1791220080-f497, 5 ottobre 2026). La fonte di verità per colori, tipografia e componenti è questa cartella; se il design system cambia in Claude Design, riesporta e sostituisci la cartella.
+Esportato da Claude Design (sistema «Daniel's Sushi», versione 1791224086-db49, 5 ottobre 2026). La fonte di verità per colori, tipografia e componenti è questa cartella; se il design system cambia in Claude Design, riesporta e sostituisci la cartella.
 
 ## Come usarlo nel codice
 
@@ -9,13 +9,16 @@ Esportato da Claude Design (sistema «Daniel's Sushi», versione 1791220080-f497
 - Importa `components/bundle.css` per le classi dei componenti (`ds-btn`, `ds-item`, `ds-chip`, `ds-badge`, `ds-announce`, `ds-info`, `ds-header`, `ds-arch`, `ds-box`).
 - Ogni componente ha `components/<Nome>/README.md` (quando usarlo, cosa fornire) e `preview.html` (markup di riferimento, apribile nel browser).
 - `tokens.json` è la sorgente dei token, con una nota d'uso per ognuno; `tokens.css` è generato da lì.
+- Per il movimento leggi `motion.md` e usa le classi `m-*` (in `components/bundle.css`, o da sole in `motion.css` se non usi il bundle). Durate e curve sono variabili in `tokens.css` (`--dur-fast`, `--ease-out`…).
 - Logo e materiali di riferimento sono in `assets/`. Il logo va usato così com'è.
 
 | Percorso | Contenuto |
 |---|---|
 | `tokens.json` | Token: colori (temi Giorno/Sera), tipografia, spaziature, raggi, layout |
 | `tokens.css` | Gli stessi token come variabili CSS e classi tipografiche |
-| `components/bundle.css` | Stili condivisi dei componenti |
+| `components/bundle.css` | Stili condivisi dei componenti, movimento compreso |
+| `motion.md` | Regole del movimento: durate, curve, cosa si anima e cosa no |
+| `motion.css` | Solo le classi di movimento `m-*`, con le loro variabili |
 | `components/*/` | Linee guida e anteprima di ogni componente |
 | `assets/` | Logo e riferimenti visivi (packaging, post Instagram) |
 | `design-system.json` | Indice originale di Claude Design |
@@ -67,6 +70,7 @@ Il sito unisce le tre cose: fondi carta (riso, kraft), tipografia da manifesto p
 - Bottoni e chip a pillola (`radius-pill`), card a `radius-md`, input e badge a `radius-sm`.
 - Bordi e filetti, non ombre: separa le voci del menù con `linea`; i controlli hanno bordo `linea-forte`.
 - Contenitore massimo `container`, testo al massimo `measure`. Margine laterale `space-4` su mobile, `space-12` da tablet. Sezioni distanziate di `space-16` (mobile) e `space-24` (desktop).
+- Il movimento ha regole sue, nella sezione **Movimento** (`motion.md`): breve, morbido, un solo momento d'effetto per pagina (gli archi che salgono).
 - Tutto ciò che si tocca è alto almeno `tap` (44px). Il focus da tastiera è un anello pieno di 2px in `focus` con 2px di distacco.
 
 ## Immagini

@@ -66,10 +66,10 @@
     "Riferimenti"
   ],
   "lastChange": {
-    "at": "2026-10-05T17:07:17Z",
+    "at": "2026-10-05T18:10:00Z",
     "by": "alessio",
-    "note": "Prima versione dal logo, dal packaging e dai post Instagram",
-    "via": "Cowork"
+    "via": "Cowork",
+    "note": "Aggiunto il movimento: sezione motion.md, token durata/easing, classi m-* e anteprima Motion"
   },
   "layout": "files",
   "libraries": [],
