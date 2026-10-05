@@ -1,8 +1,11 @@
-// Genera le categorie del menù dentro menu.html a partire da data/menu.json.
+// Genera la barra delle categorie e le categorie del menù dentro menu.html a partire da data/menu.json.
 // Uso: node scripts/genera-menu.mjs  (oppure npm run menu)
 // Sostituisce solo il contenuto tra i marcatori <!-- genera-menu:... --> e <!-- /genera-menu:... -->.
 
 import { readFile, writeFile } from 'node:fs/promises';
+
+// Categoria aperta all'arrivo sulla pagina (se l'indirizzo non ne indica un'altra con #id).
+const CATEGORIA_INIZIALE = 'special-roll';
 
 const radice = new URL('..', import.meta.url);
 const dati = JSON.parse(await readFile(new URL('data/menu.json', radice), 'utf8'));
@@ -18,77 +21,75 @@ const esc = (s) => String(s)
 // Prezzi in formato italiano: 14,00 € (spazio non separabile prima dell'euro).
 const prezzo = (n) => `${n.toFixed(2).replace('.', ',')}&nbsp;€`;
 
-function badge(voce, categoria) {
+function badge(v) {
   const out = [];
-  const pz = voce.pz ?? categoria.pezzi;
-  if (pz) out.push(`<span class="ds-badge ds-badge--pz">${esc(pz)}</span>`);
-  if (voce.piccante) out.push(`<span class="ds-badge ds-badge--spicy">${esc(voce.piccante === true ? 'Piccante' : voce.piccante)}</span>`);
-  if (voce.veg) out.push('<span class="ds-badge ds-badge--veg">Vegetariano</span>');
-  if (voce.casa) out.push('<span class="ds-badge ds-badge--new">Della casa</span>');
-  if (voce.info) out.push(`<span class="ds-badge ds-badge--info">${esc(voce.info)}</span>`);
-  if (out.length > 3) throw new Error(`Troppi badge (massimo tre) per «${voce.nome}»`);
+  if (v.piccante) out.push(`<span class="ds-badge ds-badge--spicy">${esc(v.piccante === true ? 'Piccante' : v.piccante)}</span>`);
+  if (v.veg) out.push('<span class="ds-badge ds-badge--veg">Vegetariano</span>');
+  if (v.casa) out.push('<span class="ds-badge ds-badge--new">Della casa</span>');
+  if (out.length > 3) throw new Error(`Troppi badge (massimo tre) per «${v.nome}»`);
   return out;
 }
 
-function voce(v, categoria, rientro) {
+function voce(v, rientro) {
   const righe = [
-    '<article class="ds-item">',
-    `  <span class="ds-item__num">${v.num ?? ''}</span>`,
-    `  <h3 class="ds-item__name">${esc(v.nome)}</h3>`,
-    `  <span class="ds-item__price">${prezzo(v.prezzo)}</span>`,
+    '<article class="dish">',
+    `  <span class="dish__num">${v.num ?? ''}</span>`,
+    `  <h3 class="dish__name">${esc(v.nome)}</h3>`,
+    `  <span class="dish__price">${prezzo(v.prezzo)}</span>`,
   ];
-  if (v.desc) righe.push(`  <p class="ds-item__desc">${esc(v.desc)}</p>`);
-  const b = badge(v, categoria);
-  if (b.length) righe.push(`  <div class="ds-item__meta">${b.join('')}</div>`);
+  if (v.desc) righe.push(`  <p class="dish__desc">${esc(v.desc)}</p>`);
+  const b = badge(v);
+  if (b.length) righe.push(`  <div class="dish__tags">${b.join('')}</div>`);
   righe.push('</article>');
   return righe.map((r) => rientro + r).join('\n');
 }
 
 function componi(c, rientro) {
-  const gruppi = c.gruppi.map((g) => [
-    '    <div>',
-    `      <h4 class="ds-eyebrow">${esc(g.nome)}</h4>`,
-    '      <ul class="body-s">',
-    ...g.voci.map((x) => `        <li>${esc(x)}</li>`),
-    '      </ul>',
-    '    </div>',
-  ].join('\n')).join('\n');
   return [
-    '<section class="ds-info poke-builder" id="componi" aria-labelledby="componi-titolo">',
-    `  <h3 id="componi-titolo">${esc(c.titolo)}</h3>`,
-    '  <p class="body-s box-desc">Scegli una base e aggiungi proteine, condimenti, salse e topping.</p>',
+    '<div class="poke-builder" id="componi">',
+    `  <h3>${esc(c.titolo)}</h3>`,
     '  <div class="poke-builder__groups">',
-    gruppi,
+    ...c.gruppi.map((g, i) =>
+      `    <div><p class="poke-builder__title">${i + 1} · ${esc(g.nome)}</p><p class="poke-builder__list">${g.voci.map(esc).join(' · ')}</p></div>`),
     '  </div>',
-    '</section>',
-  ].map((r) => r.split('\n').map((l) => rientro + l).join('\n')).join('\n');
+    '</div>',
+  ].map((l) => rientro + l).join('\n');
 }
 
-const r = '      ';
-const rn = '        ';
+// «8 pz. · 40 piatti» quando la categoria ha i pezzi, altrimenti «7 voci».
+const nota = (c) => (c.pezzi ? `${c.pezzi} · ${c.voci.length} piatti` : `${c.voci.length} voci`);
+
+if (!dati.categorie.some((c) => c.id === CATEGORIA_INIZIALE)) {
+  throw new Error(`Categoria iniziale «${CATEGORIA_INIZIALE}» non presente in data/menu.json`);
+}
+
+const rn = '      ';
 const nav = [
   `${rn}<nav class="ds-cats" aria-label="Categorie del menù">`,
-  ...dati.categorie.map((c, i) =>
-    `${rn}  <a class="ds-chip" href="#${c.id}"${i === 0 ? ' aria-current="true"' : ''}>${esc(c.nome)}</a>`),
+  ...dati.categorie.map((c) =>
+    `${rn}  <a class="ds-chip m-press" href="#${c.id}"${c.id === CATEGORIA_INIZIALE ? ' aria-current="true"' : ''}>${esc(c.nome)}</a>`),
   `${rn}</nav>`,
 ].join('\n');
 
+const r = '        ';
 const sezioni = dati.categorie.map((c) => {
+  const attiva = c.id === CATEGORIA_INIZIALE ? ' is-active' : '';
   const parti = [
-    `${r}<section class="menu-cat" id="${c.id}" aria-labelledby="${c.id}-titolo">`,
+    `${r}<section class="menu-cat${attiva}" id="${c.id}" aria-labelledby="${c.id}-titolo">`,
     `${r}  <div class="menu-cat__head">`,
-    `${r}    <h2 class="display-m" id="${c.id}-titolo">${esc(c.nome)}</h2>`,
+    `${r}    <h2 id="${c.id}-titolo">${esc(c.nome)}</h2>`,
+    `${r}    <span class="menu-cat__note">${esc(nota(c))}</span>`,
+    `${r}  </div>`,
+    `${r}  <div class="dishes">`,
+    ...c.voci.map((v) => voce(v, `${r}    `)),
+    `${r}  </div>`,
   ];
-  if (c.pezzi) parti.push(`${r}    <span class="ds-badge ds-badge--pz">${esc(c.pezzi)}</span>`);
-  parti.push(`${r}  </div>`, `${r}  <div class="dish-list">`);
-  parti.push(...c.voci.map((v) => voce(v, c, `${r}    `)));
-  parti.push(`${r}  </div>`);
   if (c.componi) parti.push(componi(c.componi, `${r}  `));
   parti.push(`${r}</section>`);
   return parti.join('\n');
 }).join('\n');
 
-const nota = `${r}<p class="note">${esc(dati.nota)}</p>`;
+const allergeni = `${r}<p class="menu-allergeni">${esc(dati.nota)}.</p>`;
 
 function sostituisci(html, nome, contenuto) {
   const re = new RegExp(`(<!-- genera-menu:${nome} -->)[\\s\\S]*?(\\n[ \\t]*<!-- /genera-menu:${nome} -->)`);
@@ -97,7 +98,7 @@ function sostituisci(html, nome, contenuto) {
 }
 
 pagina = sostituisci(pagina, 'nav', nav);
-pagina = sostituisci(pagina, 'sezioni', `${sezioni}\n${nota}`);
+pagina = sostituisci(pagina, 'sezioni', `${sezioni}\n${allergeni}`);
 await writeFile(percorsoPagina, pagina);
 
 const totale = dati.categorie.reduce((n, c) => n + c.voci.length, 0);
