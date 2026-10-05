@@ -1,128 +1,112 @@
-/* Daniel's Sushi — classi condivise dei componenti. Tutti i colori vengono dai token. */
-.ds { font-family: var(--font-sans); color: var(--sumi); }
+/* Daniel's Sushi — componenti del design system «Carta e indaco».
+   Tutti i valori vengono da tokens.css. Regole d'uso in ../README.md, movimento in ../motion.md. */
+
+.ds { font-family: var(--font-body); color: var(--inchiostro); background: var(--carta); }
 .ds *, .ds *::before, .ds *::after { box-sizing: border-box; }
-.ds-row { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
-.ds-stack { display: flex; flex-direction: column; gap: var(--space-4); }
 
-/* Bottoni */
-.ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); min-height: var(--tap); padding: var(--space-3) var(--space-6); border-radius: var(--radius-pill); border: 2px solid transparent; font: 600 15px/20px var(--font-sans); text-decoration: none; cursor: pointer; }
-.ds-btn:focus-visible, .ds-chip:focus-visible, .ds-nav a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
-.ds-btn--primary { background: var(--arancio); color: var(--on-arancio); }
-.ds-btn--primary:hover { background: var(--arancio-ink); color: var(--riso); }
-.ds-btn--secondary { background: transparent; color: var(--sumi); border-color: var(--linea-forte); }
-.ds-btn--secondary:hover { background: var(--kraft); }
-.ds-btn--link { background: none; padding-inline: var(--space-2); color: var(--cobalto); text-decoration: underline; text-underline-offset: 3px; }
-.ds-btn svg { width: 18px; height: 18px; }
+/* ===== Bottoni =====
+   Pieno indaco: l'unico bottone pieno, uno per schermata.
+   Outline arancio: azioni secondarie, con freccia. Testo in arancio-ink per la leggibilità. */
+.ds-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-12);
+  min-height: var(--tap); padding: 14px 32px;
+  border-radius: var(--radius-btn); border: 2px solid transparent;
+  font: 500 13px/1.2 var(--font-label); letter-spacing: .12em; text-transform: uppercase;
+  text-decoration: none; cursor: pointer; text-align: center;
+}
+.ds-btn--primary { background: var(--indaco); color: var(--on-indaco); }
+.ds-btn--secondary { background: transparent; color: var(--arancio-ink); border-color: var(--arancio); }
+.ds-btn--on-indaco { background: transparent; color: var(--on-indaco); border-color: var(--on-indaco); }
+.ds-btn--lg { padding: 20px 40px; }
+.ds-btn svg { width: 16px; height: 16px; flex: none; }
+.ds-btn:focus-visible, .ds-chip:focus-visible, .ds-link:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 
-/* Badge */
-.ds-badge { display: inline-flex; align-items: center; gap: var(--space-1); padding: 4px 8px; border-radius: var(--radius-sm); font: 600 12px/16px var(--font-sans); letter-spacing: .04em; text-transform: uppercase; border: 1px solid currentColor; }
-.ds-badge--pz { color: var(--sumi-muted); }
-.ds-badge--spicy { color: var(--shoyu); }
-.ds-badge--veg { color: var(--wasabi); }
-.ds-badge--new { color: var(--arancio-ink); background: var(--arancio-soft); border-color: transparent; }
-.ds-badge--info { color: var(--cobalto); background: var(--cobalto-soft); border-color: transparent; }
+/* Link testuale */
+.ds-link { color: var(--indaco); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
 
-/* Voce di menù */
-.ds-item { display: grid; grid-template-columns: auto 1fr auto; gap: var(--space-2) var(--space-4); padding: var(--space-4) 0; border-bottom: 1px solid var(--linea); align-items: baseline; }
-.ds-item__num { font: 600 12px/16px var(--font-sans); color: var(--arancio-ink); font-variant-numeric: tabular-nums; min-width: 2.5em; }
-.ds-item__name { margin: 0; font: 600 22px/28px var(--font-serif); color: var(--sumi); }
-.ds-item__price { font: 700 17px/22px var(--font-sans); color: var(--sumi); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.ds-item__desc { grid-column: 2 / 4; margin: 0; font: 400 14px/22px var(--font-sans); color: var(--sumi-muted); max-width: 52ch; }
-.ds-item__meta { grid-column: 2 / 4; display: flex; flex-wrap: wrap; gap: var(--space-2); }
+/* ===== Etichette ===== */
+.ds-eyebrow { margin: 0; font: 500 13px/1.6 var(--font-label); letter-spacing: .2em; text-transform: uppercase; color: var(--indaco); }
 
-/* Chip di categoria */
-.ds-cats { display: flex; gap: var(--space-2); overflow-x: auto; padding-bottom: var(--space-1); scrollbar-width: thin; }
-.ds-chip { flex: none; min-height: var(--tap); display: inline-flex; align-items: center; padding: 0 var(--space-4); border-radius: var(--radius-pill); border: 1.5px solid var(--linea-forte); background: transparent; color: var(--sumi); font: 600 15px/20px var(--font-sans); cursor: pointer; }
-.ds-chip[aria-current="true"] { background: var(--sumi); color: var(--riso); border-color: var(--sumi); }
+/* ===== Chip delle categorie (tag, raggio 16px) ===== */
+.ds-cats { display: flex; gap: var(--sp-8); overflow-x: auto; scrollbar-width: none; }
+.ds-cats::-webkit-scrollbar { display: none; }
+.ds-chip {
+  flex: none; min-height: var(--tap); display: inline-flex; align-items: center;
+  padding: 0 var(--sp-16); border-radius: var(--radius-tag);
+  border: 1px solid var(--inchiostro); background: transparent; color: var(--inchiostro);
+  font: 500 13px/1 var(--font-label); letter-spacing: .12em; text-transform: uppercase;
+  text-decoration: none; cursor: pointer;
+}
+.ds-chip[aria-current="true"] { background: var(--indaco); border-color: var(--indaco); color: var(--on-indaco); }
 
-/* Titoli */
-.ds-eyebrow { margin: 0; font: 500 14px/18px var(--font-display); letter-spacing: .14em; text-transform: uppercase; color: var(--sumi-muted); }
-.ds-display { margin: 0; font-family: var(--font-display); font-weight: 700; text-transform: uppercase; line-height: .95; }
+/* ===== Badge sotto le voci del menù ===== */
+.ds-badge {
+  display: inline-flex; align-items: center; padding: 3px 10px; border-radius: var(--radius-tag);
+  font: 500 11px/16px var(--font-label); letter-spacing: .14em; text-transform: uppercase;
+  border: 1px solid currentColor;
+}
+.ds-badge--spicy { color: var(--arancio-ink); }
+.ds-badge--veg { color: var(--salvia-ink); }
+.ds-badge--new { color: var(--on-indaco); background: var(--indaco); border-color: var(--indaco); }
 
-/* Annuncio (eredita i post Instagram) */
-.ds-announce { display: grid; gap: var(--space-2); padding: var(--space-6); border-radius: var(--radius-md); background: var(--cobalto); color: var(--on-cobalto); }
-.ds-announce__title { margin: 0; font: 700 40px/1 var(--font-display); text-transform: uppercase; }
-.ds-announce__body { margin: 0; font: 400 16px/24px var(--font-sans); max-width: 46ch; }
-.ds-announce--arancio { background: var(--arancio); color: var(--on-arancio); }
+/* ===== Card bianca sulla carta: raggio 8px, ombra asimmetrica ===== */
+.ds-card { background: var(--bianco); border-radius: var(--radius-card); box-shadow: var(--ombra-card); }
 
-/* Card info */
-.ds-info { display: grid; gap: var(--space-4); padding: var(--space-6); border-radius: var(--radius-md); background: var(--carta); border: 1px solid var(--linea); }
-.ds-info dl { display: grid; grid-template-columns: auto 1fr; gap: var(--space-2) var(--space-6); margin: 0; font: 400 15px/22px var(--font-sans); }
-.ds-info dt { color: var(--sumi-muted); }
-.ds-info dd { margin: 0; color: var(--sumi); font-variant-numeric: tabular-nums; }
-.ds-info h3 { margin: 0; font: 600 28px/1.05 var(--font-display); text-transform: uppercase; }
+/* ===== Forme organiche (blob) e onde: SVG pieni in un solo colore caldo ===== */
+.ds-blob { display: block; pointer-events: none; }
+.ds-blob--miele { fill: var(--miele); }
+.ds-blob--salvia { fill: var(--salvia); }
+.ds-blob--arancio { fill: var(--arancio); }
+.ds-blob--sabbia { fill: var(--sabbia); }
+.ds-wave { display: block; width: 100%; height: clamp(40px, 6vw, 96px); }
 
-/* Header */
-.ds-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-4); padding: var(--space-3) var(--space-6); background: var(--kraft); }
-.ds-header img { height: 56px; width: auto; display: block; }
-.ds-nav { display: flex; flex-wrap: wrap; gap: var(--space-1); }
-.ds-nav a { min-height: var(--tap); display: inline-flex; align-items: center; padding: 0 var(--space-3); color: var(--sumi); text-decoration: none; font: 600 15px/20px var(--font-sans); border-radius: var(--radius-pill); }
-.ds-nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+/* ===== Illustrazione a tratto: mai in un riquadro, leggermente ruotata, può uscire dai bordi ===== */
+.ds-illustration { display: block; pointer-events: none; height: auto; }
 
-/* Archi */
-.ds-arches { display: flex; align-items: flex-end; height: 120px; overflow: hidden; }
-.ds-arch { flex: 1; border-radius: 999px 999px 0 0; }
-.ds-arch--kraft { background: var(--brand-kraft); }
-.ds-arch--arancio { background: var(--brand-arancio); }
-.ds-arch--ardesia { background: var(--brand-ardesia); }
-.ds-arch--riso { background: var(--brand-riso); }
-
-/* Box */
-.ds-box { display: grid; grid-template-rows: 140px auto; border-radius: var(--radius-md); overflow: hidden; background: var(--carta); border: 1px solid var(--linea); }
-.ds-box__art { background: var(--brand-ardesia); display: flex; align-items: flex-end; gap: 0; padding: 0 var(--space-6); }
-.ds-box__body { display: grid; gap: var(--space-2); padding: var(--space-6); }
-.ds-box__title { margin: 0; font: 600 24px/1.05 var(--font-display); text-transform: uppercase; }
-.ds-box__foot { display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); padding-top: var(--space-2); }
-
-/* ===== Movimento =====
-   Regole in motion.md. Durate e curve sono token (famiglie durata, easing); i valori dopo la virgola sono il ripiego. */
-.ds-btn, .ds-chip, .ds-nav a { transition: background-color var(--dur-fast, 120ms) var(--ease-out, cubic-bezier(.2,.7,.2,1)), color var(--dur-fast, 120ms) var(--ease-out, cubic-bezier(.2,.7,.2,1)), border-color var(--dur-fast, 120ms) var(--ease-out, cubic-bezier(.2,.7,.2,1)), transform var(--dur-fast, 120ms) var(--ease-out, cubic-bezier(.2,.7,.2,1)); }
+/* ===== Movimento — regole in ../motion.md ===== */
+.ds-btn, .ds-chip { transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out); }
 .ds-btn:hover { transform: translateY(-1px); }
+.ds-btn--primary:hover { background: var(--indaco-scuro); }
+.ds-btn--secondary:hover { background: var(--arancio); border-color: var(--arancio); color: var(--inchiostro); }
+.ds-btn--on-indaco:hover { background: var(--on-indaco); color: var(--indaco); }
+.ds-chip:hover { background: var(--bianco); }
+.ds-chip[aria-current="true"]:hover { background: var(--indaco); }
 .ds-btn:active, .ds-chip:active { transform: translateY(1px); transition-duration: 60ms; }
-.ds-chip:hover { border-color: var(--sumi); }
 
+.m-press { transition: transform var(--dur-fast) var(--ease-out); }
+.m-press:hover { transform: translateY(-1px); }
+.m-press:active { transform: translateY(1px); transition-duration: 60ms; }
 
-/* Bottoni e chip: si sollevano di 1px, alla pressione scendono. */
-.m-press { transition: transform var(--dur-fast, 120ms) var(--ease-out, cubic-bezier(.2, .7, .2, 1)), filter var(--dur-fast, 120ms) var(--ease-out, cubic-bezier(.2, .7, .2, 1)); }
-.m-press:hover { transform: translateY(-1px); filter: brightness(.95); }
-.m-press:active { transform: translateY(1px); filter: brightness(.9); transition-duration: 60ms; }
-.m-press:focus-visible { outline: 2px solid var(--focus, #17318F); outline-offset: 2px; }
-
-/* Card: si alzano di 4px al passaggio del mouse. Niente ombre: il brand usa bordi. */
-.m-lift { transition: transform var(--dur-base, 200ms) var(--ease-out, cubic-bezier(.2, .7, .2, 1)); }
+/* Card: si alzano e l'ombra si allarga appena. */
+.m-lift { transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
 .m-lift:hover { transform: translateY(-4px); }
 
-/* Foto dentro un arco o una card: leggero zoom, il contenitore taglia. */
+/* Foto in una card: leggero zoom, il contenitore taglia. */
 .m-zoom { overflow: hidden; }
-.m-zoom > img { transition: transform var(--dur-slow, 420ms) var(--ease-out, cubic-bezier(.2, .7, .2, 1)); }
+.m-zoom > img { transition: transform var(--dur-slow) var(--ease-out); }
 .m-zoom:hover > img { transform: scale(1.04); }
 
-/* Archi che salgono dal bordo inferiore, uno dopo l'altro (style="--i: 0", "--i: 1"…). */
-@keyframes m-arch-rise { from { transform: translateY(45%); } to { transform: none; } }
-.m-arches > * { animation: m-arch-rise var(--dur-arch, 640ms) var(--ease-out, cubic-bezier(.2, .7, .2, 1)) both; animation-delay: calc(var(--i, 0) * var(--stagger, 70ms)); }
+/* Il momento d'effetto: i blob dell'hero si allargano dal centro, uno dopo l'altro (style="--i: n"). */
+@keyframes m-blob-in { from { transform: scale(.82) rotate(-6deg); opacity: .4; } to { transform: none; opacity: 1; } }
+.m-blob { transform-box: fill-box; transform-origin: center; animation: m-blob-in var(--dur-blob) var(--ease-out) both; animation-delay: calc(var(--i, 0) * var(--stagger) * 2); }
 
-/* Ingresso al caricamento: titolo, frase e bottoni dell'hero (style="--i: n"). */
+/* Ingresso al caricamento: occhiello, titolo, frase e bottoni dell'hero. */
 @keyframes m-enter { from { opacity: .35; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-.m-enter { animation: m-enter var(--dur-slow, 420ms) var(--ease-out, cubic-bezier(.2, .7, .2, 1)) both; animation-delay: calc(var(--i, 0) * var(--stagger, 70ms)); }
+.m-enter { animation: m-enter var(--dur-slow) var(--ease-out) both; animation-delay: calc(var(--i, 0) * var(--stagger)); }
 
-/* Comparsa allo scroll, solo dove il browser la supporta; altrove la sezione è già lì. */
+/* Comparsa allo scroll dove il browser la supporta; altrove la sezione è già lì. */
 @supports (animation-timeline: view()) {
   .m-reveal { animation: m-enter linear both; animation-timeline: view(); animation-range: entry 0% entry 40%; }
-  .m-arches--scroll > * { animation: m-arch-rise linear both; animation-timeline: view(); animation-range: entry 0% entry 100%; }
 }
 
-/* Cambio di categoria nel menù: alterna m-swap-a / m-swap-b per far ripartire l'animazione. */
+/* Cambio di categoria nel menù: alterna m-swap-a / m-swap-b. */
 @keyframes m-swap-a { from { opacity: .3; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 @keyframes m-swap-b { from { opacity: .3; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-.m-swap-a { animation: m-swap-a var(--dur-base, 200ms) var(--ease-out, cubic-bezier(.2, .7, .2, 1)); }
-.m-swap-b { animation: m-swap-b var(--dur-base, 200ms) var(--ease-out, cubic-bezier(.2, .7, .2, 1)); }
+.m-swap-a { animation: m-swap-a var(--dur-base) var(--ease-out); }
+.m-swap-b { animation: m-swap-b var(--dur-base) var(--ease-out); }
 
 @media (prefers-reduced-motion: reduce) {
-  .m-press, .m-lift, .m-zoom > img { transition: none; }
-  .m-press:hover, .m-press:active, .m-lift:hover, .m-zoom:hover > img { transform: none; }
-  .m-arches > *, .m-arches--scroll > *, .m-enter, .m-reveal, .m-swap-a, .m-swap-b { animation: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .ds-btn, .ds-chip, .ds-nav a { transition: none; }
-  .ds-btn:hover, .ds-btn:active, .ds-chip:active { transform: none; }
+  .ds-btn, .ds-chip, .m-press, .m-lift, .m-zoom > img { transition: none; }
+  .ds-btn:hover, .ds-btn:active, .ds-chip:active, .m-press:hover, .m-press:active, .m-lift:hover, .m-zoom:hover > img { transform: none; }
+  .m-blob, .m-enter, .m-reveal, .m-swap-a, .m-swap-b { animation: none; }
 }

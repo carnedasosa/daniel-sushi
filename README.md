@@ -1,6 +1,6 @@
 # Daniel's Sushi — sito web
 
-Sito di Daniel's Sushi, Via Beato Giacomo 72, Bitetto (BA). È un sito statico (HTML, CSS e un piccolo script) costruito sul design system esportato da Claude Design in `design-system/` e ricalcato sui prototipi ad alta fedeltà di `Design.html` (home e menù, desktop e mobile).
+Sito di Daniel's Sushi, Via Beato Giacomo 72, Bitetto (BA). È un sito statico (HTML, CSS e un piccolo script) costruito sul design system «Carta e indaco» in `design-system/` (versione 2, ricavata dallo stile Pa'lais di Refero Styles: vedi `design-system/README.md`).
 
 ## Avvio in locale
 
@@ -24,8 +24,8 @@ Poi apri http://localhost:8000. I file vanno serviti da un server: aprire `index
 | `js/menu.js` | Cambio di categoria nel menù (senza JS si vedono tutte le categorie e i chip sono ancore) |
 | `assets/img/` | Illustrazioni (ramen, pesce) prese dai prototipi e favicon |
 | `crediti.html` | Autori e licenze delle foto (obbligatorio per quelle CC BY e CC BY-SA) |
-| `Design.html` | Prototipi di Claude Design: si apre nel browser, è il riferimento visivo |
-| `design-system/` | Design system di Claude Design (token, componenti, movimento): non modificarlo a mano |
+| `Design.html` | Prototipi della prima versione (Claude Design): superati dal design system 2, restano come archivio |
+| `design-system/` | Design system «Carta e indaco»: token, componenti, movimento, logo e riferimento Pa'lais |
 | `menu.pdf` | Menù originale, scaricabile dal bottone «Scarica il menù PDF» (**al momento manca**: va rimesso nella cartella radice) |
 
 ## Aggiornare il menù
