@@ -23,6 +23,7 @@ Poi apri http://localhost:8000. I file vanno serviti da un server: aprire `index
 | `css/site.css` | Solo layout del sito; colori, font e componenti vengono dal design system |
 | `js/menu.js` | Cambio di categoria nel menù (senza JS si vedono tutte le categorie e i chip sono ancore) |
 | `assets/img/` | Illustrazioni (ramen, pesce) prese dai prototipi e favicon |
+| `crediti.html` | Autori e licenze delle foto (obbligatorio per quelle CC BY e CC BY-SA) |
 | `Design.html` | Prototipi di Claude Design: si apre nel browser, è il riferimento visivo |
 | `design-system/` | Design system di Claude Design (token, componenti, movimento): non modificarlo a mano |
 | `menu.pdf` | Menù originale, scaricabile dal bottone «Scarica il menù PDF» (**al momento manca**: va rimesso nella cartella radice) |
@@ -41,7 +42,7 @@ Questi dati mancano nel design system e nel menù e vanno chiesti al locale:
 
 - **Orari di apertura** e **numero di telefono**: in `index.html` sono segnaposto `[ORARI DI APERTURA]` e `[NUMERO DI TELEFONO]`. Il bottone «Chiama per ordinare» ha un `href="tel:"` vuoto (cerca `DA COMPLETARE`).
 - **Prezzo della poke composta**: segnaposto `[PREZZO]` in `index.html`, come nel prototipo.
-- **Foto**: i prototipi prevedono sette foto (`hero-salmone.jpg`, `salmone.jpg`, `tonno.jpg`, `gambero-rosso.jpg`, `pistacchio.jpg`, `roll.jpg`, `poke.jpg`). Finché mancano si vede il riquadro kraft con l'etichetta «FOTO · …», come nel prototipo. Per inserirne una basta mettere un `<img>` dentro il riquadro `.photo`: copre l'etichetta e prende la forma dell'arco.
+- **Foto**: i sette spazi foto della home hanno foto con licenza libera (CC0, CC BY, CC BY-SA) prese da Wikimedia Commons, rawpixel, iNaturalist e WordPress Photos, in `assets/img/foto/`. Autori e licenze sono in `crediti.html`, collegata dal footer: se sostituisci una foto, aggiorna anche quella pagina. Sono foto d'archivio, non del locale: appena ci sono foto vere dei piatti e del banco, conviene sostituirle (stesso nome file, e la pagina crediti si può togliere).
 - **menu.pdf**: è stato tolto dalla cartella; senza, il bottone «Scarica il menù PDF» non scarica nulla.
 - Logo vettoriale o su fondo trasparente: per ora si usa `design-system/assets/Logos/logo.png`.
 
