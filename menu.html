@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Menù — Daniel's Sushi, Bitetto</title>
+  <title>Daniel's Sushi — Menù</title>
   <meta name="description" content="Il menù di Daniel's Sushi a Bitetto: tartare, sashimi, sushi gio, nigiri, uramaki, special roll, poke bowl, box, primi, dessert e bevande, con i prezzi.">
   <meta name="theme-color" content="#E3D1B8">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
@@ -18,1200 +18,1022 @@
   <link rel="stylesheet" href="design-system/tokens.css">
   <link rel="stylesheet" href="design-system/components/bundle.css">
   <link rel="stylesheet" href="css/site.css">
+  <!-- Con JavaScript il menù mostra una categoria alla volta; senza, le mostra tutte. -->
+  <script>document.documentElement.classList.add('js');</script>
   <script src="js/menu.js" defer></script>
 </head>
 <body class="ds">
-  <a class="ds-btn ds-btn--secondary skip-link" href="#contenuto">Vai al contenuto</a>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
 
-  <div class="site-header">
-    <header class="ds-header">
+  <header class="site-header">
+    <div class="site-header__inner">
       <a class="site-logo" href="index.html"><img src="design-system/assets/Logos/logo.png" alt="Daniel's Sushi" width="756" height="429"></a>
-      <nav class="ds-nav" aria-label="Principale">
+      <nav class="site-nav" aria-label="Principale">
         <a href="menu.html" aria-current="page">Menù</a>
         <a href="index.html#box">Box</a>
+        <a href="index.html#poke">Componi la poke</a>
         <a href="index.html#dove">Dove siamo</a>
-        <a href="https://www.instagram.com/daniel__sushi/" rel="noopener">Instagram</a>
       </nav>
-      <a class="ds-btn ds-btn--primary" href="index.html#ordina">Ordina ora</a>
-    </header>
-  </div>
+      <a class="btn btn--primary m-press" href="index.html#dove">Ordina ora</a>
+    </div>
+  </header>
 
   <main id="contenuto">
     <section class="menu-intro" aria-labelledby="menu-titolo">
-      <div class="wrap menu-intro__grid">
+      <div class="menu-intro__inner">
         <div class="menu-intro__text">
-          <p class="ds-eyebrow m-enter" style="--i: 0">Daniel's Sushi · Bitetto</p>
-          <h1 class="display-xl m-enter" id="menu-titolo" style="--i: 1">Il menù</h1>
-          <p class="lead m-enter" style="--i: 2">Dal sashimi al ramen, con la stracciatella e il pistacchio di casa nostra. Scegli una categoria e trovi subito il tuo piatto.</p>
-          <div class="ds-row m-enter" style="--i: 3">
-            <a class="ds-btn ds-btn--secondary" href="menu.pdf" download>
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
-              Scarica il menù PDF
-            </a>
-            <a class="ds-btn ds-btn--link" href="#componi">Componi la tua Poke</a>
-          </div>
-          <p class="note">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg>
-            Per gli allergeni chiedere l'apposito menù al personale
-          </p>
+          <p class="eyebrow">#ITALIANSUSHI · Bitetto</p>
+          <h1 class="m-enter" id="menu-titolo">Il menù</h1>
+          <p class="menu-intro__lead">Ogni piatto ha il suo numero: quando ordini, citalo.</p>
         </div>
-        <figure class="arch-frame">
-          <img src="assets/img/ramen.png" alt="Illustrazione di una ciotola di ramen in blu cobalto e arancio" width="531" height="336">
-        </figure>
+        <a class="btn btn--outline btn--md m-press" href="menu.pdf" download>Scarica il menù PDF</a>
       </div>
     </section>
 
     <div class="menu-bar">
-      <div class="wrap">
-        <!-- genera-menu:nav -->
-        <nav class="ds-cats" aria-label="Categorie del menù">
-          <a class="ds-chip" href="#tartare" aria-current="true">Tartare</a>
-          <a class="ds-chip" href="#sashimi">Sashimi</a>
-          <a class="ds-chip" href="#starter">Starter</a>
-          <a class="ds-chip" href="#sushi-gio">Sushi Gio</a>
-          <a class="ds-chip" href="#hosomaki">Hosomaki</a>
-          <a class="ds-chip" href="#nigiri">Nigiri</a>
-          <a class="ds-chip" href="#triangolini">Triangolini</a>
-          <a class="ds-chip" href="#uramaki">Uramaki</a>
-          <a class="ds-chip" href="#special-roll">Special roll</a>
-          <a class="ds-chip" href="#poke-bowl">Poke bowl</a>
-          <a class="ds-chip" href="#box">Box</a>
-          <a class="ds-chip" href="#primi">Primi</a>
-          <a class="ds-chip" href="#dessert">Dessert</a>
-          <a class="ds-chip" href="#beverage">Beverage</a>
-        </nav>
-        <!-- /genera-menu:nav -->
-      </div>
+      <!-- genera-menu:nav -->
+      <nav class="ds-cats" aria-label="Categorie del menù">
+        <a class="ds-chip m-press" href="#tartare">Tartare</a>
+        <a class="ds-chip m-press" href="#sashimi">Sashimi</a>
+        <a class="ds-chip m-press" href="#starter">Starter</a>
+        <a class="ds-chip m-press" href="#sushi-gio">Sushi Gio</a>
+        <a class="ds-chip m-press" href="#hosomaki">Hosomaki</a>
+        <a class="ds-chip m-press" href="#nigiri">Nigiri</a>
+        <a class="ds-chip m-press" href="#triangolini">Triangolini</a>
+        <a class="ds-chip m-press" href="#uramaki">Uramaki</a>
+        <a class="ds-chip m-press" href="#special-roll" aria-current="true">Special roll</a>
+        <a class="ds-chip m-press" href="#poke-bowl">Poke bowl</a>
+        <a class="ds-chip m-press" href="#box">Box</a>
+        <a class="ds-chip m-press" href="#primi">Primi</a>
+        <a class="ds-chip m-press" href="#dessert">Dessert</a>
+        <a class="ds-chip m-press" href="#beverage">Beverage</a>
+      </nav>
+      <!-- /genera-menu:nav -->
     </div>
 
-    <div class="wrap menu-end" id="menu-sezioni">
-      <!-- genera-menu:sezioni -->
-      <section class="menu-cat" id="tartare" aria-labelledby="tartare-titolo">
-        <div class="menu-cat__head">
-          <h2 class="display-m" id="tartare-titolo">Tartare</h2>
-        </div>
-        <div class="dish-list">
-          <article class="ds-item">
-            <span class="ds-item__num">1</span>
-            <h3 class="ds-item__name">Salmone</h3>
-            <span class="ds-item__price">6,00&nbsp;€</span>
-            <p class="ds-item__desc">Tartare condita dallo Chef.</p>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">2</span>
-            <h3 class="ds-item__name">Tonno</h3>
-            <span class="ds-item__price">8,00&nbsp;€</span>
-            <p class="ds-item__desc">Tartare condita dallo Chef.</p>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">3</span>
-            <h3 class="ds-item__name">Mini Salmone</h3>
-            <span class="ds-item__price">4,00&nbsp;€</span>
-            <p class="ds-item__desc">Tartare con pasta Kataifi.</p>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">4</span>
-            <h3 class="ds-item__name">Mini Tonno</h3>
-            <span class="ds-item__price">6,00&nbsp;€</span>
-            <p class="ds-item__desc">Tartare con granella di pistacchio.</p>
-          </article>
-        </div>
-      </section>
-      <section class="menu-cat" id="sashimi" aria-labelledby="sashimi-titolo">
-        <div class="menu-cat__head">
-          <h2 class="display-m" id="sashimi-titolo">Sashimi</h2>
-          <span class="ds-badge ds-badge--pz">5 pz.</span>
-        </div>
-        <div class="dish-list">
-          <article class="ds-item">
-            <span class="ds-item__num">5</span>
-            <h3 class="ds-item__name">Salmone</h3>
-            <span class="ds-item__price">5,00&nbsp;€</span>
-            <p class="ds-item__desc">Filetti di pesce crudo.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">5 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">6</span>
-            <h3 class="ds-item__name">Tonno</h3>
-            <span class="ds-item__price">7,00&nbsp;€</span>
-            <p class="ds-item__desc">Filetti di pesce crudo.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">5 pz.</span></div>
-          </article>
-        </div>
-      </section>
-      <section class="menu-cat" id="starter" aria-labelledby="starter-titolo">
-        <div class="menu-cat__head">
-          <h2 class="display-m" id="starter-titolo">Starter</h2>
-        </div>
-        <div class="dish-list">
-          <article class="ds-item">
-            <span class="ds-item__num">44</span>
-            <h3 class="ds-item__name">Alga wakame</h3>
-            <span class="ds-item__price">4,00&nbsp;€</span>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--veg">Vegetariano</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">45</span>
-            <h3 class="ds-item__name">Edamame</h3>
-            <span class="ds-item__price">3,00&nbsp;€</span>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--veg">Vegetariano</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">46</span>
-            <h3 class="ds-item__name">Gamberi in tempura</h3>
-            <span class="ds-item__price">3,00&nbsp;€</span>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">47</span>
-            <h3 class="ds-item__name">Gambero in crosta di pistacchio</h3>
-            <span class="ds-item__price">3,00&nbsp;€</span>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">48</span>
-            <h3 class="ds-item__name">Gambero in crosta di mandorla</h3>
-            <span class="ds-item__price">3,00&nbsp;€</span>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">81</span>
-            <h3 class="ds-item__name">Involtini Panko &amp; Salm</h3>
-            <span class="ds-item__price">3,00&nbsp;€</span>
-            <p class="ds-item__desc">Gambero al panko avvolto da salmone scottato, Philadelphia, salsa teriyaki e semi di sesamo.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">92</span>
-            <h3 class="ds-item__name">Crispy Rice Salmone</h3>
-            <span class="ds-item__price">6,00&nbsp;€</span>
-            <p class="ds-item__desc">Tegolino di riso sushi croccante con esterno di salmone marinato e mayo piccante.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span><span class="ds-badge ds-badge--spicy">Piccante</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">101</span>
-            <h3 class="ds-item__name">Involtini Primavera Vegetariani</h3>
-            <span class="ds-item__price">3,00&nbsp;€</span>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">4 pz.</span><span class="ds-badge ds-badge--veg">Vegetariano</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">110</span>
-            <h3 class="ds-item__name">Tamago Crispy</h3>
-            <span class="ds-item__price">4,00&nbsp;€</span>
-            <p class="ds-item__desc">Uovo in tempura dal cuore morbido con Mayo giapponese.</p>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">111</span>
-            <h3 class="ds-item__name">Patatine Fritte</h3>
-            <span class="ds-item__price">3,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">112</span>
-            <h3 class="ds-item__name">Cotoletta in Tempura</h3>
-            <span class="ds-item__price">8,00&nbsp;€</span>
-            <p class="ds-item__desc">Con patatine fritte.</p>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">113</span>
-            <h3 class="ds-item__name">Kakuni</h3>
-            <span class="ds-item__price">10,00&nbsp;€</span>
-            <p class="ds-item__desc">Pancia di maiale cbt caramellizzata &amp; riso bianco.</p>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">114</span>
-            <h3 class="ds-item__name">Takoyaki</h3>
-            <span class="ds-item__price">5,00&nbsp;€</span>
-            <p class="ds-item__desc">Polpette sferiche giapponesi al polpo.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">4 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">116</span>
-            <h3 class="ds-item__name">Bao Pulled Pork</h3>
-            <span class="ds-item__price">5,00&nbsp;€</span>
-            <p class="ds-item__desc">Panini asiatici ripieni di pulled pork.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">117</span>
-            <h3 class="ds-item__name">Bao Gambero in Tempura</h3>
-            <span class="ds-item__price">5,00&nbsp;€</span>
-            <p class="ds-item__desc">Panini asiatici ripieni di gamberi in tempura.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-        </div>
-      </section>
-      <section class="menu-cat" id="sushi-gio" aria-labelledby="sushi-gio-titolo">
-        <div class="menu-cat__head">
-          <h2 class="display-m" id="sushi-gio-titolo">Sushi Gio</h2>
-          <span class="ds-badge ds-badge--pz">2 pz.</span>
-        </div>
-        <div class="dish-list">
-          <article class="ds-item">
-            <span class="ds-item__num">7</span>
-            <h3 class="ds-item__name">Gio salmone</h3>
-            <span class="ds-item__price">3,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso avvolto da salmone con tartare &amp; pasta Kataifi.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">8</span>
-            <h3 class="ds-item__name">Gio Maguro</h3>
-            <span class="ds-item__price">4,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso avvolto da tonno con tartare &amp; pasta Kataifi.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">9</span>
-            <h3 class="ds-item__name">Philadelphia Gio</h3>
-            <span class="ds-item__price">2,50&nbsp;€</span>
-            <p class="ds-item__desc">Riso avvolto da salmone con philadelphia.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">10</span>
-            <h3 class="ds-item__name">Gio Tonno &amp; Scampi</h3>
-            <span class="ds-item__price">4,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso avvolto da tonno con tartare di scampo &amp; teriyaki.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">11</span>
-            <h3 class="ds-item__name">Gio Salm &amp; Gambero</h3>
-            <span class="ds-item__price">4,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso avvolto da salmone con tartare di gambero rosso &amp; teriyaki.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">12</span>
-            <h3 class="ds-item__name">Gio Flame Salm &amp; Scampo</h3>
-            <span class="ds-item__price">4,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso avvolto da salmone scottato con tartare di scampo, filangé di mandorla &amp; teriyaki.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">13</span>
-            <h3 class="ds-item__name">Gio Flame Salm &amp; Shrimp</h3>
-            <span class="ds-item__price">4,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso avvolto da salmone scottato con tartare di gambero rosso, vellutata di pistacchio &amp; granella.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">82</span>
-            <h3 class="ds-item__name">Gio Full immersion</h3>
-            <span class="ds-item__price">3,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso avvolto da salmone, tartare di salmone, salsa spicy marinata.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span><span class="ds-badge ds-badge--spicy">Piccante</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">83</span>
-            <h3 class="ds-item__name">Gio fresh &amp; salm</h3>
-            <span class="ds-item__price">3,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso avvolto da salmone scottato, philadelphia &amp; granella di pistacchio.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">84</span>
-            <h3 class="ds-item__name">Gio fresh &amp; Tuna</h3>
-            <span class="ds-item__price">3,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso avvolto da tonno scottato, philadelphia &amp; granella di pistacchio.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-        </div>
-      </section>
-      <section class="menu-cat" id="hosomaki" aria-labelledby="hosomaki-titolo">
-        <div class="menu-cat__head">
-          <h2 class="display-m" id="hosomaki-titolo">Hosomaki</h2>
-          <span class="ds-badge ds-badge--pz">6 pz.</span>
-        </div>
-        <div class="dish-list">
-          <article class="ds-item">
-            <span class="ds-item__num">14</span>
-            <h3 class="ds-item__name">Salmone</h3>
-            <span class="ds-item__price">4,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso con alga all'esterno.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">6 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">15</span>
-            <h3 class="ds-item__name">Tonno</h3>
-            <span class="ds-item__price">5,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso con alga all'esterno.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">6 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">16</span>
-            <h3 class="ds-item__name">Gambero in tempura</h3>
-            <span class="ds-item__price">4,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso con alga all'esterno.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">6 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">17</span>
-            <h3 class="ds-item__name">Scampo</h3>
-            <span class="ds-item__price">6,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso con alga all'esterno.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">6 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">18</span>
-            <h3 class="ds-item__name">Gambero rosso</h3>
-            <span class="ds-item__price">6,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso con alga all'esterno.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">6 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">19</span>
-            <h3 class="ds-item__name">Hosomaki fritto</h3>
-            <span class="ds-item__price">6,00&nbsp;€</span>
-            <p class="ds-item__desc">Maki fritto con salmone all'interno ed esterno di philadelphia &amp; frutta di stagione.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">6 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">91</span>
-            <h3 class="ds-item__name">Maki fritto</h3>
-            <span class="ds-item__price">6,00&nbsp;€</span>
-            <p class="ds-item__desc">Hosomaki fritto con interno di salmone ed esterno di granella croccante, salsa al pistacchio &amp; teriyaki.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">6 pz.</span></div>
-          </article>
-        </div>
-      </section>
-      <section class="menu-cat" id="nigiri" aria-labelledby="nigiri-titolo">
-        <div class="menu-cat__head">
-          <h2 class="display-m" id="nigiri-titolo">Nigiri</h2>
-          <span class="ds-badge ds-badge--pz">2 pz.</span>
-        </div>
-        <div class="dish-list">
-          <article class="ds-item">
-            <span class="ds-item__num">20</span>
-            <h3 class="ds-item__name">Salmone</h3>
-            <span class="ds-item__price">2,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso coperto da fettina di salmone.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">21</span>
-            <h3 class="ds-item__name">Tonno</h3>
-            <span class="ds-item__price">3,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso coperto da fettina di tonno.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">22</span>
-            <h3 class="ds-item__name">Salmone scottato</h3>
-            <span class="ds-item__price">3,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso coperto da fettina di salmone scottato.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">23</span>
-            <h3 class="ds-item__name">Tonno scottato</h3>
-            <span class="ds-item__price">3,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso coperto da fettina di tonno scottato.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">24</span>
-            <h3 class="ds-item__name">Tartare Scampo</h3>
-            <span class="ds-item__price">4,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso coperto da tartare di scampo e mandorla.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">25</span>
-            <h3 class="ds-item__name">Tartare Gambero rosso</h3>
-            <span class="ds-item__price">4,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso coperto da tartare di gambero rosso e granella di pistacchio.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">97</span>
-            <h3 class="ds-item__name">White</h3>
-            <span class="ds-item__price">3,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso coperto da fettina di pesce bianco e semi di sesamo.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">2 pz.</span></div>
-          </article>
-        </div>
-      </section>
-      <section class="menu-cat" id="triangolini" aria-labelledby="triangolini-titolo">
-        <div class="menu-cat__head">
-          <h2 class="display-m" id="triangolini-titolo">Triangolini</h2>
-          <span class="ds-badge ds-badge--pz">4 pz.</span>
-        </div>
-        <div class="dish-list">
-          <article class="ds-item">
-            <span class="ds-item__num">93</span>
-            <h3 class="ds-item__name">SalmThree</h3>
-            <span class="ds-item__price">6,00&nbsp;€</span>
-            <p class="ds-item__desc">Triangolino di sushi con interno di salmone &amp; mayo, esterno di semi di sesamo, mayo piccante &amp; teriyaki.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">4 pz.</span><span class="ds-badge ds-badge--spicy">Piccante</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">94</span>
-            <h3 class="ds-item__name">TonnFive</h3>
-            <span class="ds-item__price">6,00&nbsp;€</span>
-            <p class="ds-item__desc">Triangolino di sushi con interno di tonno &amp; mayo, esterno di semi di sesamo, mayo piccante &amp; teriyaki.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">4 pz.</span><span class="ds-badge ds-badge--spicy">Piccante</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">95</span>
-            <h3 class="ds-item__name">GamberEight</h3>
-            <span class="ds-item__price">6,00&nbsp;€</span>
-            <p class="ds-item__desc">Triangolino di sushi con interno di gambero in tempura &amp; mayo, esterno di semi di sesamo, mayo piccante &amp; teriyaki.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">4 pz.</span><span class="ds-badge ds-badge--spicy">Piccante</span></div>
-          </article>
-        </div>
-      </section>
-      <section class="menu-cat" id="uramaki" aria-labelledby="uramaki-titolo">
-        <div class="menu-cat__head">
-          <h2 class="display-m" id="uramaki-titolo">Uramaki</h2>
-          <span class="ds-badge ds-badge--pz">8 pz.</span>
-        </div>
-        <div class="dish-list">
-          <article class="ds-item">
-            <span class="ds-item__num">26</span>
-            <h3 class="ds-item__name">Salmone roll</h3>
-            <span class="ds-item__price">6,00&nbsp;€</span>
-            <p class="ds-item__desc">Con salmone, alga, avocado e philadelphia.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">27</span>
-            <h3 class="ds-item__name">Tonno roll</h3>
-            <span class="ds-item__price">8,00&nbsp;€</span>
-            <p class="ds-item__desc">Con tonno, alga, avocado e philadelphia.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">28</span>
-            <h3 class="ds-item__name">Gambero in tempura</h3>
-            <span class="ds-item__price">6,00&nbsp;€</span>
-            <p class="ds-item__desc">Roll con gambero, alga, avocado e philadelphia.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-        </div>
-      </section>
-      <section class="menu-cat" id="special-roll" aria-labelledby="special-roll-titolo">
-        <div class="menu-cat__head">
-          <h2 class="display-m" id="special-roll-titolo">Special roll</h2>
-          <span class="ds-badge ds-badge--pz">8 pz.</span>
-        </div>
-        <div class="dish-list">
-          <article class="ds-item">
-            <span class="ds-item__num">29</span>
-            <h3 class="ds-item__name">Sake roll</h3>
-            <span class="ds-item__price">10,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di salmone, philadelphia e avocado, esterno di salmone scottato, pasta Kataifi &amp; teriyaki.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">30</span>
-            <h3 class="ds-item__name">Maguro roll</h3>
-            <span class="ds-item__price">12,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di tonno, philadelphia e avocado, esterno di tonno, pasta Kataifi &amp; teriyaki.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">31</span>
-            <h3 class="ds-item__name">Shrimp roll</h3>
-            <span class="ds-item__price">12,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di gambero in tempura e avocado, esterno di tonno, teriyaki &amp; vellutata di pistacchio.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">32</span>
-            <h3 class="ds-item__name">Daniel's roll</h3>
-            <span class="ds-item__price">14,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di salmone e avocado, esterno di tartare di gambero rosso &amp; vellutata di pistacchio.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span><span class="ds-badge ds-badge--new">Della casa</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">33</span>
-            <h3 class="ds-item__name">Spicy Maguro roll</h3>
-            <span class="ds-item__price">10,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di tonno e philadelphia, esterno di tonno, teriyaki &amp; salsa spicy.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span><span class="ds-badge ds-badge--spicy">Piccante</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">34</span>
-            <h3 class="ds-item__name">Salm &amp; Ph roll</h3>
-            <span class="ds-item__price">8,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di salmone e philadelphia, esterno di salmone.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">35</span>
-            <h3 class="ds-item__name">Tiger Flame roll</h3>
-            <span class="ds-item__price">12,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di gambero in tempura, esterno di salmone scottato, pasta Kataifi &amp; teriyaki.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">36</span>
-            <h3 class="ds-item__name">Maguro Ph roll</h3>
-            <span class="ds-item__price">10,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di tonno e philadelphia, esterno di tonno.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">37</span>
-            <h3 class="ds-item__name">Spicy Salm roll</h3>
-            <span class="ds-item__price">8,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di salmone e philadelphia, esterno di salmone, teriyaki &amp; salsa spicy.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span><span class="ds-badge ds-badge--spicy">Piccante</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">38</span>
-            <h3 class="ds-item__name">Prawn &amp; Tuna</h3>
-            <span class="ds-item__price">14,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di tonno e avocado, esterno di tartare di scampo &amp; filangè di mandorla.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">39</span>
-            <h3 class="ds-item__name">Mango roll</h3>
-            <span class="ds-item__price">14,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di tonno e mango, esterno di tonno, chutney di mango &amp; teriyaki.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">40</span>
-            <h3 class="ds-item__name">Mediterraneo roll</h3>
-            <span class="ds-item__price">12,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di salmone e formaggio francese, esterno di salmone, menta &amp; olio extravergine.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">41</span>
-            <h3 class="ds-item__name">Apulia roll</h3>
-            <span class="ds-item__price">14,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di salmone e avocado, esterno di stracciatella, gambero rosso &amp; granella di pistacchio.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">52</span>
-            <h3 class="ds-item__name">Crab &amp; Salm roll</h3>
-            <span class="ds-item__price">8,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di polpa di granchio e avocado, esterno di salmone, teriyaki e olio extravergine.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">53</span>
-            <h3 class="ds-item__name">Crab &amp; Flame Salm roll</h3>
-            <span class="ds-item__price">10,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di polpa di granchio, philadelphia e avocado, esterno di salmone scottato, teriyaki e pasta Kataifi.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">54</span>
-            <h3 class="ds-item__name">Tuna &amp; Crab roll</h3>
-            <span class="ds-item__price">10,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di polpa di granchio e philadelphia, esterno di tonno, teriyaki e semi di sesamo.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">55</span>
-            <h3 class="ds-item__name">Fried onion &amp; Crab roll</h3>
-            <span class="ds-item__price">10,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di polpa di granchio e avocado, esterno di salmone, teriyaki e cipolla fritta.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">56</span>
-            <h3 class="ds-item__name">Rainbow roll</h3>
-            <span class="ds-item__price">10,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di salmone e avocado, esterno di tonno, spigola, salmone e teriyaki.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">57</span>
-            <h3 class="ds-item__name">Lime &amp; Bass roll</h3>
-            <span class="ds-item__price">10,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di salmone e avocado, esterno di salmone, teriyaki, lime e tobiko.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">58</span>
-            <h3 class="ds-item__name">Fried onion &amp; Salm roll</h3>
-            <span class="ds-item__price">10,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di salmone e philadelphia, esterno di salmone, teriyaki e cipolla fritta.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">66</span>
-            <h3 class="ds-item__name">Mango &amp; Tuna roll</h3>
-            <span class="ds-item__price">12,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di tonno e mango, esterno di salmone, teriyaki, chutney di mango e mandorle.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">67</span>
-            <h3 class="ds-item__name">PistacchioLovers roll</h3>
-            <span class="ds-item__price">12,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di gambero in tempura e avocado, esterno di salmone, vellutata di pistacchio, teriyaki e granella di pistacchio.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">68</span>
-            <h3 class="ds-item__name">Salmon Fuji roll</h3>
-            <span class="ds-item__price">12,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di gambero in tempura, esterno di alternanza tra salmone crudo &amp; scottato, philadelphia e tobiko.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">69</span>
-            <h3 class="ds-item__name">Daiquiri roll</h3>
-            <span class="ds-item__price">12,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di salmone e mango, esterno di salmone, lime e semi di sesamo.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">70</span>
-            <h3 class="ds-item__name">Truffle &amp; Co. roll</h3>
-            <span class="ds-item__price">12,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di gambero in tempura e avocado, esterno di salmone scottato, mayo al tartufo e crumble di anacardi.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">71</span>
-            <h3 class="ds-item__name">Paradise roll</h3>
-            <span class="ds-item__price">12,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di gambero in tempura e avocado, esterno di tonno, teriyaki e pasta Kataifi.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">72</span>
-            <h3 class="ds-item__name">GamberOne</h3>
-            <span class="ds-item__price">12,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di gambero, esterno di tonno, teriyaki, crema avocado e kataifi.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">73</span>
-            <h3 class="ds-item__name">GamberTwo</h3>
-            <span class="ds-item__price">12,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di gambero, esterno di salmone, teriyaki, crema avocado e kataifi.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">76</span>
-            <h3 class="ds-item__name">GamberThree</h3>
-            <span class="ds-item__price">12,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di gambero in tempura e cetriolo, esterno di salmone scottato, chutney al mango, teriyaki, granella di pistacchio &amp; vellutata di pistacchio.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">77</span>
-            <h3 class="ds-item__name">GamberFour</h3>
-            <span class="ds-item__price">8,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di gambero e cetriolo, esterno di salmone, mayo alla barbabietola e semi di sesamo.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">78</span>
-            <h3 class="ds-item__name">TonnTwo</h3>
-            <span class="ds-item__price">10,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di tonno e cetriolo, esterno di tonno, semi di sesamo e mayo alla barbabietola.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">79</span>
-            <h3 class="ds-item__name">SalmTwo</h3>
-            <span class="ds-item__price">8,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di salmone, cetriolo, semi di sesamo e mayo alla barbabietola.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">85</span>
-            <h3 class="ds-item__name">TonnThree</h3>
-            <span class="ds-item__price">12,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di tonno, esterno di tonno, salsa teriyaki al Lime e cipolla croccante.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">86</span>
-            <h3 class="ds-item__name">TonnFour</h3>
-            <span class="ds-item__price">10,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di tonno &amp; avocado, esterno di tonno, salsa allo Zafferano &amp; tobiko.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">87</span>
-            <h3 class="ds-item__name">SalmTwo</h3>
-            <span class="ds-item__price">8,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di salmone &amp; avocado, esterno di salmone, salsa allo Zafferano &amp; tobiko.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">89</span>
-            <h3 class="ds-item__name">GamberSix</h3>
-            <span class="ds-item__price">12,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di gambero in tempura, esterno di salmone scottato, salsa teriyaki &amp; mandorla.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">90</span>
-            <h3 class="ds-item__name">GamberSeven</h3>
-            <span class="ds-item__price">8,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di gambero in tempura, esterno di salmone, salsa allo Zafferano &amp; tobiko.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">98</span>
-            <h3 class="ds-item__name">WhiteOne</h3>
-            <span class="ds-item__price">10,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di salmone &amp; avocado, esterno di pesce bianco, salsa teriyaki &amp; semi di sesamo.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">99</span>
-            <h3 class="ds-item__name">WhiteTwo</h3>
-            <span class="ds-item__price">12,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di pesce bianco &amp; avocado, esterno di pesce bianco, salsa teriyaki, lime &amp; tobiko.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">100</span>
-            <h3 class="ds-item__name">WhiteThree</h3>
-            <span class="ds-item__price">12,00&nbsp;€</span>
-            <p class="ds-item__desc">Interno di pesce bianco &amp; avocado, esterno di pesce bianco, salsa teriyaki, vellutata di arancia &amp; tobiko.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">8 pz.</span></div>
-          </article>
-        </div>
-      </section>
-      <section class="menu-cat" id="poke-bowl" aria-labelledby="poke-bowl-titolo">
-        <div class="menu-cat__head">
-          <h2 class="display-m" id="poke-bowl-titolo">Poke bowl</h2>
-        </div>
-        <div class="dish-list">
-          <article class="ds-item">
-            <span class="ds-item__num">60</span>
-            <h3 class="ds-item__name">Philadelphia's poke</h3>
-            <span class="ds-item__price">10,50&nbsp;€</span>
-            <p class="ds-item__desc">Riso bianco, salmone, tonno, zucchine, mais, carote, salsa di soia, Mayo piccante, Philadelphia e filangè di mandorla.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--spicy">Piccante</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">61</span>
-            <h3 class="ds-item__name">Daniel's poke</h3>
-            <span class="ds-item__price">10,50&nbsp;€</span>
-            <p class="ds-item__desc">Riso bianco, gamberi in tempura, salmone scottato, avocado, zucchine, vellutata di pistacchio, teriyaki &amp; granella di pistacchio.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--new">Della casa</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">62</span>
-            <h3 class="ds-item__name">Maglielano's poke</h3>
-            <span class="ds-item__price">11,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso bianco, salmone scottato, tonno, avocado, mais, carote, salsa di soia, teriyaki, mayo al tartufo, stracciatella e anacardi.</p>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">63</span>
-            <h3 class="ds-item__name">Colorful's poke</h3>
-            <span class="ds-item__price">10,50&nbsp;€</span>
-            <p class="ds-item__desc">Riso bianco, salmone, tonno, avocado, mango, salsa di soia, teriyaki, chutney di mango e semi di sesamo.</p>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">64</span>
-            <h3 class="ds-item__name">Aman's poke</h3>
-            <span class="ds-item__price">12,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso bianco, salmone, tonno, edamame, alga wakame, salsa unagi, semi di sesamo e cipolla fritta.</p>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">65</span>
-            <h3 class="ds-item__name">Sunflower's poke</h3>
-            <span class="ds-item__price">11,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso bianco, salmone, gambero in tempura, carote, pomodorini, teriyaki, sweet chili, semi [sesamo, zucca, girasole, lino].</p>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">80</span>
-            <h3 class="ds-item__name">Voglia's poke</h3>
-            <span class="ds-item__price">11,00&nbsp;€</span>
-            <p class="ds-item__desc">Riso bianco, teriyaki, salsa di soia, mayo alla barbabietola, crema di avocado, cetriolo, pomodorini, salmone, tonno, philadelphia e semi di sesamo.</p>
-          </article>
-        </div>
-        <section class="ds-info poke-builder" id="componi" aria-labelledby="componi-titolo">
-          <h3 id="componi-titolo">Componi la tua Poke</h3>
-          <p class="body-s box-desc">Scegli una base e aggiungi proteine, condimenti, salse e topping.</p>
-          <div class="poke-builder__groups">
-            <div>
-              <h4 class="ds-eyebrow">Base</h4>
-              <ul class="body-s">
-                <li>Riso bianco</li>
-                <li>Riso Venere</li>
-                <li>Insalata Iceberg</li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="ds-eyebrow">Proteine</h4>
-              <ul class="body-s">
-                <li>Salmone crudo</li>
-                <li>Salmone scottato</li>
-                <li>Tonno crudo</li>
-                <li>Tonno scottato</li>
-                <li>Gamberi al vapore</li>
-                <li>Gamberi in tempura</li>
-                <li>Pollo piastrato</li>
-                <li>Pollo in tempura</li>
-                <li>Pesce bianco</li>
-                <li>Tofu</li>
-                <li>Formaggio Feta</li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="ds-eyebrow">Condimenti</h4>
-              <ul class="body-s">
-                <li>Alga wakame</li>
-                <li>Edamame</li>
-                <li>Cetrioli</li>
-                <li>Mango</li>
-                <li>Carote</li>
-                <li>Zucchine</li>
-                <li>Mais</li>
-                <li>Avocado</li>
-                <li>Pomodorini</li>
-                <li>Olive denocciolate</li>
-                <li>Zenzero</li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="ds-eyebrow">Salse</h4>
-              <ul class="body-s">
-                <li>Teriyaki</li>
-                <li>Soia</li>
-                <li>Mayo piccante</li>
-                <li>Mayo</li>
-                <li>Vellutata al pistacchio</li>
-                <li>Chutney al mango</li>
-                <li>Crema di avocado</li>
-                <li>Sweet chilli</li>
-                <li>Mayo al tartufo</li>
-                <li>Salsa barbabietola</li>
-                <li>Mayo allo zafferano</li>
-                <li>Salsa al lime</li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="ds-eyebrow">Topping</h4>
-              <ul class="body-s">
-                <li>Cipolla fritta</li>
-                <li>Granella pistacchio</li>
-                <li>Filangé mandorla</li>
-                <li>Kataifi</li>
-                <li>Anacardi</li>
-                <li>Sesamo</li>
-                <li>Philadelphia senza lattosio</li>
-                <li>Stracciatella</li>
-                <li>Tempura flakes</li>
-                <li>Chips di patata dolce</li>
-              </ul>
+    <section class="menu-list" aria-label="Piatti del menù">
+      <div class="menu-list__inner">
+        <!-- genera-menu:sezioni -->
+        <section class="menu-cat" id="tartare" aria-labelledby="tartare-titolo">
+          <div class="menu-cat__head">
+            <h2 id="tartare-titolo">Tartare</h2>
+            <span class="menu-cat__note">4 voci</span>
+          </div>
+          <div class="dishes">
+            <article class="dish">
+              <span class="dish__num">1</span>
+              <h3 class="dish__name">Salmone</h3>
+              <span class="dish__price">6,00&nbsp;€</span>
+              <p class="dish__desc">Tartare condita dallo Chef</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">2</span>
+              <h3 class="dish__name">Tonno</h3>
+              <span class="dish__price">8,00&nbsp;€</span>
+              <p class="dish__desc">Tartare condita dallo Chef</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">3</span>
+              <h3 class="dish__name">Mini Salmone</h3>
+              <span class="dish__price">4,00&nbsp;€</span>
+              <p class="dish__desc">Tartare con pasta Kataifi</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">4</span>
+              <h3 class="dish__name">Mini Tonno</h3>
+              <span class="dish__price">6,00&nbsp;€</span>
+              <p class="dish__desc">Tartare con granella di pistacchio</p>
+            </article>
+          </div>
+        </section>
+        <section class="menu-cat" id="sashimi" aria-labelledby="sashimi-titolo">
+          <div class="menu-cat__head">
+            <h2 id="sashimi-titolo">Sashimi</h2>
+            <span class="menu-cat__note">5 pz. · 2 piatti</span>
+          </div>
+          <div class="dishes">
+            <article class="dish">
+              <span class="dish__num">5</span>
+              <h3 class="dish__name">Salmone</h3>
+              <span class="dish__price">5,00&nbsp;€</span>
+              <p class="dish__desc">Filetti di pesce crudo</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">6</span>
+              <h3 class="dish__name">Tonno</h3>
+              <span class="dish__price">7,00&nbsp;€</span>
+              <p class="dish__desc">Filetti di pesce crudo</p>
+            </article>
+          </div>
+        </section>
+        <section class="menu-cat" id="starter" aria-labelledby="starter-titolo">
+          <div class="menu-cat__head">
+            <h2 id="starter-titolo">Starter</h2>
+            <span class="menu-cat__note">15 voci</span>
+          </div>
+          <div class="dishes">
+            <article class="dish">
+              <span class="dish__num">44</span>
+              <h3 class="dish__name">Alga wakame</h3>
+              <span class="dish__price">4,00&nbsp;€</span>
+              <div class="dish__tags"><span class="ds-badge ds-badge--veg">Vegetariano</span></div>
+            </article>
+            <article class="dish">
+              <span class="dish__num">45</span>
+              <h3 class="dish__name">Edamame</h3>
+              <span class="dish__price">3,00&nbsp;€</span>
+              <div class="dish__tags"><span class="ds-badge ds-badge--veg">Vegetariano</span></div>
+            </article>
+            <article class="dish">
+              <span class="dish__num">92</span>
+              <h3 class="dish__name">Crispy Rice Salmone</h3>
+              <span class="dish__price">6,00&nbsp;€</span>
+              <p class="dish__desc">Tegolino di riso sushi croccante con esterno di salmone marinato e mayo piccante · 2 pz.</p>
+              <div class="dish__tags"><span class="ds-badge ds-badge--spicy">Piccante</span></div>
+            </article>
+            <article class="dish">
+              <span class="dish__num">101</span>
+              <h3 class="dish__name">Involtini Primavera Vegetariani</h3>
+              <span class="dish__price">3,00&nbsp;€</span>
+              <p class="dish__desc">4 pz.</p>
+              <div class="dish__tags"><span class="ds-badge ds-badge--veg">Vegetariano</span></div>
+            </article>
+            <article class="dish">
+              <span class="dish__num">46</span>
+              <h3 class="dish__name">Gamberi in tempura</h3>
+              <span class="dish__price">3,00&nbsp;€</span>
+              <p class="dish__desc">2 pz.</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">47</span>
+              <h3 class="dish__name">Gambero in crosta di pistacchio</h3>
+              <span class="dish__price">3,00&nbsp;€</span>
+              <p class="dish__desc">2 pz.</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">48</span>
+              <h3 class="dish__name">Gambero in crosta di mandorla</h3>
+              <span class="dish__price">3,00&nbsp;€</span>
+              <p class="dish__desc">2 pz.</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">81</span>
+              <h3 class="dish__name">Involtini Panko &amp; Salm</h3>
+              <span class="dish__price">3,00&nbsp;€</span>
+              <p class="dish__desc">Gambero al panko avvolto da salmone scottato, Philadelphia, salsa teriyaki e semi di sesamo · 2 pz.</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">110</span>
+              <h3 class="dish__name">Tamago Crispy</h3>
+              <span class="dish__price">4,00&nbsp;€</span>
+              <p class="dish__desc">Uovo in tempura dal cuore morbido con mayo giapponese</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">111</span>
+              <h3 class="dish__name">Patatine fritte</h3>
+              <span class="dish__price">3,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num">112</span>
+              <h3 class="dish__name">Cotoletta in tempura</h3>
+              <span class="dish__price">8,00&nbsp;€</span>
+              <p class="dish__desc">Con patatine fritte</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">113</span>
+              <h3 class="dish__name">Kakuni</h3>
+              <span class="dish__price">10,00&nbsp;€</span>
+              <p class="dish__desc">Pancia di maiale cbt caramellizzata &amp; riso bianco</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">114</span>
+              <h3 class="dish__name">Takoyaki</h3>
+              <span class="dish__price">5,00&nbsp;€</span>
+              <p class="dish__desc">Polpette sferiche giapponesi al polpo · 4 pz.</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">116</span>
+              <h3 class="dish__name">Bao Pulled Pork</h3>
+              <span class="dish__price">5,00&nbsp;€</span>
+              <p class="dish__desc">Panini asiatici ripieni di pulled pork · 2 pz.</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">117</span>
+              <h3 class="dish__name">Bao Gambero in Tempura</h3>
+              <span class="dish__price">5,00&nbsp;€</span>
+              <p class="dish__desc">Panini asiatici ripieni di gamberi in tempura · 2 pz.</p>
+            </article>
+          </div>
+        </section>
+        <section class="menu-cat" id="sushi-gio" aria-labelledby="sushi-gio-titolo">
+          <div class="menu-cat__head">
+            <h2 id="sushi-gio-titolo">Sushi Gio</h2>
+            <span class="menu-cat__note">2 pz. · 10 piatti</span>
+          </div>
+          <div class="dishes">
+            <article class="dish">
+              <span class="dish__num">7</span>
+              <h3 class="dish__name">Gio salmone</h3>
+              <span class="dish__price">3,00&nbsp;€</span>
+              <p class="dish__desc">Riso avvolto da salmone con tartare &amp; pasta Kataifi</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">8</span>
+              <h3 class="dish__name">Gio Maguro</h3>
+              <span class="dish__price">4,00&nbsp;€</span>
+              <p class="dish__desc">Riso avvolto da tonno con tartare &amp; pasta Kataifi</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">9</span>
+              <h3 class="dish__name">Philadelphia Gio</h3>
+              <span class="dish__price">2,50&nbsp;€</span>
+              <p class="dish__desc">Riso avvolto da salmone con philadelphia</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">10</span>
+              <h3 class="dish__name">Gio Tonno &amp; Scampi</h3>
+              <span class="dish__price">4,00&nbsp;€</span>
+              <p class="dish__desc">Riso avvolto da tonno con tartare di scampo &amp; teriyaki</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">11</span>
+              <h3 class="dish__name">Gio Salm &amp; Gambero</h3>
+              <span class="dish__price">4,00&nbsp;€</span>
+              <p class="dish__desc">Riso avvolto da salmone con tartare di gambero rosso &amp; teriyaki</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">12</span>
+              <h3 class="dish__name">Gio Flame Salm &amp; Scampo</h3>
+              <span class="dish__price">4,00&nbsp;€</span>
+              <p class="dish__desc">Riso avvolto da salmone scottato con tartare di scampo, filangé di mandorla &amp; teriyaki</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">13</span>
+              <h3 class="dish__name">Gio Flame Salm &amp; Shrimp</h3>
+              <span class="dish__price">4,00&nbsp;€</span>
+              <p class="dish__desc">Riso avvolto da salmone scottato con tartare di gambero rosso, vellutata di pistacchio &amp; granella</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">82</span>
+              <h3 class="dish__name">Gio Full immersion</h3>
+              <span class="dish__price">3,00&nbsp;€</span>
+              <p class="dish__desc">Riso avvolto da salmone, tartare di salmone, salsa spicy marinata</p>
+              <div class="dish__tags"><span class="ds-badge ds-badge--spicy">Piccante</span></div>
+            </article>
+            <article class="dish">
+              <span class="dish__num">83</span>
+              <h3 class="dish__name">Gio fresh &amp; salm</h3>
+              <span class="dish__price">3,00&nbsp;€</span>
+              <p class="dish__desc">Riso avvolto da salmone scottato, philadelphia &amp; granella di pistacchio</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">84</span>
+              <h3 class="dish__name">Gio fresh &amp; Tuna</h3>
+              <span class="dish__price">3,00&nbsp;€</span>
+              <p class="dish__desc">Riso avvolto da tonno scottato, philadelphia &amp; granella di pistacchio</p>
+            </article>
+          </div>
+        </section>
+        <section class="menu-cat" id="hosomaki" aria-labelledby="hosomaki-titolo">
+          <div class="menu-cat__head">
+            <h2 id="hosomaki-titolo">Hosomaki</h2>
+            <span class="menu-cat__note">6 pz. · 7 piatti</span>
+          </div>
+          <div class="dishes">
+            <article class="dish">
+              <span class="dish__num">14</span>
+              <h3 class="dish__name">Salmone</h3>
+              <span class="dish__price">4,00&nbsp;€</span>
+              <p class="dish__desc">Riso con alga all'esterno</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">15</span>
+              <h3 class="dish__name">Tonno</h3>
+              <span class="dish__price">5,00&nbsp;€</span>
+              <p class="dish__desc">Riso con alga all'esterno</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">16</span>
+              <h3 class="dish__name">Gambero in tempura</h3>
+              <span class="dish__price">4,00&nbsp;€</span>
+              <p class="dish__desc">Riso con alga all'esterno</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">17</span>
+              <h3 class="dish__name">Scampo</h3>
+              <span class="dish__price">6,00&nbsp;€</span>
+              <p class="dish__desc">Riso con alga all'esterno</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">18</span>
+              <h3 class="dish__name">Gambero rosso</h3>
+              <span class="dish__price">6,00&nbsp;€</span>
+              <p class="dish__desc">Riso con alga all'esterno</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">19</span>
+              <h3 class="dish__name">Hosomaki fritto</h3>
+              <span class="dish__price">6,00&nbsp;€</span>
+              <p class="dish__desc">Maki fritto con salmone all'interno ed esterno di philadelphia &amp; frutta di stagione</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">91</span>
+              <h3 class="dish__name">Maki fritto</h3>
+              <span class="dish__price">6,00&nbsp;€</span>
+              <p class="dish__desc">Hosomaki fritto con interno di salmone ed esterno di granella croccante, salsa al pistacchio &amp; teriyaki</p>
+            </article>
+          </div>
+        </section>
+        <section class="menu-cat" id="nigiri" aria-labelledby="nigiri-titolo">
+          <div class="menu-cat__head">
+            <h2 id="nigiri-titolo">Nigiri</h2>
+            <span class="menu-cat__note">2 pz. · 7 piatti</span>
+          </div>
+          <div class="dishes">
+            <article class="dish">
+              <span class="dish__num">20</span>
+              <h3 class="dish__name">Salmone</h3>
+              <span class="dish__price">2,00&nbsp;€</span>
+              <p class="dish__desc">Riso coperto da fettina di salmone</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">21</span>
+              <h3 class="dish__name">Tonno</h3>
+              <span class="dish__price">3,00&nbsp;€</span>
+              <p class="dish__desc">Riso coperto da fettina di tonno</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">22</span>
+              <h3 class="dish__name">Salmone scottato</h3>
+              <span class="dish__price">3,00&nbsp;€</span>
+              <p class="dish__desc">Riso coperto da fettina di salmone scottato</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">23</span>
+              <h3 class="dish__name">Tonno scottato</h3>
+              <span class="dish__price">3,00&nbsp;€</span>
+              <p class="dish__desc">Riso coperto da fettina di tonno scottato</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">24</span>
+              <h3 class="dish__name">Tartare Scampo</h3>
+              <span class="dish__price">4,00&nbsp;€</span>
+              <p class="dish__desc">Riso coperto da tartare di scampo e mandorla</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">25</span>
+              <h3 class="dish__name">Tartare Gambero rosso</h3>
+              <span class="dish__price">4,00&nbsp;€</span>
+              <p class="dish__desc">Riso coperto da tartare di gambero rosso e granella di pistacchio</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">97</span>
+              <h3 class="dish__name">White</h3>
+              <span class="dish__price">3,00&nbsp;€</span>
+              <p class="dish__desc">Riso coperto da fettina di pesce bianco e semi di sesamo</p>
+            </article>
+          </div>
+        </section>
+        <section class="menu-cat" id="triangolini" aria-labelledby="triangolini-titolo">
+          <div class="menu-cat__head">
+            <h2 id="triangolini-titolo">Triangolini</h2>
+            <span class="menu-cat__note">4 pz. · 3 piatti</span>
+          </div>
+          <div class="dishes">
+            <article class="dish">
+              <span class="dish__num">93</span>
+              <h3 class="dish__name">SalmThree</h3>
+              <span class="dish__price">6,00&nbsp;€</span>
+              <p class="dish__desc">Triangolino di sushi con interno di salmone &amp; mayo, esterno di semi di sesamo, mayo piccante &amp; teriyaki</p>
+              <div class="dish__tags"><span class="ds-badge ds-badge--spicy">Piccante</span></div>
+            </article>
+            <article class="dish">
+              <span class="dish__num">94</span>
+              <h3 class="dish__name">TonnFive</h3>
+              <span class="dish__price">6,00&nbsp;€</span>
+              <p class="dish__desc">Triangolino di sushi con interno di tonno &amp; mayo, esterno di semi di sesamo, mayo piccante &amp; teriyaki</p>
+              <div class="dish__tags"><span class="ds-badge ds-badge--spicy">Piccante</span></div>
+            </article>
+            <article class="dish">
+              <span class="dish__num">95</span>
+              <h3 class="dish__name">GamberEight</h3>
+              <span class="dish__price">6,00&nbsp;€</span>
+              <p class="dish__desc">Triangolino di sushi con interno di gambero in tempura &amp; mayo, esterno di semi di sesamo, mayo piccante &amp; teriyaki</p>
+              <div class="dish__tags"><span class="ds-badge ds-badge--spicy">Piccante</span></div>
+            </article>
+          </div>
+        </section>
+        <section class="menu-cat" id="uramaki" aria-labelledby="uramaki-titolo">
+          <div class="menu-cat__head">
+            <h2 id="uramaki-titolo">Uramaki</h2>
+            <span class="menu-cat__note">8 pz. · 3 piatti</span>
+          </div>
+          <div class="dishes">
+            <article class="dish">
+              <span class="dish__num">26</span>
+              <h3 class="dish__name">Salmone roll</h3>
+              <span class="dish__price">6,00&nbsp;€</span>
+              <p class="dish__desc">Con salmone, alga, avocado e philadelphia</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">27</span>
+              <h3 class="dish__name">Tonno roll</h3>
+              <span class="dish__price">8,00&nbsp;€</span>
+              <p class="dish__desc">Con tonno, alga, avocado e philadelphia</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">28</span>
+              <h3 class="dish__name">Gambero in tempura</h3>
+              <span class="dish__price">6,00&nbsp;€</span>
+              <p class="dish__desc">Roll con gambero, alga, avocado e philadelphia</p>
+            </article>
+          </div>
+        </section>
+        <section class="menu-cat is-active" id="special-roll" aria-labelledby="special-roll-titolo">
+          <div class="menu-cat__head">
+            <h2 id="special-roll-titolo">Special roll</h2>
+            <span class="menu-cat__note">8 pz. · 40 piatti</span>
+          </div>
+          <div class="dishes">
+            <article class="dish">
+              <span class="dish__num">29</span>
+              <h3 class="dish__name">Sake roll</h3>
+              <span class="dish__price">10,00&nbsp;€</span>
+              <p class="dish__desc">Interno di salmone, philadelphia e avocado, esterno di salmone scottato, pasta Kataifi &amp; teriyaki</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">30</span>
+              <h3 class="dish__name">Maguro roll</h3>
+              <span class="dish__price">12,00&nbsp;€</span>
+              <p class="dish__desc">Interno di tonno, philadelphia e avocado, esterno di tonno, pasta Kataifi &amp; teriyaki</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">31</span>
+              <h3 class="dish__name">Shrimp roll</h3>
+              <span class="dish__price">12,00&nbsp;€</span>
+              <p class="dish__desc">Interno di gambero in tempura e avocado, esterno di tonno, teriyaki &amp; vellutata di pistacchio</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">32</span>
+              <h3 class="dish__name">Daniel's roll</h3>
+              <span class="dish__price">14,00&nbsp;€</span>
+              <p class="dish__desc">Interno di salmone e avocado, esterno di tartare di gambero rosso &amp; vellutata di pistacchio</p>
+              <div class="dish__tags"><span class="ds-badge ds-badge--new">Della casa</span></div>
+            </article>
+            <article class="dish">
+              <span class="dish__num">33</span>
+              <h3 class="dish__name">Spicy Maguro roll</h3>
+              <span class="dish__price">10,00&nbsp;€</span>
+              <p class="dish__desc">Interno di tonno e philadelphia, esterno di tonno, teriyaki &amp; salsa spicy</p>
+              <div class="dish__tags"><span class="ds-badge ds-badge--spicy">Piccante</span></div>
+            </article>
+            <article class="dish">
+              <span class="dish__num">34</span>
+              <h3 class="dish__name">Salm &amp; Ph roll</h3>
+              <span class="dish__price">8,00&nbsp;€</span>
+              <p class="dish__desc">Interno di salmone e philadelphia, esterno di salmone</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">35</span>
+              <h3 class="dish__name">Tiger Flame roll</h3>
+              <span class="dish__price">12,00&nbsp;€</span>
+              <p class="dish__desc">Interno di gambero in tempura, esterno di salmone scottato, pasta Kataifi &amp; teriyaki</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">36</span>
+              <h3 class="dish__name">Maguro Ph roll</h3>
+              <span class="dish__price">10,00&nbsp;€</span>
+              <p class="dish__desc">Interno di tonno e philadelphia, esterno di tonno</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">37</span>
+              <h3 class="dish__name">Spicy Salm roll</h3>
+              <span class="dish__price">8,00&nbsp;€</span>
+              <p class="dish__desc">Interno di salmone e philadelphia, esterno di salmone, teriyaki &amp; salsa spicy</p>
+              <div class="dish__tags"><span class="ds-badge ds-badge--spicy">Piccante</span></div>
+            </article>
+            <article class="dish">
+              <span class="dish__num">38</span>
+              <h3 class="dish__name">Prawn &amp; Tuna</h3>
+              <span class="dish__price">14,00&nbsp;€</span>
+              <p class="dish__desc">Interno di tonno e avocado, esterno di tartare di scampo &amp; filangé di mandorla</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">39</span>
+              <h3 class="dish__name">Mango roll</h3>
+              <span class="dish__price">14,00&nbsp;€</span>
+              <p class="dish__desc">Interno di tonno e mango, esterno di tonno, chutney di mango &amp; teriyaki</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">40</span>
+              <h3 class="dish__name">Mediterraneo roll</h3>
+              <span class="dish__price">12,00&nbsp;€</span>
+              <p class="dish__desc">Interno di salmone e formaggio francese, esterno di salmone, menta &amp; olio extravergine</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">41</span>
+              <h3 class="dish__name">Apulia roll</h3>
+              <span class="dish__price">14,00&nbsp;€</span>
+              <p class="dish__desc">Interno di salmone e avocado, esterno di stracciatella, gambero rosso &amp; granella di pistacchio</p>
+              <div class="dish__tags"><span class="ds-badge ds-badge--new">Della casa</span></div>
+            </article>
+            <article class="dish">
+              <span class="dish__num">52</span>
+              <h3 class="dish__name">Crab &amp; Salm roll</h3>
+              <span class="dish__price">8,00&nbsp;€</span>
+              <p class="dish__desc">Interno di polpa di granchio e avocado, esterno di salmone, teriyaki e olio extravergine</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">53</span>
+              <h3 class="dish__name">Crab &amp; Flame Salm roll</h3>
+              <span class="dish__price">10,00&nbsp;€</span>
+              <p class="dish__desc">Interno di polpa di granchio, philadelphia e avocado, esterno di salmone scottato, teriyaki e pasta Kataifi</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">54</span>
+              <h3 class="dish__name">Tuna &amp; Crab roll</h3>
+              <span class="dish__price">10,00&nbsp;€</span>
+              <p class="dish__desc">Interno di polpa di granchio e philadelphia, esterno di tonno, teriyaki e semi di sesamo</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">55</span>
+              <h3 class="dish__name">Fried onion &amp; Crab roll</h3>
+              <span class="dish__price">10,00&nbsp;€</span>
+              <p class="dish__desc">Interno di polpa di granchio e avocado, esterno di salmone, teriyaki e cipolla fritta</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">56</span>
+              <h3 class="dish__name">Rainbow roll</h3>
+              <span class="dish__price">10,00&nbsp;€</span>
+              <p class="dish__desc">Interno di salmone e avocado, esterno di tonno, spigola, salmone e teriyaki</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">57</span>
+              <h3 class="dish__name">Lime &amp; Bass roll</h3>
+              <span class="dish__price">10,00&nbsp;€</span>
+              <p class="dish__desc">Interno di salmone e avocado, esterno di salmone, teriyaki, lime e tobiko</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">58</span>
+              <h3 class="dish__name">Fried onion &amp; Salm roll</h3>
+              <span class="dish__price">10,00&nbsp;€</span>
+              <p class="dish__desc">Interno di salmone e philadelphia, esterno di salmone, teriyaki e cipolla fritta</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">66</span>
+              <h3 class="dish__name">Mango &amp; Tuna roll</h3>
+              <span class="dish__price">12,00&nbsp;€</span>
+              <p class="dish__desc">Interno di tonno e mango, esterno di salmone, teriyaki, chutney di mango e mandorle</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">67</span>
+              <h3 class="dish__name">PistacchioLovers roll</h3>
+              <span class="dish__price">12,00&nbsp;€</span>
+              <p class="dish__desc">Interno di gambero in tempura e avocado, esterno di salmone, vellutata di pistacchio, teriyaki e granella di pistacchio</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">68</span>
+              <h3 class="dish__name">Salmon Fuji roll</h3>
+              <span class="dish__price">12,00&nbsp;€</span>
+              <p class="dish__desc">Interno di gambero in tempura, esterno di alternanza tra salmone crudo &amp; scottato, philadelphia e tobiko</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">69</span>
+              <h3 class="dish__name">Daiquiri roll</h3>
+              <span class="dish__price">12,00&nbsp;€</span>
+              <p class="dish__desc">Interno di salmone e mango, esterno di salmone, lime e semi di sesamo</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">70</span>
+              <h3 class="dish__name">Truffle &amp; Co. roll</h3>
+              <span class="dish__price">12,00&nbsp;€</span>
+              <p class="dish__desc">Interno di gambero in tempura e avocado, esterno di salmone scottato, mayo al tartufo e crumble di anacardi</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">71</span>
+              <h3 class="dish__name">Paradise roll</h3>
+              <span class="dish__price">12,00&nbsp;€</span>
+              <p class="dish__desc">Interno di gambero in tempura e avocado, esterno di tonno, teriyaki e pasta Kataifi</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">72</span>
+              <h3 class="dish__name">GamberOne</h3>
+              <span class="dish__price">12,00&nbsp;€</span>
+              <p class="dish__desc">Interno di gambero, esterno di tonno, teriyaki, crema avocado e kataifi</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">73</span>
+              <h3 class="dish__name">GamberTwo</h3>
+              <span class="dish__price">12,00&nbsp;€</span>
+              <p class="dish__desc">Interno di gambero, esterno di salmone, teriyaki, crema avocado e kataifi</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">76</span>
+              <h3 class="dish__name">GamberThree</h3>
+              <span class="dish__price">12,00&nbsp;€</span>
+              <p class="dish__desc">Interno di gambero in tempura e cetriolo, esterno di salmone scottato, chutney al mango, teriyaki, granella e vellutata di pistacchio</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">77</span>
+              <h3 class="dish__name">GamberFour</h3>
+              <span class="dish__price">8,00&nbsp;€</span>
+              <p class="dish__desc">Interno di gambero e cetriolo, esterno di salmone, mayo alla barbabietola e semi di sesamo</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">78</span>
+              <h3 class="dish__name">TonnTwo</h3>
+              <span class="dish__price">10,00&nbsp;€</span>
+              <p class="dish__desc">Interno di tonno e cetriolo, esterno di tonno, semi di sesamo e mayo alla barbabietola</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">79</span>
+              <h3 class="dish__name">SalmTwo</h3>
+              <span class="dish__price">8,00&nbsp;€</span>
+              <p class="dish__desc">Interno di salmone, cetriolo, semi di sesamo e mayo alla barbabietola</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">85</span>
+              <h3 class="dish__name">TonnThree</h3>
+              <span class="dish__price">12,00&nbsp;€</span>
+              <p class="dish__desc">Interno di tonno, esterno di tonno, salsa teriyaki al lime e cipolla croccante</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">86</span>
+              <h3 class="dish__name">TonnFour</h3>
+              <span class="dish__price">10,00&nbsp;€</span>
+              <p class="dish__desc">Interno di tonno &amp; avocado, esterno di tonno, salsa allo zafferano &amp; tobiko</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">87</span>
+              <h3 class="dish__name">SalmTwo</h3>
+              <span class="dish__price">8,00&nbsp;€</span>
+              <p class="dish__desc">Interno di salmone &amp; avocado, esterno di salmone, salsa allo zafferano &amp; tobiko</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">89</span>
+              <h3 class="dish__name">GamberSix</h3>
+              <span class="dish__price">12,00&nbsp;€</span>
+              <p class="dish__desc">Interno di gambero in tempura, esterno di salmone scottato, salsa teriyaki &amp; mandorla</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">90</span>
+              <h3 class="dish__name">GamberSeven</h3>
+              <span class="dish__price">8,00&nbsp;€</span>
+              <p class="dish__desc">Interno di gambero in tempura, esterno di salmone, salsa allo zafferano &amp; tobiko</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">98</span>
+              <h3 class="dish__name">WhiteOne</h3>
+              <span class="dish__price">10,00&nbsp;€</span>
+              <p class="dish__desc">Interno di salmone &amp; avocado, esterno di pesce bianco, salsa teriyaki &amp; semi di sesamo</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">99</span>
+              <h3 class="dish__name">WhiteTwo</h3>
+              <span class="dish__price">12,00&nbsp;€</span>
+              <p class="dish__desc">Interno di pesce bianco &amp; avocado, esterno di pesce bianco, salsa teriyaki, lime &amp; tobiko</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">100</span>
+              <h3 class="dish__name">WhiteThree</h3>
+              <span class="dish__price">12,00&nbsp;€</span>
+              <p class="dish__desc">Interno di pesce bianco &amp; avocado, esterno di pesce bianco, salsa teriyaki, vellutata di arancia &amp; tobiko</p>
+            </article>
+          </div>
+        </section>
+        <section class="menu-cat" id="poke-bowl" aria-labelledby="poke-bowl-titolo">
+          <div class="menu-cat__head">
+            <h2 id="poke-bowl-titolo">Poke bowl</h2>
+            <span class="menu-cat__note">7 voci</span>
+          </div>
+          <div class="dishes">
+            <article class="dish">
+              <span class="dish__num">60</span>
+              <h3 class="dish__name">Philadelphia's poke</h3>
+              <span class="dish__price">10,50&nbsp;€</span>
+              <p class="dish__desc">Riso bianco, salmone, tonno, zucchine, mais, carote, salsa di soia, mayo piccante, philadelphia e filangé di mandorla</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">61</span>
+              <h3 class="dish__name">Daniel's poke</h3>
+              <span class="dish__price">10,50&nbsp;€</span>
+              <p class="dish__desc">Riso bianco, gamberi in tempura, salmone scottato, avocado, zucchine, vellutata di pistacchio, teriyaki &amp; granella di pistacchio</p>
+              <div class="dish__tags"><span class="ds-badge ds-badge--new">Della casa</span></div>
+            </article>
+            <article class="dish">
+              <span class="dish__num">62</span>
+              <h3 class="dish__name">Maglielano's poke</h3>
+              <span class="dish__price">11,00&nbsp;€</span>
+              <p class="dish__desc">Riso bianco, salmone scottato, tonno, avocado, mais, carote, salsa di soia, teriyaki, mayo al tartufo, stracciatella e anacardi</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">63</span>
+              <h3 class="dish__name">Colorful's poke</h3>
+              <span class="dish__price">10,50&nbsp;€</span>
+              <p class="dish__desc">Riso bianco, salmone, tonno, avocado, mango, salsa di soia, teriyaki, chutney di mango e semi di sesamo</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">64</span>
+              <h3 class="dish__name">Aman's poke</h3>
+              <span class="dish__price">12,00&nbsp;€</span>
+              <p class="dish__desc">Riso bianco, salmone, tonno, edamame, alga wakame, salsa unagi, semi di sesamo e cipolla fritta</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">65</span>
+              <h3 class="dish__name">Sunflower's poke</h3>
+              <span class="dish__price">11,00&nbsp;€</span>
+              <p class="dish__desc">Riso bianco, salmone, gambero in tempura, carote, pomodorini, teriyaki, sweet chili, semi di sesamo, zucca, girasole e lino</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">80</span>
+              <h3 class="dish__name">Voglia's poke</h3>
+              <span class="dish__price">11,00&nbsp;€</span>
+              <p class="dish__desc">Riso bianco, teriyaki, salsa di soia, mayo alla barbabietola, crema di avocado, cetriolo, pomodorini, salmone, tonno, philadelphia e semi di sesamo</p>
+            </article>
+          </div>
+          <div class="poke-builder" id="componi">
+            <h3>Componi la tua Poke</h3>
+            <div class="poke-builder__groups">
+              <div><p class="poke-builder__title">1 · Base</p><p class="poke-builder__list">Riso bianco · Riso Venere · Insalata iceberg</p></div>
+              <div><p class="poke-builder__title">2 · Proteine</p><p class="poke-builder__list">Salmone crudo · Salmone scottato · Tonno crudo · Tonno scottato · Gamberi al vapore · Gamberi in tempura · Pollo piastrato · Pollo in tempura · Pesce bianco · Tofu · Formaggio feta</p></div>
+              <div><p class="poke-builder__title">3 · Condimenti</p><p class="poke-builder__list">Alga wakame · Edamame · Cetrioli · Mango · Carote · Zucchine · Mais · Avocado · Pomodorini · Olive denocciolate · Zenzero</p></div>
+              <div><p class="poke-builder__title">4 · Salse</p><p class="poke-builder__list">Teriyaki · Soia · Mayo piccante · Mayo · Vellutata al pistacchio · Chutney al mango · Crema di avocado · Sweet chilli · Mayo al tartufo · Salsa barbabietola · Mayo allo zafferano · Salsa al lime</p></div>
+              <div><p class="poke-builder__title">5 · Topping</p><p class="poke-builder__list">Cipolla fritta · Granella pistacchio · Filangé mandorla · Kataifi · Anacardi · Sesamo · Philadelphia senza lattosio · Stracciatella · Tempura flakes · Chips di patata dolce</p></div>
             </div>
           </div>
         </section>
-      </section>
-      <section class="menu-cat" id="box" aria-labelledby="box-titolo">
-        <div class="menu-cat__head">
-          <h2 class="display-m" id="box-titolo">Box</h2>
-        </div>
-        <div class="dish-list">
-          <article class="ds-item">
-            <span class="ds-item__num">42</span>
-            <h3 class="ds-item__name">Crazy sushi</h3>
-            <span class="ds-item__price">28,00&nbsp;€</span>
-            <p class="ds-item__desc">4 pz. Nigiri, 4 pz. Sushi gio, 8 pz. Hosomaki, 8 pz. Special roll.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">24 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">43</span>
-            <h3 class="ds-item__name">Maglielano box</h3>
-            <span class="ds-item__price">50,00&nbsp;€</span>
-            <p class="ds-item__desc">8 pz. Nigiri, 8 pz. Sushi gio, 8 pz. Hosomaki, 24 pz. Special roll.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">48 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">49</span>
-            <h3 class="ds-item__name">Daniel's sushi small box</h3>
-            <span class="ds-item__price">20,00&nbsp;€</span>
-            <p class="ds-item__desc">4 pz. Sushi gio (9), 2 pz. Nigiri (20), 8 pz. Uramaki (26), 8 pz. Uramaki (28), 2 pz. Starter (46).</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">24 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">50</span>
-            <h3 class="ds-item__name">Daniel's sushi medium box</h3>
-            <span class="ds-item__price">30,00&nbsp;€</span>
-            <p class="ds-item__desc">5 pz. Sashimi (5), 2 pz. Sushi Gio (9), 2 pz. Nigiri (20), 8 pz. Uramaki (26), 8 pz. Special Roll (a scelta dello chef), 8 pz. Hosomaki (19), 2 pz. Starter (46).</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">35 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">51</span>
-            <h3 class="ds-item__name">Daniel's sushi large box</h3>
-            <span class="ds-item__price">50,00&nbsp;€</span>
-            <p class="ds-item__desc">5 pz. Sashimi (5), 4 pz. Nigiri (20), 2 pz. Nigiri (21), 8 pz. Uramaki (26), 24 pz. Special Roll (a scelta dello chef), 8 pz. Hosomaki (19), 4 pz. Starter (46).</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">55 pz.</span></div>
-          </article>
-        </div>
-      </section>
-      <section class="menu-cat" id="primi" aria-labelledby="primi-titolo">
-        <div class="menu-cat__head">
-          <h2 class="display-m" id="primi-titolo">Primi</h2>
-        </div>
-        <div class="dish-list">
-          <article class="ds-item">
-            <span class="ds-item__num">102</span>
-            <h3 class="ds-item__name">Gyoza</h3>
-            <span class="ds-item__price">5,00&nbsp;€</span>
-            <p class="ds-item__desc">Ravioli Giapponesi dal ripieno di carne di Maiale &amp; Verza.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">4 pz.</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">103</span>
-            <h3 class="ds-item__name">Noodles di Verdure</h3>
-            <span class="ds-item__price">10,00&nbsp;€</span>
-            <p class="ds-item__desc">Udon Noodles saltati con Verdure, Tofu &amp; Sriracha.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--spicy">Leggermente piccante</span><span class="ds-badge ds-badge--veg">Vegetariano</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">104</span>
-            <h3 class="ds-item__name">Noodles di Carne</h3>
-            <span class="ds-item__price">10,00&nbsp;€</span>
-            <p class="ds-item__desc">Udon Noodles saltati con Verdure, carne di Maiale &amp; Sriracha.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--spicy">Leggermente piccante</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">105</span>
-            <h3 class="ds-item__name">Noodles di gamberi</h3>
-            <span class="ds-item__price">10,00&nbsp;€</span>
-            <p class="ds-item__desc">Udon Noodles saltati con Verdure &amp; gamberi.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--spicy">Leggermente piccante</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">106</span>
-            <h3 class="ds-item__name">Spaghetti di riso di Verdure</h3>
-            <span class="ds-item__price">10,00&nbsp;€</span>
-            <p class="ds-item__desc">Spaghetti di riso saltati con Verdure, Tofu &amp; Sriracha.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--spicy">Leggermente piccante</span><span class="ds-badge ds-badge--veg">Vegetariano</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">107</span>
-            <h3 class="ds-item__name">Spaghetti di riso di Carne</h3>
-            <span class="ds-item__price">10,00&nbsp;€</span>
-            <p class="ds-item__desc">Spaghetti di riso saltati con Verdure, carne di Maiale &amp; Sriracha.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--spicy">Leggermente piccante</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">108</span>
-            <h3 class="ds-item__name">Spaghetti di riso di gamberi</h3>
-            <span class="ds-item__price">10,00&nbsp;€</span>
-            <p class="ds-item__desc">Spaghetti di riso saltati con Verdure &amp; gamberi.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--spicy">Leggermente piccante</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">109</span>
-            <h3 class="ds-item__name">Ramen</h3>
-            <span class="ds-item__price">10,00&nbsp;€</span>
-            <p class="ds-item__desc">Noodles, brodo di Manzo, Mais, Alga, Cipollotto, pancia di Maiale cbt, Uovo sodo marinato.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--spicy">Leggermente piccante</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num">115</span>
-            <h3 class="ds-item__name">Gyoza Vegetariani</h3>
-            <span class="ds-item__price">5,00&nbsp;€</span>
-            <p class="ds-item__desc">Ravioli Giapponesi dal ripieno di verdure.</p>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--pz">4 pz.</span><span class="ds-badge ds-badge--veg">Vegetariano</span></div>
-          </article>
-        </div>
-      </section>
-      <section class="menu-cat" id="dessert" aria-labelledby="dessert-titolo">
-        <div class="menu-cat__head">
-          <h2 class="display-m" id="dessert-titolo">Dessert</h2>
-        </div>
-        <div class="dish-list">
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Sorbetto al Limone</h3>
-            <span class="ds-item__price">3,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Sorbetto alla Mela Verde</h3>
-            <span class="ds-item__price">3,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Souffle Al Ciocciolato</h3>
-            <span class="ds-item__price">5,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Souffle Al Ciocciolato Bianco</h3>
-            <span class="ds-item__price">5,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Torta ai 3 Cioccolati</h3>
-            <span class="ds-item__price">4,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Torta al Pistacchio</h3>
-            <span class="ds-item__price">4,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Torta Kinder</h3>
-            <span class="ds-item__price">4,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Torta al Mango</h3>
-            <span class="ds-item__price">4,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">CheeseCake ai Frutti di Bosco</h3>
-            <span class="ds-item__price">4,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Tiramisù</h3>
-            <span class="ds-item__price">5,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Tartufo nero</h3>
-            <span class="ds-item__price">4,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Tartufo bianco</h3>
-            <span class="ds-item__price">4,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Bomboniere</h3>
-            <span class="ds-item__price">5,00&nbsp;€</span>
-          </article>
-        </div>
-      </section>
-      <section class="menu-cat" id="beverage" aria-labelledby="beverage-titolo">
-        <div class="menu-cat__head">
-          <h2 class="display-m" id="beverage-titolo">Beverage</h2>
-        </div>
-        <div class="dish-list">
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Acqua Naturale</h3>
-            <span class="ds-item__price">2,50&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Acqua Frizzante</h3>
-            <span class="ds-item__price">2,50&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Acqua Naturale 0.5 L</h3>
-            <span class="ds-item__price">1,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Coca Cola</h3>
-            <span class="ds-item__price">2,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Coca Cola Zero</h3>
-            <span class="ds-item__price">2,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Fanta</h3>
-            <span class="ds-item__price">2,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Thè Pesca</h3>
-            <span class="ds-item__price">2,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Thè Limone</h3>
-            <span class="ds-item__price">2,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Birra Igea (Senza Glutine)</h3>
-            <span class="ds-item__price">4,00&nbsp;€</span>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--info">Senza glutine</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Birra Lemon</h3>
-            <span class="ds-item__price">2,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Birra Zero (Analcolica)</h3>
-            <span class="ds-item__price">3,00&nbsp;€</span>
-            <div class="ds-item__meta"><span class="ds-badge ds-badge--info">Analcolica</span></div>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Birra Corona</h3>
-            <span class="ds-item__price">3,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Birra Ashai</h3>
-            <span class="ds-item__price">3,00&nbsp;€</span>
-          </article>
-          <article class="ds-item">
-            <span class="ds-item__num"></span>
-            <h3 class="ds-item__name">Birra Heineken</h3>
-            <span class="ds-item__price">3,00&nbsp;€</span>
-          </article>
-        </div>
-      </section>
-      <p class="note">Per gli allergeni chiedere l'apposito menù al personale</p>
-      <!-- /genera-menu:sezioni -->
-    </div>
-
-    <div class="ds-arches m-arches--scroll site-divider" aria-hidden="true">
-      <div class="ds-arch ds-arch--ardesia" style="height: 100%"></div>
-      <div class="ds-arch ds-arch--kraft" style="height: 60%"></div>
-      <div class="ds-arch ds-arch--arancio" style="height: 85%"></div>
-      <div class="ds-arch ds-arch--ardesia" style="height: 50%"></div>
-      <div class="ds-arch ds-arch--kraft" style="height: 70%"></div>
-      <div class="ds-arch ds-arch--arancio" style="height: 100%"></div>
-      <div class="ds-arch ds-arch--ardesia" style="height: 75%"></div>
-      <div class="ds-arch ds-arch--kraft" style="height: 45%"></div>
-    </div>
+        <section class="menu-cat" id="box" aria-labelledby="box-titolo">
+          <div class="menu-cat__head">
+            <h2 id="box-titolo">Box</h2>
+            <span class="menu-cat__note">5 voci</span>
+          </div>
+          <div class="dishes">
+            <article class="dish">
+              <span class="dish__num">42</span>
+              <h3 class="dish__name">Crazy sushi</h3>
+              <span class="dish__price">28,00&nbsp;€</span>
+              <p class="dish__desc">4 pz. Nigiri, 4 pz. Sushi Gio, 8 pz. Hosomaki, 8 pz. Special roll</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">43</span>
+              <h3 class="dish__name">Maglielano box</h3>
+              <span class="dish__price">50,00&nbsp;€</span>
+              <p class="dish__desc">8 pz. Nigiri, 8 pz. Sushi Gio, 8 pz. Hosomaki, 24 pz. Special roll</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">49</span>
+              <h3 class="dish__name">Daniel's sushi small box</h3>
+              <span class="dish__price">20,00&nbsp;€</span>
+              <p class="dish__desc">4 pz. Sushi Gio (9), 2 pz. Nigiri (20), 8 pz. Uramaki (26), 8 pz. Uramaki (28), 2 pz. Starter (46) · 24 pz.</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">50</span>
+              <h3 class="dish__name">Daniel's sushi medium box</h3>
+              <span class="dish__price">30,00&nbsp;€</span>
+              <p class="dish__desc">5 pz. Sashimi (5), 2 pz. Sushi Gio (9), 2 pz. Nigiri (20), 8 pz. Uramaki (26), 8 pz. Special roll a scelta dello chef, 8 pz. Hosomaki (19), 2 pz. Starter (46) · 35 pz.</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">51</span>
+              <h3 class="dish__name">Daniel's sushi large box</h3>
+              <span class="dish__price">50,00&nbsp;€</span>
+              <p class="dish__desc">5 pz. Sashimi (5), 4 pz. Nigiri (20), 2 pz. Nigiri (21), 8 pz. Uramaki (26), 24 pz. Special roll a scelta dello chef, 8 pz. Hosomaki (19), 4 pz. Starter (46) · 55 pz.</p>
+            </article>
+          </div>
+        </section>
+        <section class="menu-cat" id="primi" aria-labelledby="primi-titolo">
+          <div class="menu-cat__head">
+            <h2 id="primi-titolo">Primi</h2>
+            <span class="menu-cat__note">9 voci</span>
+          </div>
+          <div class="dishes">
+            <article class="dish">
+              <span class="dish__num">102</span>
+              <h3 class="dish__name">Gyoza</h3>
+              <span class="dish__price">5,00&nbsp;€</span>
+              <p class="dish__desc">Ravioli giapponesi dal ripieno di carne di maiale &amp; verza · 4 pz.</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num">115</span>
+              <h3 class="dish__name">Gyoza Vegetariani</h3>
+              <span class="dish__price">5,00&nbsp;€</span>
+              <p class="dish__desc">Ravioli giapponesi dal ripieno di verdure · 4 pz.</p>
+              <div class="dish__tags"><span class="ds-badge ds-badge--veg">Vegetariano</span></div>
+            </article>
+            <article class="dish">
+              <span class="dish__num">103</span>
+              <h3 class="dish__name">Noodles di Verdure</h3>
+              <span class="dish__price">10,00&nbsp;€</span>
+              <p class="dish__desc">Udon noodles saltati con verdure, tofu &amp; sriracha</p>
+              <div class="dish__tags"><span class="ds-badge ds-badge--spicy">Piccante</span><span class="ds-badge ds-badge--veg">Vegetariano</span></div>
+            </article>
+            <article class="dish">
+              <span class="dish__num">104</span>
+              <h3 class="dish__name">Noodles di Carne</h3>
+              <span class="dish__price">10,00&nbsp;€</span>
+              <p class="dish__desc">Udon noodles saltati con verdure, carne di maiale &amp; sriracha</p>
+              <div class="dish__tags"><span class="ds-badge ds-badge--spicy">Piccante</span></div>
+            </article>
+            <article class="dish">
+              <span class="dish__num">105</span>
+              <h3 class="dish__name">Noodles di gamberi</h3>
+              <span class="dish__price">10,00&nbsp;€</span>
+              <p class="dish__desc">Udon noodles saltati con verdure &amp; gamberi</p>
+              <div class="dish__tags"><span class="ds-badge ds-badge--spicy">Piccante</span></div>
+            </article>
+            <article class="dish">
+              <span class="dish__num">106</span>
+              <h3 class="dish__name">Spaghetti di riso di Verdure</h3>
+              <span class="dish__price">10,00&nbsp;€</span>
+              <p class="dish__desc">Spaghetti di riso saltati con verdure, tofu &amp; sriracha</p>
+              <div class="dish__tags"><span class="ds-badge ds-badge--spicy">Piccante</span><span class="ds-badge ds-badge--veg">Vegetariano</span></div>
+            </article>
+            <article class="dish">
+              <span class="dish__num">107</span>
+              <h3 class="dish__name">Spaghetti di riso di Carne</h3>
+              <span class="dish__price">10,00&nbsp;€</span>
+              <p class="dish__desc">Spaghetti di riso saltati con verdure, carne di maiale &amp; sriracha</p>
+              <div class="dish__tags"><span class="ds-badge ds-badge--spicy">Piccante</span></div>
+            </article>
+            <article class="dish">
+              <span class="dish__num">108</span>
+              <h3 class="dish__name">Spaghetti di riso di gamberi</h3>
+              <span class="dish__price">10,00&nbsp;€</span>
+              <p class="dish__desc">Spaghetti di riso saltati con verdure &amp; gamberi</p>
+              <div class="dish__tags"><span class="ds-badge ds-badge--spicy">Piccante</span></div>
+            </article>
+            <article class="dish">
+              <span class="dish__num">109</span>
+              <h3 class="dish__name">Ramen</h3>
+              <span class="dish__price">10,00&nbsp;€</span>
+              <p class="dish__desc">Noodles, brodo di manzo, mais, alga, cipollotto, pancia di maiale cbt, uovo sodo marinato</p>
+              <div class="dish__tags"><span class="ds-badge ds-badge--spicy">Piccante</span></div>
+            </article>
+          </div>
+        </section>
+        <section class="menu-cat" id="dessert" aria-labelledby="dessert-titolo">
+          <div class="menu-cat__head">
+            <h2 id="dessert-titolo">Dessert</h2>
+            <span class="menu-cat__note">13 voci</span>
+          </div>
+          <div class="dishes">
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Sorbetto al limone</h3>
+              <span class="dish__price">3,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Sorbetto alla mela verde</h3>
+              <span class="dish__price">3,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Soufflé al cioccolato</h3>
+              <span class="dish__price">5,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Soufflé al cioccolato bianco</h3>
+              <span class="dish__price">5,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Torta ai 3 cioccolati</h3>
+              <span class="dish__price">4,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Torta Kinder</h3>
+              <span class="dish__price">4,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Torta al pistacchio</h3>
+              <span class="dish__price">4,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Torta al mango</h3>
+              <span class="dish__price">4,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Cheesecake ai frutti di bosco</h3>
+              <span class="dish__price">4,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Tiramisù</h3>
+              <span class="dish__price">5,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Bomboniere</h3>
+              <span class="dish__price">5,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Tartufo nero</h3>
+              <span class="dish__price">4,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Tartufo bianco</h3>
+              <span class="dish__price">4,00&nbsp;€</span>
+            </article>
+          </div>
+        </section>
+        <section class="menu-cat" id="beverage" aria-labelledby="beverage-titolo">
+          <div class="menu-cat__head">
+            <h2 id="beverage-titolo">Beverage</h2>
+            <span class="menu-cat__note">14 voci</span>
+          </div>
+          <div class="dishes">
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Acqua naturale</h3>
+              <span class="dish__price">2,50&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Acqua frizzante</h3>
+              <span class="dish__price">2,50&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Acqua naturale 0,5 L</h3>
+              <span class="dish__price">1,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Coca Cola</h3>
+              <span class="dish__price">2,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Coca Cola Zero</h3>
+              <span class="dish__price">2,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Fanta</h3>
+              <span class="dish__price">2,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Thè pesca</h3>
+              <span class="dish__price">2,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Thè limone</h3>
+              <span class="dish__price">2,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Birra Lemon</h3>
+              <span class="dish__price">2,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Birra Zero</h3>
+              <span class="dish__price">3,00&nbsp;€</span>
+              <p class="dish__desc">Analcolica</p>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Birra Corona</h3>
+              <span class="dish__price">3,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Birra Asahi</h3>
+              <span class="dish__price">3,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Birra Heineken</h3>
+              <span class="dish__price">3,00&nbsp;€</span>
+            </article>
+            <article class="dish">
+              <span class="dish__num"></span>
+              <h3 class="dish__name">Birra Igea</h3>
+              <span class="dish__price">4,00&nbsp;€</span>
+              <p class="dish__desc">Senza glutine</p>
+            </article>
+          </div>
+        </section>
+        <p class="menu-allergeni">Per gli allergeni chiedere l'apposito menù al personale.</p>
+        <!-- /genera-menu:sezioni -->
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="ds-stack">
-          <h2>Daniel's Sushi</h2>
-          <p class="body-s">#ItalianSushi<br>Via Beato Giacomo, 72 · 70020 Bitetto (BA)</p>
-        </div>
-        <nav aria-labelledby="footer-nav">
-          <h3 class="ds-eyebrow" id="footer-nav">Sito</h3>
-          <ul class="footer-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#box">Box</a></li>
-            <li><a href="index.html#dove">Dove siamo</a></li>
-            <li><a href="menu.pdf">Scarica il menù PDF</a></li>
-          </ul>
-        </nav>
-        <div>
-          <h3 class="ds-eyebrow">Seguici</h3>
-          <ul class="footer-list">
-            <li><a href="https://www.instagram.com/daniel__sushi/" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>Instagram</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-note body-s">
-        <p>Per gli allergeni chiedere l'apposito menù al personale.</p>
-        <p>© 2026 Daniel's Sushi</p>
+  <footer class="site-footer site-footer--compact">
+    <div class="site-footer__inner">
+      <div class="site-footer__line">
+        <span><strong>Daniel's Sushi</strong> · Via Beato Giacomo, 72 · 70020 Bitetto (BA)</span>
+        <span>Daniel's Sushi di Daniele Clavelli · P. IVA 08877600729 · <a href="crediti.html">Crediti foto</a></span>
       </div>
     </div>
   </footer>
