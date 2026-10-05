@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Daniel's Sushi — Home</title>
   <meta name="description" content="Daniel's Sushi, Via Beato Giacomo 72 a Bitetto (BA): sushi al tavolo e da asporto, con stracciatella, pistacchio e mandorla. Sfoglia il menù, scegli la tua box e componi la tua poke.">
-  <meta name="theme-color" content="#E3D1B8">
+  <meta name="theme-color" content="#FBF9F6">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="restaurant">
   <meta property="og:title" content="Daniel's Sushi — #ItalianSushi a Bitetto">
   <meta property="og:description" content="Roll creativi con stracciatella, pistacchio e mandorla: la cucina giapponese con un accento pugliese.">
-  <meta property="og:image" content="design-system/assets/Logos/logo.png">
+  <meta property="og:image" content="assets/img/foto/roll.jpg">
   <meta property="og:locale" content="it_IT">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Oswald:wght@500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Jost:wght@400;500&display=swap">
   <link rel="stylesheet" href="design-system/tokens.css">
   <link rel="stylesheet" href="design-system/components/bundle.css">
   <link rel="stylesheet" href="css/site.css">
@@ -46,279 +46,284 @@
 
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-logo" href="index.html"><img src="design-system/assets/Logos/logo.png" alt="Daniel's Sushi" width="756" height="429"></a>
+      <a class="site-logo" href="index.html"><img src="design-system/assets/Logos/logo-trasparente.png" alt="Daniel's Sushi" width="451" height="339"></a>
       <nav class="site-nav" aria-label="Principale">
         <a href="menu.html">Menù</a>
         <a href="#box">Box</a>
         <a href="#poke">Componi la poke</a>
         <a href="#dove">Dove siamo</a>
       </nav>
-      <a class="btn btn--primary m-press" href="#dove">Ordina ora</a>
+      <a class="ds-btn ds-btn--primary" href="#dove">Ordina ora</a>
     </div>
   </header>
 
   <main id="contenuto">
+    <!-- Hero: titolo a sinistra, foto con i blob a destra. I blob sono l'unico momento d'effetto. -->
     <section class="hero" aria-labelledby="hero-titolo">
       <div class="hero__inner">
         <div class="hero__text">
-          <p class="eyebrow m-enter" style="--i: 0">#ITALIANSUSHI · Bitetto</p>
-          <h1 class="hero__title m-enter" id="hero-titolo" style="--i: 1">Ti aspettiamo <span>questa sera</span></h1>
-          <p class="hero__lead m-enter" style="--i: 2">Roll creativi con stracciatella, pistacchio e mandorla: la cucina giapponese con un accento pugliese.</p>
-          <div class="hero__actions m-enter" style="--i: 3">
-            <a class="btn btn--primary btn--lg m-press" href="#dove">Ordina ora</a>
-            <a class="btn btn--outline btn--lg m-press" href="menu.html">Sfoglia il menù</a>
+          <p class="ds-eyebrow m-enter" style="--i: 0">#ItalianSushi · Bitetto</p>
+          <h1 class="display hero__title m-enter" id="hero-titolo" style="--i: 1">Ti aspettiamo questa sera</h1>
+          <p class="script hero__script m-enter" style="--i: 2">sushi giapponese, cuore pugliese</p>
+          <p class="hero__lead m-enter" style="--i: 3">Roll creativi con stracciatella, pistacchio e mandorla: la cucina giapponese con un accento pugliese.</p>
+          <div class="hero__actions m-enter" style="--i: 4">
+            <a class="ds-btn ds-btn--primary ds-btn--lg" href="#dove">Ordina ora</a>
+            <a class="ds-btn ds-btn--secondary ds-btn--lg" href="menu.html">Sfoglia il menù <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </div>
-        <!-- Gli archi che salgono: l'unico momento d'effetto della pagina. -->
-        <div class="hero__art m-arches">
-          <div style="--i: 0" aria-hidden="true"></div>
-          <div class="photo" style="--i: 1"><img src="assets/img/foto/hero-salmone.jpg" alt="Un sushi chef al banco prepara il pesce crudo" width="900" height="1200" fetchpriority="high"></div>
-          <div style="--i: 2" aria-hidden="true"></div>
+        <div class="hero__art">
+          <svg class="ds-blob ds-blob--miele hero__blob hero__blob--a" viewBox="0 0 600 560" aria-hidden="true"><path class="m-blob" style="--i: 0" d="M462 58c78 52 132 150 118 246-14 98-96 194-198 226-102 34-228 4-300-74C10 378-8 254 34 160 76 64 186 6 290 2c62-2 122 18 172 56z"/></svg>
+          <svg class="ds-blob ds-blob--salvia hero__blob hero__blob--b" viewBox="0 0 520 480" aria-hidden="true"><path class="m-blob" style="--i: 1" d="M418 92c62 70 92 172 52 252-40 82-150 142-252 132C116 466 34 386 12 292-10 198 30 92 112 40 196-12 356 22 418 92z"/></svg>
+          <figure class="hero__photo ds-card">
+            <img src="assets/img/foto/hero-salmone.jpg" alt="Un sushi chef al banco prepara il pesce crudo" width="900" height="1200" fetchpriority="high">
+          </figure>
         </div>
       </div>
     </section>
 
     <section class="section" aria-labelledby="materia-titolo">
-      <div class="wrap stack">
-        <div class="section-head">
-          <p class="eyebrow">La materia prima</p>
-          <h2 class="section-title m-reveal" id="materia-titolo">Quello che mettiamo nei roll</h2>
+      <div class="wrap">
+        <div class="section-head m-reveal">
+          <p class="ds-eyebrow">La materia prima</p>
+          <h2 class="heading-lg section-title" id="materia-titolo">Quello che mettiamo nei roll</h2>
           <p class="section-lead">Il pesce crudo della tradizione giapponese, con un accento pugliese.</p>
         </div>
         <div class="ingredients m-reveal">
-          <article class="ingredient m-lift">
-            <div class="photo photo--arch m-zoom"><img src="assets/img/foto/salmone.jpg" alt="Filetti di salmone crudo su un tagliere con sale grosso" width="600" height="900" loading="lazy"></div>
-            <h3>Salmone</h3>
-            <p>Crudo, scottato o marinato: in tartare, sashimi, nigiri e in quasi tutti gli special roll.</p>
+          <article class="ingredient ds-card m-lift">
+            <div class="ingredient__photo m-zoom"><img src="assets/img/foto/salmone.jpg" alt="Filetti di salmone crudo su un tagliere con sale grosso" width="600" height="900" loading="lazy"></div>
+            <div class="ingredient__body">
+              <h3 class="heading-sm">Salmone</h3>
+              <p>Crudo, scottato o marinato: in tartare, sashimi, nigiri e in quasi tutti gli special roll.</p>
+            </div>
           </article>
-          <article class="ingredient m-lift">
-            <div class="photo photo--arch m-zoom"><img src="assets/img/foto/tonno.jpg" alt="Sashimi di tonno a fette" width="1024" height="683" loading="lazy"></div>
-            <h3>Tonno</h3>
-            <p>In tartare e sashimi, nei Gio Maguro e nei Maguro roll, crudo o scottato.</p>
+          <article class="ingredient ds-card m-lift">
+            <div class="ingredient__photo m-zoom"><img src="assets/img/foto/tonno.jpg" alt="Sashimi di tonno a fette" width="1024" height="683" loading="lazy"></div>
+            <div class="ingredient__body">
+              <h3 class="heading-sm">Tonno</h3>
+              <p>In tartare e sashimi, nei Gio Maguro e nei Maguro roll, crudo o scottato.</p>
+            </div>
           </article>
-          <article class="ingredient m-lift">
-            <div class="photo photo--arch m-zoom"><img src="assets/img/foto/gambero-rosso.jpg" alt="Gamberi rossi crudi" width="750" height="1000" loading="lazy"></div>
-            <h3>Gambero rosso e scampo</h3>
-            <p>In tartare sopra i Gio, i nigiri e il Daniel's roll.</p>
+          <article class="ingredient ds-card m-lift">
+            <div class="ingredient__photo m-zoom"><img src="assets/img/foto/gambero-rosso.jpg" alt="Gamberi rossi crudi" width="750" height="1000" loading="lazy"></div>
+            <div class="ingredient__body">
+              <h3 class="heading-sm">Gambero rosso e scampo</h3>
+              <p>In tartare sopra i Gio, i nigiri e il Daniel's roll.</p>
+            </div>
           </article>
-          <article class="ingredient m-lift">
-            <div class="photo photo--arch m-zoom"><img src="assets/img/foto/pistacchio.jpg" alt="Una ciotola di pistacchi" width="1024" height="683" loading="lazy"></div>
-            <h3>Pistacchio e stracciatella</h3>
-            <p>Vellutata, granella, crosta; e la stracciatella sull'Apulia roll.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <div class="arch-band m-arches--scroll" aria-hidden="true">
-      <div class="ds-arch ds-arch--ardesia" style="height: 100%"></div>
-      <div class="ds-arch ds-arch--kraft" style="height: 55%"></div>
-      <div class="ds-arch ds-arch--arancio" style="height: 85%"></div>
-      <div class="ds-arch ds-arch--ardesia" style="height: 45%"></div>
-      <div class="ds-arch ds-arch--kraft" style="height: 70%"></div>
-      <div class="ds-arch ds-arch--arancio" style="height: 100%"></div>
-      <div class="ds-arch ds-arch--ardesia" style="height: 60%"></div>
-      <div class="ds-arch ds-arch--cobalto" style="height: 90%"></div>
-      <div class="ds-arch ds-arch--kraft" style="height: 50%"></div>
-      <div class="ds-arch ds-arch--arancio" style="height: 75%"></div>
-    </div>
-
-    <section class="section section--ardesia" aria-labelledby="casa-titolo">
-      <div class="wrap stack">
-        <div class="head-row">
-          <div class="section-head section-head--wide">
-            <p class="eyebrow">Della casa</p>
-            <h2 class="section-title m-reveal" id="casa-titolo">I roll che ci chiedete di più</h2>
-          </div>
-          <a class="btn btn--on-dark m-press" href="menu.html#special-roll">Tutti gli special roll</a>
-        </div>
-        <div class="photo photo--dark"><img src="assets/img/foto/roll.jpg" alt="Special roll al salmone con salsa teriyaki e wasabi" width="1280" height="1036" loading="lazy"></div>
-        <div class="roll-grid m-reveal">
-          <article class="roll-card m-lift">
-            <span class="roll-card__num">32</span>
-            <h3>Daniel's roll</h3>
-            <p>Interno di salmone e avocado, esterno di tartare di gambero rosso &amp; vellutata di pistacchio.</p>
-            <div class="roll-card__foot"><span class="roll-card__pz">8 PZ.</span><span class="roll-card__price">14,00&nbsp;€</span></div>
-          </article>
-          <article class="roll-card m-lift">
-            <span class="roll-card__num">41</span>
-            <h3>Apulia roll</h3>
-            <p>Interno di salmone e avocado, esterno di stracciatella, gambero rosso &amp; granella di pistacchio.</p>
-            <div class="roll-card__foot"><span class="roll-card__pz">8 PZ.</span><span class="roll-card__price">14,00&nbsp;€</span></div>
-          </article>
-          <article class="roll-card m-lift">
-            <span class="roll-card__num">67</span>
-            <h3>PistacchioLovers roll</h3>
-            <p>Interno di gambero in tempura e avocado, esterno di salmone, vellutata di pistacchio, teriyaki e granella di pistacchio.</p>
-            <div class="roll-card__foot"><span class="roll-card__pz">8 PZ.</span><span class="roll-card__price">12,00&nbsp;€</span></div>
-          </article>
-          <article class="roll-card m-lift">
-            <span class="roll-card__num">40</span>
-            <h3>Mediterraneo roll</h3>
-            <p>Interno di salmone e formaggio francese, esterno di salmone, menta &amp; olio extravergine.</p>
-            <div class="roll-card__foot"><span class="roll-card__pz">8 PZ.</span><span class="roll-card__price">12,00&nbsp;€</span></div>
+          <article class="ingredient ds-card m-lift">
+            <div class="ingredient__photo m-zoom"><img src="assets/img/foto/pistacchio.jpg" alt="Una ciotola di pistacchi" width="1024" height="683" loading="lazy"></div>
+            <div class="ingredient__body">
+              <h3 class="heading-sm">Pistacchio e stracciatella</h3>
+              <p>Vellutata, granella, crosta; e la stracciatella sull'Apulia roll.</p>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section--kraft" id="box" aria-labelledby="box-titolo">
-      <div class="wrap stack">
-        <div class="box-head">
+    <!-- Fascia arancio: si entra e si esce con un'onda, non con una linea dritta. -->
+    <svg class="ds-wave wave wave--su-arancio" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 64C180 18 360 6 560 34s380 70 600 46c120-14 200-40 280-58V100H0z"/></svg>
+    <section class="section section--arancio" aria-labelledby="casa-titolo">
+      <div class="wrap">
+        <div class="head-row m-reveal">
           <div class="section-head">
-            <p class="eyebrow">Da condividere</p>
-            <h2 class="section-title m-reveal" id="box-titolo">Le box di Daniel's</h2>
+            <p class="ds-eyebrow">Della casa</p>
+            <h2 class="heading-lg section-title" id="casa-titolo">I roll che ci chiedete di più</h2>
+          </div>
+          <a class="ds-btn ds-btn--primary" href="menu.html#special-roll">Tutti gli special roll <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <figure class="roll-photo ds-card m-zoom"><img src="assets/img/foto/roll.jpg" alt="Special roll al salmone con salsa teriyaki e wasabi" width="1280" height="1036" loading="lazy"></figure>
+        <div class="roll-grid m-reveal">
+          <article class="roll-card ds-card m-lift">
+            <span class="roll-card__num">32</span>
+            <h3 class="roll-card__name">Daniel's roll</h3>
+            <p>Interno di salmone e avocado, esterno di tartare di gambero rosso &amp; vellutata di pistacchio.</p>
+            <div class="roll-card__foot"><span class="caption">8 pz.</span><span class="price">14,00&nbsp;€</span></div>
+          </article>
+          <article class="roll-card ds-card m-lift">
+            <span class="roll-card__num">41</span>
+            <h3 class="roll-card__name">Apulia roll</h3>
+            <p>Interno di salmone e avocado, esterno di stracciatella, gambero rosso &amp; granella di pistacchio.</p>
+            <div class="roll-card__foot"><span class="caption">8 pz.</span><span class="price">14,00&nbsp;€</span></div>
+          </article>
+          <article class="roll-card ds-card m-lift">
+            <span class="roll-card__num">67</span>
+            <h3 class="roll-card__name">PistacchioLovers roll</h3>
+            <p>Interno di gambero in tempura e avocado, esterno di salmone, vellutata di pistacchio, teriyaki e granella di pistacchio.</p>
+            <div class="roll-card__foot"><span class="caption">8 pz.</span><span class="price">12,00&nbsp;€</span></div>
+          </article>
+          <article class="roll-card ds-card m-lift">
+            <span class="roll-card__num">40</span>
+            <h3 class="roll-card__name">Mediterraneo roll</h3>
+            <p>Interno di salmone e formaggio francese, esterno di salmone, menta &amp; olio extravergine.</p>
+            <div class="roll-card__foot"><span class="caption">8 pz.</span><span class="price">12,00&nbsp;€</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <svg class="ds-wave wave wave--da-arancio" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0h1440v42c-160 34-340 58-560 30S440 10 260 30C150 42 70 60 0 74z"/></svg>
+
+    <section class="section" id="box" aria-labelledby="box-titolo">
+      <div class="wrap">
+        <div class="box-head m-reveal">
+          <div class="section-head">
+            <p class="ds-eyebrow">Da condividere</p>
+            <h2 class="heading-lg section-title" id="box-titolo">Le box di Daniel's</h2>
             <p class="section-lead">Un assaggio di tutto il menù, nella nostra scatola d'asporto.</p>
           </div>
-          <div class="box-photo m-zoom"><img src="design-system/assets/Riferimenti/packaging-sushi.jpg" alt="Le scatole d'asporto di Daniel's Sushi, decorate ad archi" width="1400" height="1050" loading="lazy"></div>
+          <figure class="box-photo ds-card m-zoom"><img src="design-system/assets/Riferimenti/packaging-sushi.jpg" alt="Le scatole d'asporto di Daniel's Sushi, decorate ad archi" width="1400" height="1050" loading="lazy"></figure>
         </div>
         <div class="box-grid m-reveal">
-          <article class="box-card m-lift">
-            <div class="box-card__art" aria-hidden="true">
-              <div class="ds-arch ds-arch--arancio" style="height: 70px"></div>
-              <div class="ds-arch ds-arch--riso" style="height: 100px"></div>
-              <div class="ds-arch ds-arch--kraft" style="height: 56px"></div>
-            </div>
+          <article class="box-card ds-card m-lift">
+            <svg class="box-card__art" viewBox="0 0 360 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <path class="ds-blob--miele" d="M120 18c34 22 46 66 26 100-20 34-72 46-108 30S-12 94 6 58 86-4 120 18z"/>
+              <path class="ds-blob--salvia" d="M262 30c40 18 64 64 44 96s-84 40-118 16-40-74-12-100c22-20 54-24 86-12z"/>
+            </svg>
             <div class="box-card__body">
-              <p class="box-card__eyebrow">49 · 24 PZ.</p>
-              <h3>Small box</h3>
+              <p class="caption box-card__meta">49 · 24 pz.</p>
+              <h3 class="heading-sm">Small box</h3>
               <p class="box-card__desc">4 pz. Sushi Gio, 2 pz. Nigiri, 8 pz. Uramaki salmone, 8 pz. Uramaki gambero in tempura, 2 pz. Starter.</p>
-              <div class="box-card__foot"><span class="box-card__price">20,00&nbsp;€</span><a class="btn btn--primary btn--sm m-press" href="#dove">Ordina</a></div>
+              <div class="box-card__foot"><span class="price price--lg">20,00&nbsp;€</span><a class="ds-btn ds-btn--secondary" href="#dove">Ordina</a></div>
             </div>
           </article>
-          <article class="box-card m-lift">
-            <div class="box-card__art" aria-hidden="true">
-              <div class="ds-arch ds-arch--arancio" style="height: 90px"></div>
-              <div class="ds-arch ds-arch--kraft" style="height: 60px"></div>
-              <div class="ds-arch ds-arch--riso" style="height: 112px"></div>
-              <div class="ds-arch ds-arch--arancio" style="height: 72px"></div>
-            </div>
+          <article class="box-card ds-card m-lift">
+            <svg class="box-card__art" viewBox="0 0 360 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <path class="ds-blob--arancio" d="M96 10c40 10 70 50 60 90s-60 60-100 46S-6 96 6 58 56 0 96 10z"/>
+              <path class="ds-blob--miele" d="M230 22c36 6 66 40 60 76s-50 58-88 48-60-46-50-80 42-50 78-44z"/>
+              <path class="ds-blob--sabbia" d="M330 40c26 10 36 44 22 70s-50 30-70 12-18-56 4-74c14-12 30-14 44-8z"/>
+            </svg>
             <div class="box-card__body">
-              <p class="box-card__eyebrow">50 · 35 PZ.</p>
-              <h3>Medium box</h3>
+              <p class="caption box-card__meta">50 · 35 pz.</p>
+              <h3 class="heading-sm">Medium box</h3>
               <p class="box-card__desc">5 pz. Sashimi, 2 pz. Sushi Gio, 2 pz. Nigiri, 8 pz. Uramaki, 8 pz. Special roll a scelta dello chef, 8 pz. Hosomaki, 2 pz. Starter.</p>
-              <div class="box-card__foot"><span class="box-card__price">30,00&nbsp;€</span><a class="btn btn--primary btn--sm m-press" href="#dove">Ordina</a></div>
+              <div class="box-card__foot"><span class="price price--lg">30,00&nbsp;€</span><a class="ds-btn ds-btn--secondary" href="#dove">Ordina</a></div>
             </div>
           </article>
-          <article class="box-card m-lift">
-            <div class="box-card__art" aria-hidden="true">
-              <div class="ds-arch ds-arch--riso" style="height: 112px"></div>
-              <div class="ds-arch ds-arch--arancio" style="height: 76px"></div>
-              <div class="ds-arch ds-arch--cobalto" style="height: 100px"></div>
-              <div class="ds-arch ds-arch--kraft" style="height: 60px"></div>
-              <div class="ds-arch ds-arch--arancio" style="height: 92px"></div>
-            </div>
+          <article class="box-card ds-card m-lift">
+            <svg class="box-card__art" viewBox="0 0 360 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <path class="ds-blob--salvia" d="M70 14c38 4 64 38 58 76s-48 58-84 48S-8 92 4 56 32 10 70 14z"/>
+              <path class="ds-blob--arancio" d="M190 8c42 8 70 52 56 92s-66 54-104 34-52-62-32-94c16-26 46-38 80-32z"/>
+              <path class="ds-blob--miele" d="M318 30c30 10 46 46 30 76s-58 36-82 14-20-66 8-84c14-8 30-10 44-6z"/>
+            </svg>
             <div class="box-card__body">
-              <p class="box-card__eyebrow">51 · 55 PZ.</p>
-              <h3>Large box</h3>
+              <p class="caption box-card__meta">51 · 55 pz.</p>
+              <h3 class="heading-sm">Large box</h3>
               <p class="box-card__desc">5 pz. Sashimi, 4 pz. Nigiri salmone, 2 pz. Nigiri tonno, 8 pz. Uramaki, 24 pz. Special roll a scelta dello chef, 8 pz. Hosomaki, 4 pz. Starter.</p>
-              <div class="box-card__foot"><span class="box-card__price">50,00&nbsp;€</span><a class="btn btn--primary btn--sm m-press" href="#dove">Ordina</a></div>
+              <div class="box-card__foot"><span class="price price--lg">50,00&nbsp;€</span><a class="ds-btn ds-btn--secondary" href="#dove">Ordina</a></div>
             </div>
           </article>
         </div>
-        <p class="muted-s">Anche Crazy sushi (24 pz., 28,00&nbsp;€) e Maglielano box (48 pz., 50,00&nbsp;€): li trovi nel <a href="menu.html#box">menù completo</a>.</p>
+        <p class="note">Anche Crazy sushi (24 pz., 28,00&nbsp;€) e Maglielano box (48 pz., 50,00&nbsp;€): li trovi nel <a class="ds-link" href="menu.html#box">menù completo</a>.</p>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="menu-titolo">
-      <div class="split">
-        <div class="split__text">
-          <p class="eyebrow">Il menù</p>
-          <h2 class="section-title title-cobalto m-reveal" id="menu-titolo">Dalla tartare al ramen</h2>
-          <p class="teaser-text">Più di cento piatti, ognuno con il suo numero: scegli una categoria e ordina citando il numero.</p>
+    <section class="section section--bianco teaser" aria-labelledby="menu-titolo">
+      <div class="wrap split">
+        <div class="split__text m-reveal">
+          <p class="ds-eyebrow">Il menù</p>
+          <h2 class="heading-lg section-title" id="menu-titolo">Dalla tartare al ramen</h2>
+          <p class="section-text">Più di cento piatti, ognuno con il suo numero: scegli una categoria e ordina citando il numero.</p>
           <nav class="chips" aria-label="Categorie del menù">
-            <a class="ds-chip m-press" href="menu.html#tartare">Tartare</a>
-            <a class="ds-chip m-press" href="menu.html#starter">Starter</a>
-            <a class="ds-chip m-press" href="menu.html#sushi-gio">Sushi Gio</a>
-            <a class="ds-chip m-press" href="menu.html#hosomaki">Hosomaki</a>
-            <a class="ds-chip m-press" href="menu.html#nigiri">Nigiri</a>
-            <a class="ds-chip m-press" href="menu.html#special-roll" aria-current="true">Special roll</a>
-            <a class="ds-chip m-press" href="menu.html#poke-bowl">Poke bowl</a>
-            <a class="ds-chip m-press" href="menu.html#primi">Primi</a>
-            <a class="ds-chip m-press" href="menu.html#dessert">Dessert</a>
+            <a class="ds-chip" href="menu.html#tartare">Tartare</a>
+            <a class="ds-chip" href="menu.html#starter">Starter</a>
+            <a class="ds-chip" href="menu.html#sushi-gio">Sushi Gio</a>
+            <a class="ds-chip" href="menu.html#hosomaki">Hosomaki</a>
+            <a class="ds-chip" href="menu.html#nigiri">Nigiri</a>
+            <a class="ds-chip" href="menu.html#special-roll" aria-current="true">Special roll</a>
+            <a class="ds-chip" href="menu.html#poke-bowl">Poke bowl</a>
+            <a class="ds-chip" href="menu.html#primi">Primi</a>
+            <a class="ds-chip" href="menu.html#dessert">Dessert</a>
           </nav>
         </div>
-        <div class="split__art"><img src="assets/img/ramen.png" alt="Illustrazione di una ciotola di ramen in blu cobalto" width="540" height="355" loading="lazy"></div>
+        <div class="split__art teaser__art">
+          <svg class="ds-blob ds-blob--salvia teaser__blob" viewBox="0 0 400 360" aria-hidden="true"><path d="M330 60c52 50 76 132 44 196-32 66-118 112-198 102C96 348 28 288 10 216-8 144 24 62 88 26c66-38 190-16 242 34z"/></svg>
+          <img class="ds-illustration teaser__ramen" src="assets/img/ramen.png" alt="Illustrazione di una ciotola di ramen in blu cobalto" width="540" height="355" loading="lazy">
+        </div>
       </div>
     </section>
 
-    <section class="section section--carta" id="poke" aria-labelledby="poke-titolo">
-      <div class="wrap stack">
-        <div class="head-row">
+    <section class="section" id="poke" aria-labelledby="poke-titolo">
+      <div class="wrap">
+        <div class="poke-head m-reveal">
           <div class="section-head">
-            <p class="eyebrow">Poke bowl</p>
-            <h2 class="section-title title-shoyu m-reveal" id="poke-titolo">Componi la tua poke</h2>
-            <p class="section-lead">Cinque passaggi, dalla base al topping.</p>
+            <p class="ds-eyebrow">Poke bowl</p>
+            <h2 class="heading-lg section-title" id="poke-titolo">Componi la tua poke</h2>
+            <p class="script poke-script">cinque passaggi, dalla base al topping</p>
+            <a class="ds-btn ds-btn--secondary poke-link" href="menu.html#poke-bowl">Oppure scegli una poke della casa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
-          <div class="poke-aside">
-            <div class="photo photo--arch"><img src="assets/img/foto/poke.jpg" alt="Poke bowl con salmone, tonno, alghe, avocado e carote" width="750" height="1000" loading="lazy"></div>
-            <a class="btn btn--outline m-press" href="menu.html#poke-bowl">Oppure scegli una poke della casa</a>
+          <div class="poke-art">
+            <svg class="ds-blob ds-blob--miele poke-art__blob" viewBox="0 0 520 480" aria-hidden="true"><path d="M418 92c62 70 92 172 52 252-40 82-150 142-252 132C116 466 34 386 12 292-10 198 30 92 112 40 196-12 356 22 418 92z"/></svg>
+            <figure class="poke-art__photo ds-card m-zoom"><img src="assets/img/foto/poke.jpg" alt="Poke bowl con salmone, tonno, alghe, avocado e carote" width="750" height="1000" loading="lazy"></figure>
           </div>
         </div>
-        <div class="poke-steps m-reveal">
-          <div class="poke-step">
+        <ol class="poke-steps m-reveal">
+          <li class="poke-step">
             <span class="poke-step__num">1</span>
-            <h3>Base</h3>
+            <h3 class="label">Base</h3>
             <p>Riso bianco · Riso Venere · Insalata iceberg</p>
-          </div>
-          <div class="poke-step">
+          </li>
+          <li class="poke-step">
             <span class="poke-step__num">2</span>
-            <h3>Proteine</h3>
+            <h3 class="label">Proteine</h3>
             <p>Salmone crudo o scottato · Tonno crudo o scottato · Gamberi al vapore o in tempura · Pollo piastrato o in tempura · Pesce bianco · Tofu · Feta</p>
-          </div>
-          <div class="poke-step">
+          </li>
+          <li class="poke-step">
             <span class="poke-step__num">3</span>
-            <h3>Condimenti</h3>
+            <h3 class="label">Condimenti</h3>
             <p>Alga wakame · Edamame · Cetrioli · Mango · Carote · Zucchine · Mais · Avocado · Pomodorini · Olive denocciolate · Zenzero</p>
-          </div>
-          <div class="poke-step">
+          </li>
+          <li class="poke-step">
             <span class="poke-step__num">4</span>
-            <h3>Salse</h3>
+            <h3 class="label">Salse</h3>
             <p>Teriyaki · Soia · Mayo · Mayo piccante · Vellutata al pistacchio · Chutney al mango · Crema di avocado · Sweet chilli · Mayo al tartufo · Barbabietola · Mayo allo zafferano · Lime</p>
-          </div>
-          <div class="poke-step">
+          </li>
+          <li class="poke-step">
             <span class="poke-step__num">5</span>
-            <h3>Topping</h3>
+            <h3 class="label">Topping</h3>
             <p>Cipolla fritta · Granella di pistacchio · Filangé di mandorla · Kataifi · Anacardi · Sesamo · Philadelphia senza lattosio · Stracciatella · Tempura flakes · Chips di patata dolce</p>
-          </div>
-        </div>
+          </li>
+        </ol>
         <!-- DA COMPLETARE: prezzo della poke composta -->
         <p class="poke-price">Prezzo della poke composta: <strong>[PREZZO]</strong></p>
       </div>
     </section>
 
-    <section class="section" id="dove" aria-labelledby="dove-titolo">
-      <div class="split split--contact">
-        <div class="split__text">
-          <p class="eyebrow">Dove siamo</p>
-          <h2 class="section-title m-reveal" id="dove-titolo">Vieni a trovarci a Bitetto</h2>
-          <div class="info-card">
+    <section class="section section--bianco dove" id="dove" aria-labelledby="dove-titolo">
+      <div class="wrap split">
+        <div class="split__text m-reveal">
+          <p class="ds-eyebrow">Dove siamo</p>
+          <h2 class="heading-lg section-title" id="dove-titolo">Vieni a trovarci a Bitetto</h2>
+          <div class="info-card ds-card">
             <dl>
-              <dt>Indirizzo</dt><dd>Via Beato Giacomo, 72<br>70020 Bitetto (BA)</dd>
-              <dt>Orari</dt><dd>[ORARI DI APERTURA]</dd>
-              <dt>Telefono</dt><dd>[NUMERO DI TELEFONO]</dd>
-              <dt>Instagram</dt><dd><a href="https://www.instagram.com/daniel__sushi/" rel="noopener">@daniel__sushi</a></dd>
+              <dt class="caption">Indirizzo</dt><dd>Via Beato Giacomo, 72<br>70020 Bitetto (BA)</dd>
+              <dt class="caption">Orari</dt><dd>[ORARI DI APERTURA]</dd>
+              <dt class="caption">Telefono</dt><dd>[NUMERO DI TELEFONO]</dd>
+              <dt class="caption">Instagram</dt><dd><a class="ds-link" href="https://www.instagram.com/daniel__sushi/" rel="noopener">@daniel__sushi</a></dd>
             </dl>
             <div class="info-card__actions">
               <!-- DA COMPLETARE: inserire il numero nel link tel: (es. tel:+39080...) -->
-              <a class="btn btn--primary btn--md m-press" href="tel:">Chiama per ordinare</a>
-              <a class="btn btn--outline btn--md m-press" href="https://www.google.com/maps/search/?api=1&amp;query=Via+Beato+Giacomo+72+Bitetto" rel="noopener">Apri in Mappe</a>
+              <a class="ds-btn ds-btn--primary" href="tel:">Chiama per ordinare</a>
+              <a class="ds-btn ds-btn--secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Via+Beato+Giacomo+72+Bitetto" rel="noopener">Apri in Mappe <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             </div>
           </div>
         </div>
-        <div class="split__art"><img src="assets/img/pesce.png" alt="Illustrazione incisa di un pesce in blu cobalto" width="430" height="273" loading="lazy"></div>
+        <div class="split__art dove__art">
+          <svg class="ds-blob ds-blob--sabbia dove__blob" viewBox="0 0 600 560" aria-hidden="true"><path d="M462 58c78 52 132 150 118 246-14 98-96 194-198 226-102 34-228 4-300-74C10 378-8 254 34 160 76 64 186 6 290 2c62-2 122 18 172 56z"/></svg>
+          <img class="ds-illustration dove__fish" src="assets/img/pesce.png" alt="Illustrazione incisa di un pesce in blu cobalto" width="430" height="273" loading="lazy">
+        </div>
       </div>
     </section>
   </main>
 
+  <svg class="ds-wave wave wave--footer" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70c200-40 420-62 680-36s500 40 760 0V100H0z"/></svg>
   <footer class="site-footer">
-    <div class="site-footer__inner">
+    <div class="wrap">
       <div class="site-footer__top">
         <div class="site-footer__brand">
-          <p class="site-footer__name">Daniel's Sushi</p>
+          <p class="heading site-footer__name">Daniel's Sushi</p>
           <p class="site-footer__address">Via Beato Giacomo, 72 · 70020 Bitetto (BA)</p>
         </div>
-        <nav aria-label="Piè di pagina">
+        <nav class="site-footer__nav" aria-label="Piè di pagina">
           <a href="menu.html">Menù</a>
           <a href="#box">Box</a>
           <a href="#dove">Dove siamo</a>

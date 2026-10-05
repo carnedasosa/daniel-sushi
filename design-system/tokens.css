@@ -1,115 +1,86 @@
-/* Generato da tokens.json (design system Daniel's Sushi). Non modificare a mano: aggiorna tokens.json. */
-
-:root, [data-theme="light"] {
-  --riso: #FCF0DA;
-  --carta: #FFF9EE;
-  --kraft: #E3D1B8;
-  --linea: #D3BE9E;
-  --linea-forte: #5E554A;
-  --sumi: #1F1D1A;
-  --sumi-muted: #5E554A;
-  --arancio: #E06A29;
-  --on-arancio: #1F1D1A;
-  --arancio-ink: #9A3F0C;
-  --arancio-soft: #F8DCC6;
-  --cobalto: #17318F;
-  --on-cobalto: #FCF0DA;
-  --cobalto-soft: #DDE2F2;
-  --shoyu: #80190A;
-  --wasabi: #55611A;
-  --ardesia: #33363A;
-  --on-ardesia: #FCF0DA;
-  --focus: var(--cobalto);
-  --brand-kraft: #E3D1B8;
-  --brand-arancio: #D9692C;
-  --brand-ardesia: #33363A;
-  --brand-riso: #FCF0DA;
-  --brand-cobalto: #17318F;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --riso: #1A1917;
-    --carta: #24211E;
-    --kraft: #2A2622;
-    --linea: #3D372F;
-    --linea-forte: #BDAE98;
-    --sumi: #F5EAD6;
-    --sumi-muted: #BDAE98;
-    --arancio: #EE7A38;
-    --on-arancio: #1A1917;
-    --arancio-ink: #F29A62;
-    --arancio-soft: #3B2216;
-    --cobalto: #9DB0F0;
-    --on-cobalto: #1A1917;
-    --cobalto-soft: #1E2650;
-    --shoyu: #F08B72;
-    --wasabi: #B5C46A;
-    --ardesia: #26292D;
-    --on-ardesia: #F5EAD6;
-    color-scheme: dark;
-  }
-}
-
-[data-theme="dark"] {
-  --riso: #1A1917;
-  --carta: #24211E;
-  --kraft: #2A2622;
-  --linea: #3D372F;
-  --linea-forte: #BDAE98;
-  --sumi: #F5EAD6;
-  --sumi-muted: #BDAE98;
-  --arancio: #EE7A38;
-  --on-arancio: #1A1917;
-  --arancio-ink: #F29A62;
-  --arancio-soft: #3B2216;
-  --cobalto: #9DB0F0;
-  --on-cobalto: #1A1917;
-  --cobalto-soft: #1E2650;
-  --shoyu: #F08B72;
-  --wasabi: #B5C46A;
-  --ardesia: #26292D;
-  --on-ardesia: #F5EAD6;
-  color-scheme: dark;
-}
+/* Daniel's Sushi — token del design system «Carta e indaco».
+   Derivato dal riferimento Pa'lais (riferimenti/palais-DESIGN.md), adattato al locale.
+   Sorgente: tokens.json. Tema unico chiaro: la carta crema è parte dell'identità. */
 
 :root {
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-6: 24px;
-  --space-8: 32px;
-  --space-12: 48px;
-  --space-16: 64px;
-  --space-24: 96px;
-  --radius-sm: 4px;
-  --radius-md: 12px;
-  --radius-pill: 999px;
-  --radius-arch-s: 40px;
-  --radius-arch-l: 80px;
+  color-scheme: light;
+
+  /* Superfici */
+  --carta: #FBF9F6;          /* fondo pagina: carta crema */
+  --bianco: #FFFFFF;         /* card e pannelli sopra la carta */
+
+  /* Inchiostri */
+  --indaco: #234386;         /* unico colore freddo: titoli, link, nav, bottone pieno, fasce scure */
+  --on-indaco: #FFFFFF;
+  --indaco-scuro: #1B356B;  /* solo stato hover del bottone pieno */
+  --inchiostro: #000000;     /* testo corrente e filetti netti */
+  --inchiostro-tenue: #5C5A55; /* descrizioni e note — 6.5:1 su carta */
+  --filetto: #E2D9CA;        /* separatori sottili delle liste */
+
+  /* Accenti caldi — solo forme organiche, illustrazioni e bordi */
+  --arancio: #ED7328;        /* blob, bordo del bottone secondario, fascia arancio */
+  --arancio-ink: #BC5110;    /* arancio quando è testo — 4.6:1 su carta */
+  --miele: #FFC400;          /* solo blob */
+  --salvia: #A2D3A6;         /* solo blob */
+  --salvia-ink: #3A6640;     /* testo del badge Vegetariano — 6.3:1 su carta */
+  --sabbia: #D2B68C;         /* dettagli decorativi */
+  --cielo: #6AA8DC;          /* illustrazioni a tratto, mai testo */
+
+  --focus: var(--indaco);
+
+  /* Tipografia (Google Fonts, licenza OFL) */
+  --font-display: "Bebas Neue", "Oswald", "Arial Narrow", sans-serif;   /* titoli maiuscoli condensati */
+  --font-label: "Jost", "Futura", "Century Gothic", sans-serif;          /* etichette e nav, molto spaziate */
+  --font-body: "DM Sans", system-ui, sans-serif;                          /* testo e interfaccia */
+  --font-script: "Caveat", "Segoe Print", cursive;                        /* solo frasi d'emozione */
+
+  /* Spaziatura: unità 4px */
+  --sp-4: 4px;
+  --sp-8: 8px;
+  --sp-12: 12px;
+  --sp-16: 16px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-40: 40px;
+  --sp-48: 48px;
+  --sp-56: 56px;
+  --sp-64: 64px;
+  --sp-80: 80px;
+  --sp-128: 128px;
+
+  /* Forma */
+  --radius-card: 8px;
+  --radius-input: 8px;
+  --radius-tag: 16px;
+  --radius-btn: 32px;
+
+  /* Elevazione: solo le card hanno ombra, morbida e asimmetrica */
+  --ombra-card: rgba(0, 0, 0, 0.16) -14px 10px 49px 0px;
+  --ombra-hover: rgba(0, 0, 0, 0.05) 0px 20px 27px 0px;
+
+  /* Layout */
   --container: 1200px;
-  --measure: 62ch;
+  --measure: 60ch;
   --tap: 44px;
+
+  /* Movimento */
   --dur-fast: 120ms;
   --dur-base: 200ms;
   --dur-slow: 420ms;
-  --dur-arch: 640ms;
+  --dur-blob: 900ms;
   --stagger: 70ms;
   --ease-out: cubic-bezier(.2, .7, .2, 1);
   --ease-in-out: cubic-bezier(.45, 0, .25, 1);
-  --font-display: "Oswald", "Arial Narrow", sans-serif;
-  --font-serif: "Source Serif 4", Georgia, serif;
-  --font-sans: "Archivo", system-ui, sans-serif;
 }
-.display-xl { font-family: var(--font-display); font-size: 88px; line-height: 0.95; font-weight: 700; letter-spacing: -0.01em; text-transform: uppercase; }
-.display-l { font-family: var(--font-display); font-size: 56px; line-height: 1; font-weight: 700; text-transform: uppercase; }
-.display-m { font-family: var(--font-display); font-size: 36px; line-height: 1.05; font-weight: 600; text-transform: uppercase; }
-.eyebrow { font-family: var(--font-display); font-size: 14px; line-height: 18px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; }
-.dish-name { font-family: var(--font-serif); font-size: 22px; line-height: 28px; font-weight: 600; }
-.lead { font-family: var(--font-serif); font-size: 20px; line-height: 30px; font-weight: 400; font-style: italic; }
-.body { font-family: var(--font-sans); font-size: 16px; line-height: 26px; font-weight: 400; }
-.body-s { font-family: var(--font-sans); font-size: 14px; line-height: 22px; font-weight: 400; }
-.label { font-family: var(--font-sans); font-size: 15px; line-height: 20px; font-weight: 600; }
-.price { font-family: var(--font-sans); font-size: 17px; line-height: 22px; font-weight: 700; font-variant-numeric: tabular-nums; }
-.caption { font-family: var(--font-sans); font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; }
+
+/* Scala tipografica */
+.display    { font-family: var(--font-display); font-weight: 400; font-size: 88px; line-height: .86; letter-spacing: .03em; text-transform: uppercase; }
+.heading-lg { font-family: var(--font-display); font-weight: 400; font-size: 56px; line-height: .95; letter-spacing: .031em; text-transform: uppercase; }
+.heading    { font-family: var(--font-display); font-weight: 400; font-size: 46px; line-height: 1; letter-spacing: .043em; text-transform: uppercase; }
+.heading-sm { font-family: var(--font-display); font-weight: 400; font-size: 32px; line-height: .95; letter-spacing: .043em; text-transform: uppercase; }
+.script     { font-family: var(--font-script); font-weight: 600; font-size: 34px; line-height: 1.15; }
+.eyebrow    { font-family: var(--font-label); font-weight: 500; font-size: 13px; line-height: 1.6; letter-spacing: .2em; text-transform: uppercase; }
+.label      { font-family: var(--font-label); font-weight: 500; font-size: 14px; line-height: 1.4; letter-spacing: .12em; text-transform: uppercase; }
+.body       { font-family: var(--font-body); font-weight: 400; font-size: 16px; line-height: 1.6; }
+.body-sm    { font-family: var(--font-body); font-weight: 400; font-size: 14px; line-height: 1.65; }
+.caption    { font-family: var(--font-label); font-weight: 500; font-size: 12px; line-height: 1.6; letter-spacing: .14em; text-transform: uppercase; }

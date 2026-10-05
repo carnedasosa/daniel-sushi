@@ -67,7 +67,7 @@ const rn = '      ';
 const nav = [
   `${rn}<nav class="ds-cats" aria-label="Categorie del menù">`,
   ...dati.categorie.map((c) =>
-    `${rn}  <a class="ds-chip m-press" href="#${c.id}"${c.id === CATEGORIA_INIZIALE ? ' aria-current="true"' : ''}>${esc(c.nome)}</a>`),
+    `${rn}  <a class="ds-chip" href="#${c.id}"${c.id === CATEGORIA_INIZIALE ? ' aria-current="true"' : ''}>${esc(c.nome)}</a>`),
   `${rn}</nav>`,
 ].join('\n');
 

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Daniel's Sushi — Menù</title>
   <meta name="description" content="Il menù di Daniel's Sushi a Bitetto: tartare, sashimi, sushi gio, nigiri, uramaki, special roll, poke bowl, box, primi, dessert e bevande, con i prezzi.">
-  <meta name="theme-color" content="#E3D1B8">
+  <meta name="theme-color" content="#FBF9F6">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Menù — Daniel's Sushi">
@@ -14,7 +14,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Oswald:wght@500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Jost:wght@400;500&display=swap">
   <link rel="stylesheet" href="design-system/tokens.css">
   <link rel="stylesheet" href="design-system/components/bundle.css">
   <link rel="stylesheet" href="css/site.css">
@@ -27,46 +27,47 @@
 
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-logo" href="index.html"><img src="design-system/assets/Logos/logo.png" alt="Daniel's Sushi" width="756" height="429"></a>
+      <a class="site-logo" href="index.html"><img src="design-system/assets/Logos/logo-trasparente.png" alt="Daniel's Sushi" width="451" height="339"></a>
       <nav class="site-nav" aria-label="Principale">
         <a href="menu.html" aria-current="page">Menù</a>
         <a href="index.html#box">Box</a>
         <a href="index.html#poke">Componi la poke</a>
         <a href="index.html#dove">Dove siamo</a>
       </nav>
-      <a class="btn btn--primary m-press" href="index.html#dove">Ordina ora</a>
+      <a class="ds-btn ds-btn--primary" href="index.html#dove">Ordina ora</a>
     </div>
   </header>
 
   <main id="contenuto">
     <section class="menu-intro" aria-labelledby="menu-titolo">
+      <svg class="ds-blob ds-blob--miele menu-intro__blob" viewBox="0 0 520 480" aria-hidden="true"><path d="M418 92c62 70 92 172 52 252-40 82-150 142-252 132C116 466 34 386 12 292-10 198 30 92 112 40 196-12 356 22 418 92z"/></svg>
       <div class="menu-intro__inner">
         <div class="menu-intro__text">
-          <p class="eyebrow">#ITALIANSUSHI · Bitetto</p>
-          <h1 class="m-enter" id="menu-titolo">Il menù</h1>
-          <p class="menu-intro__lead">Ogni piatto ha il suo numero: quando ordini, citalo.</p>
+          <p class="ds-eyebrow">#ItalianSushi · Bitetto</p>
+          <h1 class="display m-enter" id="menu-titolo">Il menù</h1>
+          <p class="script menu-intro__script">ogni piatto ha il suo numero: quando ordini, citalo</p>
         </div>
-        <a class="btn btn--outline btn--md m-press" href="menu.pdf" download>Scarica il menù PDF</a>
+        <a class="ds-btn ds-btn--secondary" href="menu.pdf" download>Scarica il menù PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M5 20h14"/></svg></a>
       </div>
     </section>
 
     <div class="menu-bar">
       <!-- genera-menu:nav -->
       <nav class="ds-cats" aria-label="Categorie del menù">
-        <a class="ds-chip m-press" href="#tartare">Tartare</a>
-        <a class="ds-chip m-press" href="#sashimi">Sashimi</a>
-        <a class="ds-chip m-press" href="#starter">Starter</a>
-        <a class="ds-chip m-press" href="#sushi-gio">Sushi Gio</a>
-        <a class="ds-chip m-press" href="#hosomaki">Hosomaki</a>
-        <a class="ds-chip m-press" href="#nigiri">Nigiri</a>
-        <a class="ds-chip m-press" href="#triangolini">Triangolini</a>
-        <a class="ds-chip m-press" href="#uramaki">Uramaki</a>
-        <a class="ds-chip m-press" href="#special-roll" aria-current="true">Special roll</a>
-        <a class="ds-chip m-press" href="#poke-bowl">Poke bowl</a>
-        <a class="ds-chip m-press" href="#box">Box</a>
-        <a class="ds-chip m-press" href="#primi">Primi</a>
-        <a class="ds-chip m-press" href="#dessert">Dessert</a>
-        <a class="ds-chip m-press" href="#beverage">Beverage</a>
+        <a class="ds-chip" href="#tartare">Tartare</a>
+        <a class="ds-chip" href="#sashimi">Sashimi</a>
+        <a class="ds-chip" href="#starter">Starter</a>
+        <a class="ds-chip" href="#sushi-gio">Sushi Gio</a>
+        <a class="ds-chip" href="#hosomaki">Hosomaki</a>
+        <a class="ds-chip" href="#nigiri">Nigiri</a>
+        <a class="ds-chip" href="#triangolini">Triangolini</a>
+        <a class="ds-chip" href="#uramaki">Uramaki</a>
+        <a class="ds-chip" href="#special-roll" aria-current="true">Special roll</a>
+        <a class="ds-chip" href="#poke-bowl">Poke bowl</a>
+        <a class="ds-chip" href="#box">Box</a>
+        <a class="ds-chip" href="#primi">Primi</a>
+        <a class="ds-chip" href="#dessert">Dessert</a>
+        <a class="ds-chip" href="#beverage">Beverage</a>
       </nav>
       <!-- /genera-menu:nav -->
     </div>
@@ -1028,10 +1029,10 @@
       </div>
     </section>
   </main>
-
+  <svg class="ds-wave wave wave--footer-carta" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70c200-40 420-62 680-36s500 40 760 0V100H0z"/></svg>
   <footer class="site-footer site-footer--compact">
-    <div class="site-footer__inner">
-      <div class="site-footer__line">
+    <div class="wrap">
+      <div class="site-footer__bottom">
         <span><strong>Daniel's Sushi</strong> · Via Beato Giacomo, 72 · 70020 Bitetto (BA)</span>
         <span>Daniel's Sushi di Daniele Clavelli · P. IVA 08877600729 · <a href="crediti.html">Crediti foto</a></span>
       </div>

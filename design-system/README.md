@@ -1,88 +1,84 @@
-# Daniel's Sushi — design system
+# Daniel's Sushi — design system «Carta e indaco»
 
-Esportato da Claude Design (sistema «Daniel's Sushi», versione 1791224086-db49, 5 ottobre 2026). La fonte di verità per colori, tipografia e componenti è questa cartella; se il design system cambia in Claude Design, riesporta e sostituisci la cartella.
+Seconda versione del design system (ottobre 2026). Sostituisce la prima, esportata da Claude Design (archi e kraft), che resta nella cronologia di git e in `daniel-sushi-design-system.zip`.
+
+Il riferimento è lo stile **Pa'lais** da Refero Styles, salvato in `riferimenti/palais-DESIGN.md`: un ricettario illustrato a mano su carta crema, con un solo inchiostro indaco e accenti caldi in forme organiche. Da Pa'lais prendiamo **struttura, palette e regole**; da Daniel's Sushi restano **logo, illustrazioni dei post, foto e tono di voce**. Non è una copia del marchio Pa'lais: niente nomi, prodotti o illustrazioni loro.
+
+## Perché questo stile
+
+- L'**indaco** di Pa'lais è quasi il blu cobalto dei post Instagram del locale (pesce inciso, ramen): le nostre illustrazioni ci stanno dentro senza ritocchi.
+- L'**arancio bruciato** è quello del packaging d'asporto.
+- I **titoli condensati maiuscoli** erano già la voce dei post.
+- La **carta crema** con card bianche fa pensare a un menù stampato, non a un'app.
 
 ## Come usarlo nel codice
 
-- Carica i font Google: `https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Oswald:wght@500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap`.
-- Importa `tokens.css` (variabili CSS `--riso`, `--arancio`, `--space-4`, `--font-display`… e le classi tipografiche `.display-xl`, `.dish-name`, `.price`…). Il tema scuro «Sera» si attiva con `prefers-color-scheme: dark` o `data-theme="dark"` su `<html>`.
-- Importa `components/bundle.css` per le classi dei componenti (`ds-btn`, `ds-item`, `ds-chip`, `ds-badge`, `ds-announce`, `ds-info`, `ds-header`, `ds-arch`, `ds-box`).
-- Ogni componente ha `components/<Nome>/README.md` (quando usarlo, cosa fornire) e `preview.html` (markup di riferimento, apribile nel browser).
-- `tokens.json` è la sorgente dei token, con una nota d'uso per ognuno; `tokens.css` è generato da lì.
-- Per il movimento leggi `motion.md` e usa le classi `m-*` (in `components/bundle.css`, o da sole in `motion.css` se non usi il bundle). Durate e curve sono variabili in `tokens.css` (`--dur-fast`, `--ease-out`…).
-- Logo e materiali di riferimento sono in `assets/`. Il logo va usato così com'è.
-
-| Percorso | Contenuto |
-|---|---|
-| `tokens.json` | Token: colori (temi Giorno/Sera), tipografia, spaziature, raggi, layout |
-| `tokens.css` | Gli stessi token come variabili CSS e classi tipografiche |
-| `components/bundle.css` | Stili condivisi dei componenti, movimento compreso |
-| `motion.md` | Regole del movimento: durate, curve, cosa si anima e cosa no |
-| `motion.css` | Solo le classi di movimento `m-*`, con le loro variabili |
-| `components/*/` | Linee guida e anteprima di ogni componente |
-| `assets/` | Logo e riferimenti visivi (packaging, post Instagram) |
-| `design-system.json` | Indice originale di Claude Design |
-
-## Brand book
-
-Daniel's Sushi è un ristorante di sushi in Via Beato Giacomo 72 a Bitetto (BA). Si presenta come «#ITALIANSUSHI»: cucina giapponese con ingredienti e gusti pugliesi (stracciatella, pistacchio, mandorla, olio extravergine). Il sito deve far venire voglia di ordinare e far trovare il menù in due tocchi, soprattutto da telefono.
-
-## Da dove viene lo stile
-
-Tre fonti reali, tutte negli asset:
-
-- **Logo** (`assets/Logos/logo.png`): serif nero su kraft, con le bacchette che formano la «h» di Sushi e un maki come puntino.
-- **Packaging** (`assets/Riferimenti/packaging-sushi.jpg`): archi e semicerchi sovrapposti in ardesia, arancio bruciato, crema e kraft.
-- **Post Instagram** (`assets/Riferimenti/grafica-*.png`): fondo crema, titoli condensati maiuscoli, illustrazioni a una o due tinte in cobalto, arancio e bordeaux.
-
-Il sito unisce le tre cose: fondi carta (riso, kraft), tipografia da manifesto per i titoli, serif del logo per i piatti, archi del packaging come unico motivo grafico.
-
-## Tono di voce
-
-- Si scrive in italiano, dando del **tu** al cliente: «Effettua il tuo ordine!», «Ti aspettiamo questa sera».
-- Frasi brevi, calde, da locale di paese. Gli avvisi sono diretti e concreti, come nei post: «Domani siamo regolarmente aperti», «Martedì aperto, mercoledì chiuso».
-- I nomi dei piatti restano esattamente come nel menù, con il loro numero: «32. Daniel's roll», «GamberOne», «Philadelphia's poke». Non tradurli e non cambiarne le maiuscole.
-- Prezzi in formato italiano: `14,00 €` (virgola, euro dopo, spazio). Pezzi come `8 pz.`.
-- Niente emoji nel sito. Il punto esclamativo è ammesso solo nelle call to action.
-- La nota sugli allergeni è sempre presente nel menù: «Per gli allergeni chiedere l'apposito menù al personale».
+- Font Google: `https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Jost:wght@400;500&display=swap` (tutti con licenza OFL).
+- Importa `tokens.css` (variabili `--indaco`, `--carta`, `--sp-16`, `--radius-card`… e classi tipografiche `.display`, `.heading`, `.eyebrow`, `.script`…).
+- Importa `components/bundle.css` per i componenti (`ds-btn`, `ds-chip`, `ds-badge`, `ds-card`, `ds-blob`, `ds-wave`, `ds-illustration`) e il movimento `m-*`. `motion.css` contiene solo il movimento.
+- `tokens.json` è l'elenco dei token con il ruolo di ognuno.
+- Logo: `assets/Logos/logo-trasparente.png` (fondo trasparente, ricavato dall'originale senza ricolorarlo). L'originale su kraft resta in `assets/Logos/logo.png`.
 
 ## Colore
 
-- Pagina su `riso`, card su `carta`, sezioni alternate su `kraft`, footer su `ardesia` con testo `on-ardesia`.
-- Testo in `sumi`; descrizioni e note in `sumi-muted`.
-- Un solo colore d'azione: `arancio`. Il bottone primario è arancio con testo `on-arancio` (scuro), mai bianco. L'arancio come testo è sempre `arancio-ink`.
-- `cobalto` è il colore degli avvisi e dei link; `shoyu` per i titoli promozionali e il badge Piccante; `wasabi` solo per Vegetariano.
-- Al massimo due colori d'accento per schermata (di norma arancio + cobalto). Il resto è carta e inchiostro.
-- I `brand-*` sono fissi in entrambi i temi e servono solo per archi e campiture decorative.
-- Tema **Sera**: stessi ruoli, fondi scuri caldi. Ogni coppia testo/fondo dichiarata nelle note dei token regge 4.5:1 in entrambi i temi.
+| Token | Valore | Ruolo |
+|---|---|---|
+| `--carta` | `#FBF9F6` | Fondo di ogni pagina |
+| `--bianco` | `#FFFFFF` | Card e pannelli sopra la carta |
+| `--indaco` | `#234386` | **Unico colore freddo**: titoli, link, nav, bottone pieno, fasce scure e footer |
+| `--inchiostro` | `#000000` | Testo corrente, filetti netti, bordi dei chip |
+| `--inchiostro-tenue` | `#5C5A55` | Descrizioni dei piatti e note |
+| `--filetto` | `#E2D9CA` | Separatori sottili tra le voci del menù |
+| `--arancio` | `#ED7328` | Blob, bordo del bottone secondario, fascia arancio |
+| `--arancio-ink` | `#BC5110` | L'arancio quando è testo (l'arancio pieno su carta non è leggibile: 2.8:1) |
+| `--miele` | `#FFC400` | Solo blob |
+| `--salvia` | `#A2D3A6` | Solo blob (richiama pistacchio e wasabi) |
+| `--salvia-ink` | `#3A6640` | Testo del badge Vegetariano |
+| `--sabbia` | `#D2B68C` | Dettagli decorativi |
+| `--cielo` | `#6AA8DC` | Illustrazioni a tratto, mai testo |
+
+Regole:
+- **Corsie separate**: l'indaco porta tutta la struttura (tipo, link, azioni); i caldi vivono solo in blob, onde, illustrazioni e bordi. Non mettere caldi nel testo corrente né l'indaco nei blob.
+- **Un solo bottone pieno per schermata** nel contenuto (oltre a «Ordina ora» nell'header), indaco con testo bianco. L'arancio non è mai il fondo di un bottone: le azioni secondarie sono outline arancio con freccia.
+- Superfici: carta → card bianca → fascia arancio → fascia indaco. Niente grigi per separare.
+- Sulla fascia arancio: titoli indaco solo grandi (3.2:1, almeno 32px), testi piccoli in `--inchiostro` (7:1), contenuti dentro card bianche.
+- Tema unico chiaro: la carta crema è l'identità, non c'è un tema scuro.
 
 ## Tipografia
 
-- Titoli in **Oswald** (`display-xl`, `display-l`, `display-m`), sempre MAIUSCOLI, come i post. Un solo `display-xl` per pagina.
-- Nomi dei piatti in **Source Serif 4** (`dish-name`): è il ponte con il serif del logo. `lead` in corsivo per una frase d'apertura per sezione.
-- Tutto il resto in **Archivo**: `body`, `body-s`, `label` per i comandi, `price` con cifre tabellari, `caption` per badge e pezzi.
-- Occhielli (`eyebrow`) maiuscoli e spaziati sopra i titoli: «DANIEL'S SUSHI · BITETTO».
-- Tutti e tre i caratteri sono Google Fonts: `family=Oswald:wght@500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Archivo:wght@400;600;700`.
+| Voce | Font | Uso |
+|---|---|---|
+| Display | **Bebas Neue** (al posto di hwt-artz/Delivery Note di Pa'lais) | Titoli, sempre maiuscoli, indaco, spaziatura .03–.043em. Un solo `.display` per pagina |
+| Etichette | **Jost** (al posto di Avant Garde/Axiforma) | Occhielli, nav, bottoni, chip, badge: maiuscolo e molto spaziato (.12–.2em) |
+| Testo | **DM Sans** | Paragrafi, descrizioni, prezzi, nomi dei piatti |
+| Script | **Caveat** 600 | Una frase d'emozione sotto il titolo principale, in indaco. Mai in bottoni, etichette o menù |
 
-## Forma e spazio
+- Nomi dei piatti in DM Sans 700, esattamente come nel menù (niente maiuscolo forzato): «32. Daniel's roll», «GamberOne».
+- Prezzi `14,00 €` in DM Sans 700 con cifre tabellari.
 
-- Il motivo grafico è l'**arco**: pannelli con la testa a semicerchio (`radius-arch-s`, `radius-arch-l`, o `border-radius: 999px 999px 0 0` in CSS) e semicerchi sovrapposti, come sul packaging. Usalo per incorniciare le foto dei piatti e per una fascia divisoria per pagina, non come sfondo ovunque.
-- Bottoni e chip a pillola (`radius-pill`), card a `radius-md`, input e badge a `radius-sm`.
-- Bordi e filetti, non ombre: separa le voci del menù con `linea`; i controlli hanno bordo `linea-forte`.
-- Contenitore massimo `container`, testo al massimo `measure`. Margine laterale `space-4` su mobile, `space-12` da tablet. Sezioni distanziate di `space-16` (mobile) e `space-24` (desktop).
-- Il movimento ha regole sue, nella sezione **Movimento** (`motion.md`): breve, morbido, un solo momento d'effetto per pagina (gli archi che salgono).
-- Tutto ciò che si tocca è alto almeno `tap` (44px). Il focus da tastiera è un anello pieno di 2px in `focus` con 2px di distacco.
+## Forma, spazio, elevazione
+
+- Bottoni a pillola `--radius-btn` (32px), card `--radius-card` (8px), chip e badge `--radius-tag` (16px). Il contrasto pillola/card squadrata è voluto.
+- Unità di spazio 4px (`--sp-4` … `--sp-128`); sezioni distanziate di 64–128px; contenitore 1200px.
+- **Ombra solo sulle card**: `--ombra-card`, morbida e spostata in basso a sinistra. Bottoni e nav senza ombre.
+- Ogni elemento toccabile è alto almeno `--tap` (44px); focus = anello indaco 2px con 3px di distacco.
+
+## Forme organiche e illustrazioni
+
+- **Blob**: SVG pieni in un solo colore caldo (`ds-blob--miele`, `--salvia`, `--arancio`, `--sabbia`), dietro foto e illustrazioni o ai bordi delle sezioni. Mai sfumature, mai più colori in un blob.
+- **Onde** (`ds-wave`): separano le fasce di colore al posto delle linee dritte; prendono il colore della sezione sotto.
+- **Illustrazioni a tratto** (pesce inciso, ramen dei post): mai chiuse in un riquadro; ruotate di ±5–10°, possono sovrapporsi ai bordi e uscire dalla pagina. Si usano così come sono, non si ridisegnano.
 
 ## Immagini
 
-- Le foto dei piatti stanno dentro un arco o in un rettangolo `radius-sm`, su fondo `kraft`.
-- Le illustrazioni dei post (pesce inciso, ramen, sushi isometrico) possono entrare nel sito come immagini a una tinta; non ridisegnarle.
-- Il logo si usa così com'è, su `kraft` o `riso`. Non ricolorarlo e non ricostruirlo in testo.
+Foto di cibo con luce naturale, inquadrature ravvicinate o dall'alto, dentro card bianche (8px) con l'ombra del sistema. Nessun filtro o duotono. Le foto attuali sono d'archivio con licenza libera (crediti in `crediti.html`): vanno sostituite con foto del locale appena possibile.
 
-## Iconografia
+## Tono di voce (invariato)
 
-Il sistema non ha un set di icone proprio. Usa icone lineari a tratto 1.75px, angoli arrotondati, nel colore del testo (`currentColor`), sempre accompagnate da una parola per orari, indirizzo, telefono e Instagram. Niente emoji.
+- Italiano, si dà del **tu**: «Effettua il tuo ordine!», «Ti aspettiamo questa sera».
+- Frasi brevi, calde. Avvisi diretti. Niente emoji; punto esclamativo solo nelle call to action.
+- Nomi dei piatti esattamente come nel menù. Nota allergeni sempre presente: «Per gli allergeni chiedere l'apposito menù al personale».
 
-## Contenuti del menù
+## Movimento
 
-Il menù reale è organizzato in: Tartare, Sashimi, Starter, Sushi Gio, Hosomaki, Nigiri, Triangolini, Uramaki, Special roll, Poke bowl (anche «Componi la tua Poke»), Box, Primi, Dessert, Beverage. Usa questi nomi per la navigazione per categorie (`CategoryNav`) e le voci come in `MenuItem`.
+Vedi `motion.md`: breve e morbido; un solo momento d'effetto per pagina (i blob dell'hero che si allargano).

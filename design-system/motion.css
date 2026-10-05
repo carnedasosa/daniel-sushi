@@ -1,48 +1,33 @@
-/* Daniel's Sushi — movimento.
-   Regole: movimenti brevi e morbidi, solo transform e opacità, niente rimbalzi.
-   Un solo momento d'effetto per pagina: gli archi che salgono.
-   Ogni elemento parte già visibile; con prefers-reduced-motion tutto resta fermo. */
+/* Daniel's Sushi — solo le classi di movimento m-*, per chi non usa components/bundle.css.
+   Durate e curve sono token in tokens.css. Regole in motion.md. */
 
-:root {
-  --dur-fast: 120ms;   /* hover e pressione di bottoni e chip */
-  --dur-base: 200ms;   /* cambio di stato: categoria del menù, filtri */
-  --dur-slow: 420ms;   /* ingresso di titoli e sezioni */
-  --dur-arch: 640ms;   /* salita degli archi */
-  --ease-out: cubic-bezier(.2, .7, .2, 1);      /* curva standard: parte decisa, si posa piano */
-  --ease-in-out: cubic-bezier(.45, 0, .25, 1);  /* solo per elementi che escono */
-  --stagger: 70ms;     /* ritardo tra elementi in sequenza, moltiplicato per --i */
-}
+.m-press { transition: transform var(--dur-fast) var(--ease-out); }
+.m-press:hover { transform: translateY(-1px); }
+.m-press:active { transform: translateY(1px); transition-duration: 60ms; }
 
-/* Bottoni e chip: si sollevano di 1px, alla pressione scendono. */
-.m-press { transition: transform var(--dur-fast) var(--ease-out), filter var(--dur-fast) var(--ease-out); }
-.m-press:hover { transform: translateY(-1px); filter: brightness(.95); }
-.m-press:active { transform: translateY(1px); filter: brightness(.9); transition-duration: 60ms; }
-.m-press:focus-visible { outline: 2px solid var(--focus, #17318F); outline-offset: 2px; }
-
-/* Card: si alzano di 4px al passaggio del mouse. Niente ombre: il brand usa bordi. */
-.m-lift { transition: transform var(--dur-base) var(--ease-out); }
+/* Card: si alzano e l'ombra si allarga appena. */
+.m-lift { transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
 .m-lift:hover { transform: translateY(-4px); }
 
-/* Foto dentro un arco o una card: leggero zoom, il contenitore taglia. */
+/* Foto in una card: leggero zoom, il contenitore taglia. */
 .m-zoom { overflow: hidden; }
 .m-zoom > img { transition: transform var(--dur-slow) var(--ease-out); }
 .m-zoom:hover > img { transform: scale(1.04); }
 
-/* Archi che salgono dal bordo inferiore, uno dopo l'altro (style="--i: 0", "--i: 1"…). */
-@keyframes m-arch-rise { from { transform: translateY(45%); } to { transform: none; } }
-.m-arches > * { animation: m-arch-rise var(--dur-arch) var(--ease-out) both; animation-delay: calc(var(--i, 0) * var(--stagger)); }
+/* Il momento d'effetto: i blob dell'hero si allargano dal centro, uno dopo l'altro (style="--i: n"). */
+@keyframes m-blob-in { from { transform: scale(.82) rotate(-6deg); opacity: .4; } to { transform: none; opacity: 1; } }
+.m-blob { transform-box: fill-box; transform-origin: center; animation: m-blob-in var(--dur-blob) var(--ease-out) both; animation-delay: calc(var(--i, 0) * var(--stagger) * 2); }
 
-/* Ingresso al caricamento: titolo, frase e bottoni dell'hero (style="--i: n"). */
+/* Ingresso al caricamento: occhiello, titolo, frase e bottoni dell'hero. */
 @keyframes m-enter { from { opacity: .35; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 .m-enter { animation: m-enter var(--dur-slow) var(--ease-out) both; animation-delay: calc(var(--i, 0) * var(--stagger)); }
 
-/* Comparsa allo scroll, solo dove il browser la supporta; altrove la sezione è già lì. */
+/* Comparsa allo scroll dove il browser la supporta; altrove la sezione è già lì. */
 @supports (animation-timeline: view()) {
   .m-reveal { animation: m-enter linear both; animation-timeline: view(); animation-range: entry 0% entry 40%; }
-  .m-arches--scroll > * { animation: m-arch-rise linear both; animation-timeline: view(); animation-range: entry 0% entry 100%; }
 }
 
-/* Cambio di categoria nel menù: alterna m-swap-a / m-swap-b per far ripartire l'animazione. */
+/* Cambio di categoria nel menù: alterna m-swap-a / m-swap-b. */
 @keyframes m-swap-a { from { opacity: .3; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 @keyframes m-swap-b { from { opacity: .3; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 .m-swap-a { animation: m-swap-a var(--dur-base) var(--ease-out); }
@@ -51,5 +36,5 @@
 @media (prefers-reduced-motion: reduce) {
   .m-press, .m-lift, .m-zoom > img { transition: none; }
   .m-press:hover, .m-press:active, .m-lift:hover, .m-zoom:hover > img { transform: none; }
-  .m-arches > *, .m-arches--scroll > *, .m-enter, .m-reveal, .m-swap-a, .m-swap-b { animation: none; }
+  .m-blob, .m-enter, .m-reveal, .m-swap-a, .m-swap-b { animation: none; }
 }
