@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="design-system/tokens.css">
   <link rel="stylesheet" href="design-system/components/bundle.css">
   <link rel="stylesheet" href="css/site.css">
+  <script src="js/ordini.js" defer></script>
 
   <script type="application/ld+json">
   {
@@ -53,7 +54,7 @@
         <a href="#poke">Componi la poke</a>
         <a href="#dove">Dove siamo</a>
       </nav>
-      <a class="ds-btn ds-btn--primary" href="#dove">Ordina ora</a>
+      <a class="ds-btn ds-btn--primary" href="#dove" data-ordina>Ordina ora</a>
     </div>
   </header>
 
@@ -67,7 +68,7 @@
           <p class="script hero__script m-enter" style="--i: 2">sushi giapponese, cuore pugliese</p>
           <p class="hero__lead m-enter" style="--i: 3">Roll creativi con stracciatella, pistacchio e mandorla: la cucina giapponese con un accento pugliese.</p>
           <div class="hero__actions m-enter" style="--i: 4">
-            <a class="ds-btn ds-btn--primary ds-btn--lg" href="#dove">Ordina ora</a>
+            <a class="ds-btn ds-btn--primary ds-btn--lg" href="#dove" data-ordina>Ordina ora</a>
             <a class="ds-btn ds-btn--secondary ds-btn--lg" href="menu.html">Sfoglia il menù <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </div>
@@ -183,7 +184,7 @@
               <p class="caption box-card__meta">49 · 24 pz.</p>
               <h3 class="heading-sm">Small box</h3>
               <p class="box-card__desc">4 pz. Sushi Gio, 2 pz. Nigiri, 8 pz. Uramaki salmone, 8 pz. Uramaki gambero in tempura, 2 pz. Starter.</p>
-              <div class="box-card__foot"><span class="price price--lg">20,00&nbsp;€</span><a class="ds-btn ds-btn--secondary" href="#dove">Ordina</a></div>
+              <div class="box-card__foot"><span class="price price--lg">20,00&nbsp;€</span><a class="ds-btn ds-btn--secondary" href="#dove" data-ordina="box">Ordina</a></div>
             </div>
           </article>
           <article class="box-card ds-card m-lift">
@@ -196,7 +197,7 @@
               <p class="caption box-card__meta">50 · 35 pz.</p>
               <h3 class="heading-sm">Medium box</h3>
               <p class="box-card__desc">5 pz. Sashimi, 2 pz. Sushi Gio, 2 pz. Nigiri, 8 pz. Uramaki, 8 pz. Special roll a scelta dello chef, 8 pz. Hosomaki, 2 pz. Starter.</p>
-              <div class="box-card__foot"><span class="price price--lg">30,00&nbsp;€</span><a class="ds-btn ds-btn--secondary" href="#dove">Ordina</a></div>
+              <div class="box-card__foot"><span class="price price--lg">30,00&nbsp;€</span><a class="ds-btn ds-btn--secondary" href="#dove" data-ordina="box">Ordina</a></div>
             </div>
           </article>
           <article class="box-card ds-card m-lift">
@@ -209,7 +210,7 @@
               <p class="caption box-card__meta">51 · 55 pz.</p>
               <h3 class="heading-sm">Large box</h3>
               <p class="box-card__desc">5 pz. Sashimi, 4 pz. Nigiri salmone, 2 pz. Nigiri tonno, 8 pz. Uramaki, 24 pz. Special roll a scelta dello chef, 8 pz. Hosomaki, 4 pz. Starter.</p>
-              <div class="box-card__foot"><span class="price price--lg">50,00&nbsp;€</span><a class="ds-btn ds-btn--secondary" href="#dove">Ordina</a></div>
+              <div class="box-card__foot"><span class="price price--lg">50,00&nbsp;€</span><a class="ds-btn ds-btn--secondary" href="#dove" data-ordina="box">Ordina</a></div>
             </div>
           </article>
         </div>
