@@ -8,10 +8,16 @@
 }
 
 /* ===== Base ===== */
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: var(--sp-24); }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 body { margin: 0; font: 400 16px/1.6 var(--font-body); color: var(--inchiostro); background: var(--carta); }
 img { display: block; max-width: 100%; height: auto; }
 h1, h2, h3, p, dl, dd, figure, ol { margin: 0; }
+/* Titoli senza parole orfane; nei paragrafi l'ultima riga non resta con una parola sola. */
+h1, h2, h3, .display, .heading-lg, .heading, .heading-sm { text-wrap: balance; }
+p, dd, li { text-wrap: pretty; }
+/* Il bottone «Chiama» resta nascosto finché nel link tel: non c'è il numero. */
+a[href="tel:"] { display: none; }
 a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 .skip-link {
   position: absolute; left: var(--sp-16); top: var(--sp-8); z-index: 100;
@@ -82,7 +88,14 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 }
 
 /* ===== La materia prima ===== */
-.ingredients { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--sp-32) var(--sp-24); }
+/* 1, 2 o 4 colonne: mai una card sola sull'ultima riga. Su quattro colonne le card pari
+   scendono di 48px, come fogli appoggiati sul banco invece di una fila di caselle. */
+.ingredients { display: grid; grid-template-columns: 1fr; gap: var(--sp-32) var(--sp-24); align-items: start; }
+@media (min-width: 560px) { .ingredients { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1080px) {
+  .ingredients { grid-template-columns: repeat(4, 1fr); }
+  .ingredient:nth-child(even) { margin-top: var(--sp-48); }
+}
 .ingredient { display: flex; flex-direction: column; overflow: hidden; }
 .ingredient__photo { aspect-ratio: 4 / 5; }
 .ingredient__photo img { width: 100%; height: 100%; object-fit: cover; }
@@ -99,7 +112,9 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 .section--arancio .ds-eyebrow { color: var(--inchiostro); }
 .roll-photo { overflow: hidden; height: clamp(240px, 32vw, 440px); margin-bottom: var(--sp-32); }
 .roll-photo img { width: 100%; height: 100%; object-fit: cover; }
-.roll-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--sp-24); }
+.roll-grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-24); }
+@media (min-width: 560px) { .roll-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1080px) { .roll-grid { grid-template-columns: repeat(4, 1fr); } }
 .roll-card { display: flex; flex-direction: column; gap: var(--sp-8); padding: var(--sp-32) var(--sp-24) var(--sp-24); }
 .roll-card__num { font: 400 56px/.9 var(--font-display); color: var(--arancio-ink); letter-spacing: .03em; }
 .roll-card__name { font: 700 20px/1.3 var(--font-body); color: var(--indaco); }
@@ -112,9 +127,16 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 .box-head .section-head { flex: 1 1 360px; margin-bottom: 0; }
 .box-photo { flex: 1 1 360px; max-width: 520px; height: 300px; overflow: hidden; transform: rotate(-1.5deg); }
 .box-photo img { width: 100%; height: 100%; object-fit: cover; }
-.box-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--sp-32) var(--sp-24); }
+/* Tre box: una colonna su telefono, righe orizzontali (blob a sinistra) su tablet, tre colonne da 960px. */
+.box-grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-32) var(--sp-24); }
 .box-card { display: flex; flex-direction: column; overflow: hidden; }
 .box-card__art { display: block; width: 100%; height: 120px; background: var(--carta); }
+@media (min-width: 600px) and (max-width: 959px) {
+  .box-grid { gap: var(--sp-24); }
+  .box-card { display: grid; grid-template-columns: 200px minmax(0, 1fr); }
+  .box-card__art { height: 100%; min-height: 160px; }
+}
+@media (min-width: 960px) { .box-grid { grid-template-columns: repeat(3, 1fr); } }
 .box-card__body { display: flex; flex-direction: column; gap: var(--sp-8); padding: var(--sp-24); flex-grow: 1; }
 .box-card__meta { color: var(--arancio-ink); }
 .box-card__desc { flex-grow: 1; font-size: 14px; line-height: 1.65; color: var(--inchiostro-tenue); }
@@ -143,7 +165,16 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 .poke-art__photo { position: relative; width: min(72%, 360px); aspect-ratio: 1; overflow: hidden; transform: rotate(-3deg); }
 .poke-art__photo img { width: 100%; height: 100%; object-fit: cover; }
 @media (min-width: 900px) { .poke-head { grid-template-columns: 1.1fr 1fr; } }
-.poke-steps { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: var(--sp-32) var(--sp-24); border-top: 1px solid var(--inchiostro); padding-top: var(--sp-32); }
+.poke-steps { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr; gap: var(--sp-32) var(--sp-24); border-top: 1px solid var(--inchiostro); padding-top: var(--sp-32); }
+/* Cinque passaggi: su due colonne il quinto occupa tutta la riga; da 1080px stanno in fila. */
+@media (min-width: 560px) {
+  .poke-steps { grid-template-columns: repeat(2, 1fr); }
+  .poke-step:last-child { grid-column: 1 / -1; }
+}
+@media (min-width: 1080px) {
+  .poke-steps { grid-template-columns: repeat(5, 1fr); }
+  .poke-step:last-child { grid-column: auto; }
+}
 .poke-step { display: flex; flex-direction: column; gap: var(--sp-8); }
 .poke-step__num { font: 400 48px/.9 var(--font-display); color: var(--arancio-ink); }
 .poke-step .label { color: var(--indaco); }
@@ -217,6 +248,12 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 .poke-builder__title { margin: 0 0 var(--sp-8); font: 500 13px/1.6 var(--font-label); letter-spacing: .2em; text-transform: uppercase; color: var(--indaco); }
 .poke-builder__list { font-size: 14px; line-height: 1.75; color: var(--inchiostro-tenue); }
 .menu-allergeni { margin-top: var(--sp-16); font-size: 14px; color: var(--inchiostro-tenue); }
+
+/* ===== Pagina 404 ===== */
+.notfound { overflow: hidden; }
+.notfound__script { color: var(--indaco); }
+.notfound__blob { position: absolute; width: 76%; left: 10%; top: 8%; }
+.notfound__fish { position: relative; width: min(100%, 480px); transform: rotate(-10deg); }
 
 /* ===== Crediti foto ===== */
 .credits { display: grid; border-top: 1px solid var(--filetto); }
