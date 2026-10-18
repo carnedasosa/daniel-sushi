@@ -133,32 +133,43 @@
           </div>
           <a class="ds-btn ds-btn--primary" href="menu.html#special-roll">Tutti gli special roll <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-        <figure class="roll-photo ds-card m-zoom"><img src="assets/img/foto/roll.jpg" alt="Special roll al salmone con salsa teriyaki e wasabi" width="1280" height="1036" loading="lazy"></figure>
-        <div class="roll-grid m-reveal">
-          <article class="roll-card ds-card m-lift">
-            <span class="roll-card__num">32</span>
-            <h3 class="roll-card__name">Daniel's roll</h3>
-            <p>Interno di salmone e avocado, esterno di tartare di gambero rosso &amp; vellutata di pistacchio.</p>
-            <div class="roll-card__foot"><span class="caption">8 pz.</span><span class="price">14,00&nbsp;€</span></div>
-          </article>
-          <article class="roll-card ds-card m-lift">
-            <span class="roll-card__num">41</span>
-            <h3 class="roll-card__name">Apulia roll</h3>
-            <p>Interno di salmone e avocado, esterno di stracciatella, gambero rosso &amp; granella di pistacchio.</p>
-            <div class="roll-card__foot"><span class="caption">8 pz.</span><span class="price">14,00&nbsp;€</span></div>
-          </article>
-          <article class="roll-card ds-card m-lift">
-            <span class="roll-card__num">67</span>
-            <h3 class="roll-card__name">PistacchioLovers roll</h3>
-            <p>Interno di gambero in tempura e avocado, esterno di salmone, vellutata di pistacchio, teriyaki e granella di pistacchio.</p>
-            <div class="roll-card__foot"><span class="caption">8 pz.</span><span class="price">12,00&nbsp;€</span></div>
-          </article>
-          <article class="roll-card ds-card m-lift">
-            <span class="roll-card__num">40</span>
-            <h3 class="roll-card__name">Mediterraneo roll</h3>
-            <p>Interno di salmone e formaggio francese, esterno di salmone, menta &amp; olio extravergine.</p>
-            <div class="roll-card__foot"><span class="caption">8 pz.</span><span class="price">12,00&nbsp;€</span></div>
-          </article>
+        <!-- Una sola card bianca: la foto a sinistra e i roll elencati come nel menù stampato. -->
+        <div class="roll-menu ds-card m-reveal">
+          <figure class="roll-menu__photo m-zoom"><img src="assets/img/foto/roll.jpg" alt="Special roll al salmone con salsa teriyaki e wasabi" width="1280" height="1036" loading="lazy"></figure>
+          <ul class="roll-list">
+            <li class="roll-item">
+              <span class="roll-item__num">32</span>
+              <div class="roll-item__text">
+                <h3 class="roll-item__name">Daniel's roll</h3>
+                <p>Interno di salmone e avocado, esterno di tartare di gambero rosso &amp; vellutata di pistacchio.</p>
+              </div>
+              <div class="roll-item__meta"><span class="price">14,00&nbsp;€</span><span class="caption">8 pz.</span></div>
+            </li>
+            <li class="roll-item">
+              <span class="roll-item__num">41</span>
+              <div class="roll-item__text">
+                <h3 class="roll-item__name">Apulia roll</h3>
+                <p>Interno di salmone e avocado, esterno di stracciatella, gambero rosso &amp; granella di pistacchio.</p>
+              </div>
+              <div class="roll-item__meta"><span class="price">14,00&nbsp;€</span><span class="caption">8 pz.</span></div>
+            </li>
+            <li class="roll-item">
+              <span class="roll-item__num">67</span>
+              <div class="roll-item__text">
+                <h3 class="roll-item__name">PistacchioLovers roll</h3>
+                <p>Interno di gambero in tempura e avocado, esterno di salmone, vellutata di pistacchio, teriyaki e granella di pistacchio.</p>
+              </div>
+              <div class="roll-item__meta"><span class="price">12,00&nbsp;€</span><span class="caption">8 pz.</span></div>
+            </li>
+            <li class="roll-item">
+              <span class="roll-item__num">40</span>
+              <div class="roll-item__text">
+                <h3 class="roll-item__name">Mediterraneo roll</h3>
+                <p>Interno di salmone e formaggio francese, esterno di salmone, menta &amp; olio extravergine.</p>
+              </div>
+              <div class="roll-item__meta"><span class="price">12,00&nbsp;€</span><span class="caption">8 pz.</span></div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -174,42 +185,63 @@
           </div>
           <figure class="box-photo ds-card m-zoom"><img src="design-system/assets/Riferimenti/packaging-sushi.jpg" alt="Le scatole d'asporto di Daniel's Sushi, decorate ad archi" width="1400" height="1050" loading="lazy"></figure>
         </div>
+        <!-- Il numero di pezzi è la prima cosa che si legge; il contenuto è una lista, quantità a sinistra. -->
         <div class="box-grid m-reveal">
           <article class="box-card ds-card m-lift">
-            <svg class="box-card__art" viewBox="0 0 360 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-              <path class="ds-blob--miele" d="M120 18c34 22 46 66 26 100-20 34-72 46-108 30S-12 94 6 58 86-4 120 18z"/>
-              <path class="ds-blob--salvia" d="M262 30c40 18 64 64 44 96s-84 40-118 16-40-74-12-100c22-20 54-24 86-12z"/>
-            </svg>
+            <div class="box-card__top">
+              <svg class="ds-blob ds-blob--miele box-card__blob" viewBox="0 0 520 480" aria-hidden="true"><path d="M418 92c62 70 92 172 52 252-40 82-150 142-252 132C116 466 34 386 12 292-10 198 30 92 112 40 196-12 356 22 418 92z"/></svg>
+              <p class="box-card__pz"><span class="box-card__pz-num">24</span> <span class="caption">pezzi</span></p>
+              <p class="caption box-card__meta">N. 49</p>
+            </div>
             <div class="box-card__body">
-              <p class="caption box-card__meta">49 · 24 pz.</p>
               <h3 class="heading-sm">Small box</h3>
-              <p class="box-card__desc">4 pz. Sushi Gio, 2 pz. Nigiri, 8 pz. Uramaki salmone, 8 pz. Uramaki gambero in tempura, 2 pz. Starter.</p>
+              <ul class="box-card__list">
+                <li><span>4</span> Sushi Gio</li>
+                <li><span>2</span> Nigiri</li>
+                <li><span>8</span> Uramaki salmone</li>
+                <li><span>8</span> Uramaki gambero in tempura</li>
+                <li><span>2</span> Starter</li>
+              </ul>
               <div class="box-card__foot"><span class="price price--lg">20,00&nbsp;€</span><a class="ds-btn ds-btn--secondary" href="#dove" data-ordina="box">Ordina</a></div>
             </div>
           </article>
           <article class="box-card ds-card m-lift">
-            <svg class="box-card__art" viewBox="0 0 360 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-              <path class="ds-blob--arancio" d="M96 10c40 10 70 50 60 90s-60 60-100 46S-6 96 6 58 56 0 96 10z"/>
-              <path class="ds-blob--miele" d="M230 22c36 6 66 40 60 76s-50 58-88 48-60-46-50-80 42-50 78-44z"/>
-              <path class="ds-blob--sabbia" d="M330 40c26 10 36 44 22 70s-50 30-70 12-18-56 4-74c14-12 30-14 44-8z"/>
-            </svg>
+            <div class="box-card__top">
+              <svg class="ds-blob ds-blob--salvia box-card__blob" viewBox="0 0 600 560" aria-hidden="true"><path d="M462 58c78 52 132 150 118 246-14 98-96 194-198 226-102 34-228 4-300-74C10 378-8 254 34 160 76 64 186 6 290 2c62-2 122 18 172 56z"/></svg>
+              <p class="box-card__pz"><span class="box-card__pz-num">35</span> <span class="caption">pezzi</span></p>
+              <p class="caption box-card__meta">N. 50</p>
+            </div>
             <div class="box-card__body">
-              <p class="caption box-card__meta">50 · 35 pz.</p>
               <h3 class="heading-sm">Medium box</h3>
-              <p class="box-card__desc">5 pz. Sashimi, 2 pz. Sushi Gio, 2 pz. Nigiri, 8 pz. Uramaki, 8 pz. Special roll a scelta dello chef, 8 pz. Hosomaki, 2 pz. Starter.</p>
+              <ul class="box-card__list">
+                <li><span>5</span> Sashimi</li>
+                <li><span>2</span> Sushi Gio</li>
+                <li><span>2</span> Nigiri</li>
+                <li><span>8</span> Uramaki</li>
+                <li><span>8</span> Special roll a scelta dello chef</li>
+                <li><span>8</span> Hosomaki</li>
+                <li><span>2</span> Starter</li>
+              </ul>
               <div class="box-card__foot"><span class="price price--lg">30,00&nbsp;€</span><a class="ds-btn ds-btn--secondary" href="#dove" data-ordina="box">Ordina</a></div>
             </div>
           </article>
           <article class="box-card ds-card m-lift">
-            <svg class="box-card__art" viewBox="0 0 360 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-              <path class="ds-blob--salvia" d="M70 14c38 4 64 38 58 76s-48 58-84 48S-8 92 4 56 32 10 70 14z"/>
-              <path class="ds-blob--arancio" d="M190 8c42 8 70 52 56 92s-66 54-104 34-52-62-32-94c16-26 46-38 80-32z"/>
-              <path class="ds-blob--miele" d="M318 30c30 10 46 46 30 76s-58 36-82 14-20-66 8-84c14-8 30-10 44-6z"/>
-            </svg>
+            <div class="box-card__top">
+              <svg class="ds-blob ds-blob--sabbia box-card__blob" viewBox="0 0 400 360" aria-hidden="true"><path d="M330 60c52 50 76 132 44 196-32 66-118 112-198 102C96 348 28 288 10 216-8 144 24 62 88 26c66-38 190-16 242 34z"/></svg>
+              <p class="box-card__pz"><span class="box-card__pz-num">55</span> <span class="caption">pezzi</span></p>
+              <p class="caption box-card__meta">N. 51</p>
+            </div>
             <div class="box-card__body">
-              <p class="caption box-card__meta">51 · 55 pz.</p>
               <h3 class="heading-sm">Large box</h3>
-              <p class="box-card__desc">5 pz. Sashimi, 4 pz. Nigiri salmone, 2 pz. Nigiri tonno, 8 pz. Uramaki, 24 pz. Special roll a scelta dello chef, 8 pz. Hosomaki, 4 pz. Starter.</p>
+              <ul class="box-card__list">
+                <li><span>5</span> Sashimi</li>
+                <li><span>4</span> Nigiri salmone</li>
+                <li><span>2</span> Nigiri tonno</li>
+                <li><span>8</span> Uramaki</li>
+                <li><span>24</span> Special roll a scelta dello chef</li>
+                <li><span>8</span> Hosomaki</li>
+                <li><span>4</span> Starter</li>
+              </ul>
               <div class="box-card__foot"><span class="price price--lg">50,00&nbsp;€</span><a class="ds-btn ds-btn--secondary" href="#dove" data-ordina="box">Ordina</a></div>
             </div>
           </article>
@@ -294,18 +326,17 @@
         <div class="split__text m-reveal">
           <p class="ds-eyebrow">Dove siamo</p>
           <h2 class="heading-lg section-title" id="dove-titolo">Vieni a trovarci a Bitetto</h2>
-          <div class="info-card ds-card">
-            <dl>
-              <dt class="caption">Indirizzo</dt><dd>Via Beato Giacomo, 72<br>70020 Bitetto (BA)</dd>
-              <dt class="caption">Orari</dt><dd>[ORARI DI APERTURA]</dd>
-              <dt class="caption">Telefono</dt><dd>[NUMERO DI TELEFONO]</dd>
-              <dt class="caption">Instagram</dt><dd><a class="ds-link" href="https://www.instagram.com/daniel__sushi/" rel="noopener">@daniel__sushi</a></dd>
-            </dl>
-            <div class="info-card__actions">
-              <!-- DA COMPLETARE: inserire il numero nel link tel: (es. tel:+39080...) -->
-              <a class="ds-btn ds-btn--primary" href="tel:">Chiama per ordinare</a>
-              <a class="ds-btn ds-btn--secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Via+Beato+Giacomo+72+Bitetto" rel="noopener">Apri in Mappe <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            </div>
+          <!-- Niente card: l'indirizzo è grande, il resto sta in una riga sotto un filetto netto. -->
+          <address class="dove__address">Via Beato Giacomo, 72<br>70020 Bitetto (BA)</address>
+          <dl class="dove__info">
+            <div><dt class="caption">Orari</dt><dd>[ORARI DI APERTURA]</dd></div>
+            <div><dt class="caption">Telefono</dt><dd>[NUMERO DI TELEFONO]</dd></div>
+            <div><dt class="caption">Instagram</dt><dd><a class="ds-link" href="https://www.instagram.com/daniel__sushi/" rel="noopener">@daniel__sushi</a></dd></div>
+          </dl>
+          <div class="dove__actions">
+            <!-- DA COMPLETARE: inserire il numero nel link tel: (es. tel:+39080...) -->
+            <a class="ds-btn ds-btn--primary" href="tel:">Chiama per ordinare</a>
+            <a class="ds-btn ds-btn--secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Via+Beato+Giacomo+72+Bitetto" rel="noopener">Apri in Mappe <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </div>
         <div class="split__art dove__art">
