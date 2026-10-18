@@ -82,25 +82,39 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 .hero__blob--b { width: 58%; left: -6%; bottom: -8%; }
 .hero__photo { position: relative; width: min(78%, 440px); aspect-ratio: 4 / 5; overflow: hidden; transform: rotate(2deg); }
 .hero__photo img { width: 100%; height: 100%; object-fit: cover; }
+/* Da 960px il titolo è molto grande e sconfina nella colonna dei blob; la foto sta sul bordo
+   destro, così le lettere passano sopra il blob salvia ma mai sopra la foto. */
 @media (min-width: 960px) {
-  .hero__inner { grid-template-columns: 1.05fr 1fr; }
-  .hero__art { min-height: 620px; }
+  .hero__inner { grid-template-columns: 1fr 1fr; }
+  .hero__text { position: relative; z-index: 1; margin-right: -22%; }
+  .hero__title { font-size: clamp(112px, 11.5vw, 168px); line-height: .84; }
+  .hero__lead { max-width: 40ch; }
+  .hero__art { min-height: 640px; justify-items: end; }
+  .hero__photo { width: min(70%, 420px); margin-right: 4%; }
 }
 
 /* ===== La materia prima ===== */
-/* 1, 2 o 4 colonne: mai una card sola sull'ultima riga. Su quattro colonne le card pari
-   scendono di 48px, come fogli appoggiati sul banco invece di una fila di caselle. */
-.ingredients { display: grid; grid-template-columns: 1fr; gap: var(--sp-32) var(--sp-24); align-items: start; }
-@media (min-width: 560px) { .ingredients { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1080px) {
-  .ingredients { grid-template-columns: repeat(4, 1fr); }
-  .ingredient:nth-child(even) { margin-top: var(--sp-48); }
-}
+/* Mosaico: il salmone è la card grande, gli altri tre sono righe con la foto quadrata a sinistra.
+   Da 760px il salmone occupa la colonna di sinistra per tutta l'altezza. */
+.ingredients { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--sp-24); }
 .ingredient { display: flex; flex-direction: column; overflow: hidden; }
 .ingredient__photo { aspect-ratio: 4 / 5; }
 .ingredient__photo img { width: 100%; height: 100%; object-fit: cover; }
 .ingredient__body { display: flex; flex-direction: column; gap: var(--sp-8); padding: var(--sp-24) var(--sp-24) var(--sp-32); }
-.ingredient__body p { font-size: 15px; color: var(--inchiostro-tenue); }
+.ingredient__body p { font-size: 15px; color: var(--inchiostro-tenue); max-width: 44ch; }
+.ingredient:not(:first-child) { display: grid; grid-template-columns: minmax(112px, 38%) minmax(0, 1fr); align-items: center; }
+/* La foto riempie la riga senza dettarne l'altezza: comanda il testo. */
+.ingredient:not(:first-child) .ingredient__photo { position: relative; aspect-ratio: auto; align-self: stretch; min-height: 136px; }
+.ingredient:not(:first-child) .ingredient__photo img { position: absolute; inset: 0; }
+.ingredient:not(:first-child) .ingredient__body { padding: var(--sp-16) var(--sp-24); }
+.ingredient:first-child .ingredient__photo { aspect-ratio: 4 / 3; }
+.ingredient:first-child .heading-sm { font-size: 46px; }
+@media (min-width: 760px) {
+  .ingredients { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); grid-template-rows: repeat(3, 1fr); }
+  .ingredient:first-child { grid-row: 1 / 4; }
+  .ingredient:first-child .ingredient__photo { aspect-ratio: auto; flex: 1 1 360px; }
+  .ingredient:first-child .ingredient__body { padding: var(--sp-32); }
+}
 
 /* ===== Onde tra le fasce ===== */
 .wave { margin-block: -1px; }
@@ -110,17 +124,31 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 
 /* ===== Della casa (fascia arancio) ===== */
 .section--arancio .ds-eyebrow { color: var(--inchiostro); }
-.roll-photo { overflow: hidden; height: clamp(240px, 32vw, 440px); margin-bottom: var(--sp-32); }
-.roll-photo img { width: 100%; height: 100%; object-fit: cover; }
-.roll-grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-24); }
-@media (min-width: 560px) { .roll-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1080px) { .roll-grid { grid-template-columns: repeat(4, 1fr); } }
-.roll-card { display: flex; flex-direction: column; gap: var(--sp-8); padding: var(--sp-32) var(--sp-24) var(--sp-24); }
-.roll-card__num { font: 400 56px/.9 var(--font-display); color: var(--arancio-ink); letter-spacing: .03em; }
-.roll-card__name { font: 700 20px/1.3 var(--font-body); color: var(--indaco); }
-.roll-card p { flex-grow: 1; font-size: 14px; line-height: 1.65; color: var(--inchiostro-tenue); }
-.roll-card__foot { display: flex; justify-content: space-between; align-items: center; padding-top: var(--sp-16); margin-top: var(--sp-8); border-top: 1px solid var(--filetto); }
-.roll-card__foot .caption { color: var(--inchiostro-tenue); }
+/* Una card sola: foto e lista dei roll affiancate da 900px, la foto sopra su telefono. */
+.roll-menu { display: grid; overflow: hidden; }
+.roll-menu__photo { height: clamp(220px, 50vw, 320px); }
+.roll-menu__photo img { width: 100%; height: 100%; object-fit: cover; }
+@media (min-width: 900px) {
+  .roll-menu { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+  .roll-menu__photo { height: auto; min-height: 100%; }
+}
+.roll-list { list-style: none; margin: 0; padding: var(--sp-8) var(--pad-x) var(--sp-16); }
+.roll-item {
+  display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: var(--sp-4) var(--sp-16);
+  align-items: baseline; padding: var(--sp-24) 0; border-bottom: 1px solid var(--filetto);
+}
+.roll-item:last-child { border-bottom: 0; }
+.roll-item__num { font: 400 48px/.9 var(--font-display); color: var(--arancio-ink); letter-spacing: .03em; font-variant-numeric: tabular-nums; }
+.roll-item__text { display: flex; flex-direction: column; gap: var(--sp-4); }
+.roll-item__name { font: 700 20px/1.3 var(--font-body); color: var(--indaco); }
+.roll-item__text p { font-size: 14px; line-height: 1.65; color: var(--inchiostro-tenue); max-width: 52ch; }
+.roll-item__meta { display: flex; flex-direction: column; align-items: flex-end; gap: var(--sp-4); }
+.roll-item__meta .caption { color: var(--inchiostro-tenue); }
+@media (max-width: 559px) {
+  .roll-item { grid-template-columns: 44px minmax(0, 1fr); }
+  .roll-item__num { font-size: 36px; }
+  .roll-item__meta { grid-column: 2; flex-direction: row; align-items: baseline; gap: var(--sp-12); }
+}
 
 /* ===== Box ===== */
 .box-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--sp-32); margin-bottom: var(--sp-48); }
